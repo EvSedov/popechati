@@ -1,0 +1,83 @@
+{
+  "public/LogoPopechati.png": {
+    "file": "assets/LogoPopechati-n5l2dxgf.png",
+    "src": "public/LogoPopechati.png"
+  },
+  "public/hero-t-shirt.png": {
+    "file": "assets/hero-t-shirt-D91BJKBe.png",
+    "src": "public/hero-t-shirt.png"
+  },
+  "public/icons/arrow-right.svg": {
+    "file": "assets/arrow-right-Bs_6WOL8.svg",
+    "src": "public/icons/arrow-right.svg"
+  },
+  "public/icons/basket-shopping.svg": {
+    "file": "assets/basket-shopping-BMfZBbcV.svg",
+    "src": "public/icons/basket-shopping.svg"
+  },
+  "public/icons/container-1.png": {
+    "file": "assets/container-1-C-YPYBQG.png",
+    "src": "public/icons/container-1.png"
+  },
+  "public/icons/container-2.png": {
+    "file": "assets/container-2-B7qPMWQm.png",
+    "src": "public/icons/container-2.png"
+  },
+  "public/icons/container-3.png": {
+    "file": "assets/container-3-CyBVsjCE.png",
+    "src": "public/icons/container-3.png"
+  },
+  "public/icons/container-4.png": {
+    "file": "assets/container-4-CG9joPVO.png",
+    "src": "public/icons/container-4.png"
+  },
+  "public/icons/container-5.png": {
+    "file": "assets/container-5-DCX7XJ7S.png",
+    "src": "public/icons/container-5.png"
+  },
+  "public/icons/container-6.png": {
+    "file": "assets/container-6-Cdd_5DdW.png",
+    "src": "public/icons/container-6.png"
+  },
+  "public/icons/i-social-tg.png": {
+    "file": "assets/i-social-tg-D5RvMVwN.png",
+    "src": "public/icons/i-social-tg.png"
+  },
+  "public/icons/i-social-vk.png": {
+    "file": "assets/i-social-vk-DWEBIM-e.png",
+    "src": "public/icons/i-social-vk.png"
+  },
+  "public/icons/i-social-whatsapp.png": {
+    "file": "assets/i-social-whatsapp-3AAGdiPa.png",
+    "src": "public/icons/i-social-whatsapp.png"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-CanK6K9e.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DyJNY0xS.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-CgTxJgXF.css"
+    ],
+    "assets": [
+      "assets/LogoPopechati-n5l2dxgf.png",
+      "assets/basket-shopping-BMfZBbcV.svg",
+      "assets/i-social-vk-DWEBIM-e.png",
+      "assets/i-social-tg-D5RvMVwN.png",
+      "assets/i-social-whatsapp-3AAGdiPa.png",
+      "assets/hero-t-shirt-D91BJKBe.png",
+      "assets/arrow-right-Bs_6WOL8.svg",
+      "assets/container-1-C-YPYBQG.png",
+      "assets/container-2-B7qPMWQm.png",
+      "assets/container-3-CyBVsjCE.png",
+      "assets/container-4-CG9joPVO.png",
+      "assets/container-5-DCX7XJ7S.png",
+      "assets/container-6-Cdd_5DdW.png"
+    ]
+  }
+}
