@@ -13,10 +13,6 @@ export default defineConfig({
         vuePlugin(),
         tailwindcss(),
     ],
-    build: {
-        outDir: "dist", // Папка для сборки
-        emptyOutDir: true,
-    },
     resolve: (name) => {
         const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
         return pages[`./Pages/${name}.vue`];
