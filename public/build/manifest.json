@@ -15,6 +15,22 @@
     "file": "assets/basket-shopping-BMfZBbcV.svg",
     "src": "public/icons/basket-shopping.svg"
   },
+  "public/icons/cards-master.png": {
+    "file": "assets/cards-master-B4fj7Av5.png",
+    "src": "public/icons/cards-master.png"
+  },
+  "public/icons/cards-mir.png": {
+    "file": "assets/cards-mir-BSMMhK7j.png",
+    "src": "public/icons/cards-mir.png"
+  },
+  "public/icons/cards-visa.png": {
+    "file": "assets/cards-visa-CCCYEq3l.png",
+    "src": "public/icons/cards-visa.png"
+  },
+  "public/icons/cards-webmoney.png": {
+    "file": "assets/cards-webmoney-CCbS350Z.png",
+    "src": "public/icons/cards-webmoney.png"
+  },
   "public/icons/container-1.png": {
     "file": "assets/container-1-C-YPYBQG.png",
     "src": "public/icons/container-1.png"
@@ -52,21 +68,25 @@
     "src": "public/icons/i-social-whatsapp.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CgXgeaSy.css",
+    "file": "assets/app-Br4ZWsCv.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-DyJNY0xS.js",
+    "file": "assets/app-CiGCE1_I.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-CgTxJgXF.css"
+      "assets/app-BcSA9cVN.css"
     ],
     "assets": [
       "assets/LogoPopechati-n5l2dxgf.png",
       "assets/basket-shopping-BMfZBbcV.svg",
+      "assets/cards-visa-CCCYEq3l.png",
+      "assets/cards-master-B4fj7Av5.png",
+      "assets/cards-webmoney-CCbS350Z.png",
+      "assets/cards-mir-BSMMhK7j.png",
       "assets/i-social-vk-DWEBIM-e.png",
       "assets/i-social-tg-D5RvMVwN.png",
       "assets/i-social-whatsapp-3AAGdiPa.png",
