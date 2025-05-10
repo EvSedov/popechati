@@ -6,21 +6,47 @@ import Logo from "@/Components/Logo.vue";
     <div class="footer">
         <div class="container flex gap-18">
             <div class="flex min-w-56 flex-col">
-                <ul class="m-0 flex flex-col gap-6 p-0">
+                <ul class="m-0 flex flex-col p-0">
                     <li>
                         <Logo />
                     </li>
-                    <li>
-                        <div class="">
-                            <img src="" alt="" />
-                            <img src="" alt="" />
-                        </div>
-                        <div class="">
-                            <img src="" alt="" />
-                            <img src="" alt="" />
+                    <li class="my-6 w-33.5">
+                        <div class="grid grid-cols-2 grid-rows-2 gap-1.5">
+                            <div
+                                class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]"
+                            >
+                                <img
+                                    src="/public/icons/cards-visa.png"
+                                    alt="Оплата картой visa"
+                                />
+                            </div>
+                            <div
+                                class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]"
+                            >
+                                <img
+                                    src="/public/icons/cards-master.png"
+                                    alt="Оплата master card"
+                                />
+                            </div>
+                            <div
+                                class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]"
+                            >
+                                <img
+                                    src="/public/icons/cards-webmoney.png"
+                                    alt="Оплата через WebMoney"
+                                />
+                            </div>
+                            <div
+                                class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]"
+                            >
+                                <img
+                                    src="/public/icons/cards-mir.png"
+                                    alt="Оплата картой Мир"
+                                />
+                            </div>
                         </div>
                     </li>
-                    <li>
+                    <li class="mb-5">
                         <div class="icons-social flex gap-1">
                             <img
                                 src="/public/icons/i-social-vk.png"
@@ -39,8 +65,8 @@ import Logo from "@/Components/Logo.vue";
                             />
                         </div>
                     </li>
-                    <li>
-                        <span class="text-xs"
+                    <li class="relative">
+                        <span class="absolute w-60 text-xs"
                             >Copyright © 2014 – 2024 Popechati.com</span
                         >
                     </li>
@@ -59,7 +85,7 @@ import Logo from "@/Components/Logo.vue";
                             +7 (800) 555-35-35
                         </p>
                     </li>
-                    <li class="mb-[23px]">
+                    <li class="mb-6">
                         <a
                             class="text-main-blue text-base/6.5 font-semibold"
                             href="mail:popechati@gmail.com"
@@ -68,9 +94,9 @@ import Logo from "@/Components/Logo.vue";
                         </a>
                     </li>
                     <li
-                        class="text-content-primery text-sm/[22.4px] font-normal"
+                        class="text-content-primery relative text-sm/[22.4px] font-normal"
                     >
-                        <span>
+                        <span class="absolute w-73">
                             115280, г. Москва, ул. Ленинская<br />
                             Слобода, д. 19, БЦ "Омега Плаза", 4 этаж,<br />
                             офис 4005/1. В 300 метрах от станции<br />
