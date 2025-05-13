@@ -3,6 +3,18 @@
     "file": "assets/LogoPopechati-n5l2dxgf.png",
     "src": "public/LogoPopechati.png"
   },
+  "public/fonts/Commissioner-Bold.ttf": {
+    "file": "assets/Commissioner-Bold-GoDjoJPL.ttf",
+    "src": "public/fonts/Commissioner-Bold.ttf"
+  },
+  "public/fonts/Commissioner-Regular.ttf": {
+    "file": "assets/Commissioner-Regular-BJ0q_E0q.ttf",
+    "src": "public/fonts/Commissioner-Regular.ttf"
+  },
+  "public/fonts/Commissioner-SemiBold.ttf": {
+    "file": "assets/Commissioner-SemiBold-C33mJM-e.ttf",
+    "src": "public/fonts/Commissioner-SemiBold.ttf"
+  },
   "public/hero-t-shirt.png": {
     "file": "assets/hero-t-shirt-D91BJKBe.png",
     "src": "public/hero-t-shirt.png"
@@ -68,17 +80,29 @@
     "src": "public/icons/i-social-whatsapp.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-Br4ZWsCv.css",
+    "file": "assets/app-LyxlTkUQ.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
+  "resources/images/examp-1.jpg": {
+    "file": "assets/examp-1-DlraCh49.jpg",
+    "src": "resources/images/examp-1.jpg"
+  },
+  "resources/images/examp-2.jpg": {
+    "file": "assets/examp-2-CY4EIlVs.jpg",
+    "src": "resources/images/examp-2.jpg"
+  },
+  "resources/images/examp-3.jpg": {
+    "file": "assets/examp-3-DEBERZxF.jpg",
+    "src": "resources/images/examp-3.jpg"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-CiGCE1_I.js",
+    "file": "assets/app-oW5jNRNT.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-BcSA9cVN.css"
+      "assets/app-DtfrYgAK.css"
     ],
     "assets": [
       "assets/LogoPopechati-n5l2dxgf.png",
