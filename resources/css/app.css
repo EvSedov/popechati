@@ -1,3 +1,28 @@
+@font-face {
+    font-family: "Commissioner";
+    src:
+        local("Commissioner"),
+        url("/public/fonts/Commissioner-Regular.ttf") format("TrueType");
+    font-weight: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Commissioner-SemiBold";
+    src:
+        local("Commissioner"),
+        url("/public/fonts/Commissioner-SemiBold.ttf") format("TrueType");
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Commissioner";
+    src:
+        local("Commissioner-Bold"),
+        url("/public/fonts/Commissioner-Bold.ttf") format("TrueType");
+    font-weight: bold;
+    font-display: swap;
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
