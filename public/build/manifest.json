@@ -80,7 +80,7 @@
     "src": "public/icons/i-social-whatsapp.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-LyxlTkUQ.css",
+    "file": "assets/app-DO2YgGYV.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -97,12 +97,12 @@
     "src": "resources/images/examp-3.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-oW5jNRNT.js",
+    "file": "assets/app-DYmc--PO.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-DtfrYgAK.css"
+      "assets/app-BqQPzN9e.css"
     ],
     "assets": [
       "assets/LogoPopechati-n5l2dxgf.png",
