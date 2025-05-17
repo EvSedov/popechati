@@ -6,7 +6,7 @@
         </h2>
         <div class="mx-auto flex w-fit gap-5.5">
             <div
-                class="relative h-89 w-89 overflow-hidden rounded-xl bg-[url(/resources/images/examp-1.jpg)]"
+                class="example-tshirt-1 relative h-89 w-89 overflow-hidden rounded-xl"
             >
                 <div
                     class="absolute top-0 right-0 bottom-0 left-0 flex items-end bg-black/25"
@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div
-                class="relative h-89 w-89 overflow-hidden rounded-xl bg-[url(/resources/images/examp-2.jpg)]"
+                class="example-tshirt-2 relative h-89 w-89 overflow-hidden rounded-xl"
             >
                 <div
                     class="absolute top-0 right-0 bottom-0 left-0 flex items-end bg-black/25"
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div
-                class="relative h-89 w-89 overflow-hidden rounded-xl bg-[url(/resources/images/examp-3.jpg)]"
+                class="example-tshirt-3 relative h-89 w-89 overflow-hidden rounded-xl"
             >
                 <div
                     class="absolute top-0 right-0 bottom-0 left-0 flex items-end bg-black/25"
@@ -44,5 +44,20 @@
 <style scoped>
 h2 {
     font-family: "Commissioner";
+}
+.example-tshirt-1 {
+    background-image: url('/images/examp-1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.example-tshirt-2 {
+    background-image: url('/images/examp-2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.example-tshirt-3 {
+    background-image: url('/images/examp-3.jpg');
+    background-size: cover;
+    background-position: center;
 }
 </style> 

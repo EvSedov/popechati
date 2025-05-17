@@ -79,7 +79,7 @@ const components: { title: string; href: string; description: string }[] = [
             </NavigationMenuItem>
             <NavigationMenuItem>
                 <NavigationMenuLink
-                    href="#"
+                    href="#contacts"
                     :class="navigationMenuTriggerStyle()"
                 >
                     Контакты
