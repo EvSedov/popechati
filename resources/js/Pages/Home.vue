@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Header from "@/Components/Header.vue";
-import Discount from "@/Components/Discount.vue";
-import Footer from "@/Components/Footer.vue";
-import HeroSection from "@/Components/section/Hero.vue";
-import HowWeWork from "@/Components/HowWeWork.vue";
-import ExamplesTShirts from "@/Components/ExamplesTShirts.vue";
+import Header from "@/Components/organisms/Header.vue";
+import Discount from "@/Components/molecules/Discount.vue";
+import Footer from "@/Components/organisms/Footer.vue";
+import HeroSection from "@/Components/templates/Hero.vue";
+import HowWeWork from "@/Components/templates/HowWeWork.vue";
+import ExamplesTShirts from "@/Components/templates/ExamplesTShirts.vue";
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button } from "@/Components/ui/button";
+import { Button } from "@/Components/atoms/ui/button";
 </script>
 
 <template>
@@ -31,4 +31,4 @@ import { Button } from "@/Components/ui/button";
     margin: 0 auto;
     padding: 12px 0;
 }
-</style>
+</style> 

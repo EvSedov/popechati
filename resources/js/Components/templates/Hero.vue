@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { Button } from "@/Components/ui/button";
-import ArrowRight from "../icons/ArrowRight.vue";
+import { Button } from "@/Components/atoms/ui/button";
+import ArrowRight from "@/Components/atoms/icons/ArrowRight.vue";
 </script>
 
 <template>
@@ -84,4 +84,4 @@ h3 {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
 }
-</style>
+</style> 

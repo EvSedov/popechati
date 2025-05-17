@@ -7,7 +7,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
-} from "@/Components/ui/navigation-menu";
+} from "@/Components/atoms/ui/navigation-menu";
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -95,4 +95,4 @@ const components: { title: string; href: string; description: string }[] = [
             </NavigationMenuItem>
         </NavigationMenuList>
     </NavigationMenu>
-</template>
+</template> 

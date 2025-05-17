@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Logo from "@/Components/Logo.vue";
+import Logo from "@/Components/atoms/Logo.vue";
 </script>
 
 <template>
@@ -160,4 +160,4 @@ import Logo from "@/Components/Logo.vue";
     margin: 32px auto 56px;
     padding: 0 30px;
 }
-</style>
+</style> 

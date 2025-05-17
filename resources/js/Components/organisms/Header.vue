@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Logo from "@/Components/Logo.vue";
-import Menu from "@/Components/Menu.vue";
-import { Button } from "@/Components/ui/button";
-import BasketShopping from "./icons/BasketShopping.vue";
+import Logo from "@/Components/atoms/Logo.vue";
+import Menu from "@/Components/molecules/Menu.vue";
+import { Button } from "@/Components/atoms/ui/button";
+import BasketShopping from "@/Components/atoms/icons/BasketShopping.vue";
 </script>
 
 <template>
@@ -30,4 +30,4 @@ import BasketShopping from "./icons/BasketShopping.vue";
     margin: 0 auto;
     padding: 12px 0 0;
 }
-</style>
+</style> 
