@@ -33,7 +33,7 @@ const faqItems = [
         <div class="mx-auto w-[1170px]">
             <!-- Заголовок секции -->
             <h2
-                class="font-montserrat mb-10 text-center text-[42px] font-semibold text-[#2C2C2C]"
+                class="font-montserrat mb-8 text-center text-[42px] font-semibold text-[#2C2C2C]"
             >
                 Контактная информация
             </h2>
@@ -41,7 +41,7 @@ const faqItems = [
             <!-- Контактная информация с картой -->
             <div class="mb-16 flex flex-row gap-23.5">
                 <!-- Левая колонка: Карта и FAQ -->
-                <div class="flex flex-col pl-2">
+                <div class="flex flex-col pt-2 pl-2">
                     <!-- Яндекс карта -->
                     <YandexMap />
 
