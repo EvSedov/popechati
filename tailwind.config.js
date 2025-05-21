@@ -3,6 +3,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 commissioner: ["Commissioner", "serif"],
+                montserrat: ["Montserrat", "serif"],
             },
         },
     },
