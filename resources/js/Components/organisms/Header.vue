@@ -12,7 +12,7 @@ import BasketShopping from "@/Components/atoms/icons/BasketShopping.vue";
             <Menu />
             <!--<Socials />-->
             <Button
-                class="ml-62 border-2 border-[#BA2150] bg-linear-to-r from-[#F10488] to-[#FF0224] px-6 tracking-wider text-white"
+                class="ml-auto border-2 border-[#BA2150] bg-linear-to-r from-[#F10488] to-[#FF0224] px-6 tracking-wider text-white"
             >
                 <BasketShopping class="h-3.75 w-4.25" />
                 Создать заказ
@@ -30,4 +30,4 @@ import BasketShopping from "@/Components/atoms/icons/BasketShopping.vue";
     margin: 0 auto;
     padding: 12px 0 0;
 }
-</style> 
+</style>

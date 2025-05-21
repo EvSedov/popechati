@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import {
     NavigationMenu,
-    NavigationMenuContent,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/Components/atoms/ui/navigation-menu";
 
@@ -95,4 +93,4 @@ const components: { title: string; href: string; description: string }[] = [
             </NavigationMenuItem>
         </NavigationMenuList>
     </NavigationMenu>
-</template> 
+</template>
