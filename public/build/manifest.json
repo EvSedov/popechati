@@ -79,18 +79,30 @@
     "file": "assets/i-social-whatsapp-3AAGdiPa.png",
     "src": "public/icons/i-social-whatsapp.png"
   },
+  "public/icons/icon-nav-2gis.svg": {
+    "file": "assets/icon-nav-2gis-IENnA5nh.svg",
+    "src": "public/icons/icon-nav-2gis.svg"
+  },
+  "public/icons/icon-nav-yandex.svg": {
+    "file": "assets/icon-nav-yandex-DGqMgLlN.svg",
+    "src": "public/icons/icon-nav-yandex.svg"
+  },
+  "public/icons/icons-nav-google.svg": {
+    "file": "assets/icons-nav-google-DgMeKI7J.svg",
+    "src": "public/icons/icons-nav-google.svg"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-CV9jiSKb.css",
+    "file": "assets/app-Dg5YgVFD.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-BZqEhFJU.js",
+    "file": "assets/app-C7QOelrF.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-XnUcuz-M.css"
+      "assets/app-CvgzRt5I.css"
     ],
     "assets": [
       "assets/LogoPopechati-n5l2dxgf.png",
@@ -109,7 +121,10 @@
       "assets/container-3-CyBVsjCE.png",
       "assets/container-4-CG9joPVO.png",
       "assets/container-5-DCX7XJ7S.png",
-      "assets/container-6-Cdd_5DdW.png"
+      "assets/container-6-Cdd_5DdW.png",
+      "assets/icon-nav-yandex-DGqMgLlN.svg",
+      "assets/icons-nav-google-DgMeKI7J.svg",
+      "assets/icon-nav-2gis-IENnA5nh.svg"
     ]
   }
 }
