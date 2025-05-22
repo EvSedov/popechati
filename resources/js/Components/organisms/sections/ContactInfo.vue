@@ -29,7 +29,7 @@ const faqItems = [
 </script>
 
 <template>
-    <div id="contacts" class="w-full bg-white pt-[26px] pb-[80px]">
+    <section id="contacts" class="w-full bg-white pt-[26px] pb-[2px]">
         <div class="mx-auto w-[1170px]">
             <!-- Заголовок секции -->
             <h2
@@ -39,7 +39,7 @@ const faqItems = [
             </h2>
 
             <!-- Контактная информация с картой -->
-            <div class="mb-16 flex flex-row gap-23.5">
+            <div class="mb-8 flex flex-row gap-23.5">
                 <!-- Левая колонка: Карта и FAQ -->
                 <div class="flex flex-col pt-2 pl-2">
                     <!-- Яндекс карта -->
@@ -55,7 +55,7 @@ const faqItems = [
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <style scoped>

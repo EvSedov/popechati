@@ -1,68 +1,118 @@
 <script setup lang="ts">
 // Массивы с данными для секций
 const cards = [
-  { name: 'VISA', icon: '/icons/visa.svg' },
-  { name: 'mastercard', icon: '/icons/mastercard.svg' },
-  { name: 'maestro', icon: '/icons/maestro.svg' },
-  { name: 'МИР', icon: '/icons/mir.svg' },
-  { name: 'Apple Pay', icon: '/icons/applepay.svg' },
+    { name: "VISA", icon: "/icons/visa.svg", className: "w-13 h-7.5" },
+    {
+        name: "mastercard",
+        icon: "/icons/mastercard.svg",
+        className: "w-9.5 h-7.5",
+    },
+    { name: "maestro", icon: "/icons/maestro.svg", className: "w-9.5 h-7.5" },
+    { name: "МИР", icon: "/icons/mir.svg", className: "w-16 h-5" },
+    {
+        name: "Apple Pay",
+        icon: "/icons/applepay.svg",
+        className: "w-15.5 h-10.5",
+    },
 ];
 const wallets = [
-  { name: 'WebMoney', icon: '/icons/webmoney.svg' },
-  { name: 'QIWI', icon: '/icons/qiwi.svg' },
-  { name: 'Юmoney', icon: '/icons/yoomoney.svg' },
+    {
+        name: "WebMoney",
+        icon: "/icons/webmoney.svg",
+        className: "w-27.5 h-8.5",
+    },
+    { name: "QIWI", icon: "/icons/qiwi.svg", className: "w-23.5 h-13" },
+    { name: "Юmoney", icon: "/icons/yoomoney.svg", className: "w-26 h-5.5" },
 ];
 const terminals = [
-  { name: 'Comepay', icon: '/icons/comepay.svg' },
-  { name: 'Связной', icon: '/icons/svyaznoy.svg' },
-  { name: 'Евросеть', icon: '/icons/euroset.svg' },
+    { name: "Comepay", icon: "/icons/comepay.svg", className: "w-30 h-12.5" },
+    { name: "Связной", icon: "/icons/svyaznoy.svg", className: "w-28 h-9.5" },
+    { name: "Евросеть", icon: "/icons/euroset.svg", className: "w-28 h-7.5" },
 ];
-const bank = [
-  { name: 'Банковский расчет', icon: '/icons/bank.svg' },
-];
+const bank = [{ name: "Банковский расчет", icon: "/icons/bank.svg" }];
 </script>
 
 <template>
-  <section class="w-full flex justify-center items-center bg-[#f7f7f7]" style="min-height: 856px; max-width: 1920px; margin: 0 auto;">
-    <div class="w-[1160px] mx-auto my-0">
-      <h2 class="text-[42px] font-bold text-center mb-12 mt-0">Способы оплаты в Типографии</h2>
-      <div class="grid grid-cols-2 grid-rows-2 gap-0 rounded-2xl overflow-hidden bg-white shadow-sm">
-        <!-- 1 -->
-        <div class="flex flex-col items-center justify-center border-b border-r border-[#ececec] py-12 px-8">
-          <div class="mb-6 text-lg font-medium">Любые банковские карты</div>
-          <div class="flex gap-8 items-center">
-            <img v-for="item in cards" :key="item.name" :src="item.icon" :alt="item.name" class="h-10" />
-          </div>
+    <section class="mx-auto my-0 flex w-full bg-[#f7f7f7] pt-18 pb-20">
+        <div class="mx-auto my-0">
+            <h2 class="mb-7 text-center text-[42px] font-bold">
+                Способы оплаты в Типографии
+            </h2>
+            <div
+                class="grid grid-cols-2 grid-rows-2 rounded-2xl bg-white text-sm"
+            >
+                <!-- 1 -->
+                <div
+                    class="flex flex-col items-center justify-center border-r border-b border-[#ececec] px-19 pb-13"
+                >
+                    <div class="mt-6.5 mb-6 font-medium">
+                        Любые банковские карты
+                    </div>
+                    <div class="flex items-center gap-10">
+                        <img
+                            v-for="item in cards"
+                            :key="item.name"
+                            :src="item.icon"
+                            :alt="item.name"
+                            :class="className"
+                        />
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div
+                    class="flex flex-col items-center justify-center border-b border-[#ececec] px-19 pb-13"
+                >
+                    <div class="mt-6.5 mb-6 font-medium">
+                        Электронные деньги и кошельки
+                    </div>
+                    <div class="flex items-center gap-14">
+                        <img
+                            v-for="item in wallets"
+                            :key="item.name"
+                            :src="item.icon"
+                            :alt="item.name"
+                        />
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div
+                    class="flex flex-col items-center justify-center border-r border-[#ececec] px-19 pb-13"
+                >
+                    <div class="mt-6.5 mb-6 font-medium">
+                        Наличные через терминалы
+                    </div>
+                    <div class="flex items-center gap-7">
+                        <img
+                            v-for="item in terminals"
+                            :key="item.name"
+                            :src="item.icon"
+                            :alt="item.name"
+                        />
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div
+                    class="flex flex-col items-center justify-center border-r border-[#ececec] px-19 pb-13"
+                >
+                    <div class="mt-6.5 mb-6 font-medium">
+                        Безналичный расчёт (для ИП и юридических лиц)
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <img
+                            v-for="item in bank"
+                            :key="item.name"
+                            :src="item.icon"
+                            :alt="item.name"
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- 2 -->
-        <div class="flex flex-col items-center justify-center border-b border-[#ececec] py-12 px-8">
-          <div class="mb-6 text-lg font-medium">Электронные деньги и кошельки</div>
-          <div class="flex gap-8 items-center">
-            <img v-for="item in wallets" :key="item.name" :src="item.icon" :alt="item.name" class="h-10" />
-          </div>
-        </div>
-        <!-- 3 -->
-        <div class="flex flex-col items-center justify-center border-r border-[#ececec] py-12 px-8">
-          <div class="mb-6 text-lg font-medium">Наличные через терминалы</div>
-          <div class="flex gap-8 items-center">
-            <img v-for="item in terminals" :key="item.name" :src="item.icon" :alt="item.name" class="h-10" />
-          </div>
-        </div>
-        <!-- 4 -->
-        <div class="flex flex-col items-center justify-center py-12 px-8">
-          <div class="mb-6 text-lg font-medium">Безналичный расчёт (для ИП и юридических лиц)</div>
-          <div class="flex gap-8 items-center">
-            <img v-for="item in bank" :key="item.name" :src="item.icon" :alt="item.name" class="h-10" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </template>
 
 <style scoped>
-section {
-  min-width: 100vw;
-  background: #f7f7f7;
+* {
+    font-family: "Commissioner";
 }
-</style> 
+</style>
