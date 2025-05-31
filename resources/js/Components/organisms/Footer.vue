@@ -3,8 +3,8 @@ import Logo from "@/Components/atoms/Logo.vue";
 </script>
 
 <template>
-    <div class="footer">
-        <div class="container flex gap-18">
+    <div class="footer border-t border-[#F3F3F3]">
+        <div class="container flex gap-[88px]">
             <div class="flex min-w-56 flex-col">
                 <ul class="m-0 flex flex-col p-0">
                     <li>
@@ -47,7 +47,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                         </div>
                     </li>
                     <li class="mb-5">
-                        <div class="icons-social flex gap-1">
+                        <div class="icons-social flex gap-[5px]">
                             <img
                                 src="/public/icons/i-social-vk.png"
                                 alt="Иконка социальной сети вконтакте"
@@ -66,7 +66,8 @@ import Logo from "@/Components/atoms/Logo.vue";
                         </div>
                     </li>
                     <li class="relative">
-                        <span class="absolute w-60 text-xs"
+                        <span
+                            class="absolute w-60 text-xs leading-relaxed text-[#2C2C2C]"
                             >Copyright © 2014 – 2024 Popechati.com</span
                         >
                     </li>
@@ -75,28 +76,30 @@ import Logo from "@/Components/atoms/Logo.vue";
             <div class="flex max-w-73 min-w-66.5 flex-col">
                 <ul class="m-0 flex flex-col p-0">
                     <li class="mb-4.5">
-                        <p class="text-lg/5.5 font-medium">Контакты</p>
+                        <p class="text-lg/5.5 font-medium text-[#2C2C2C]">
+                            Контакты
+                        </p>
                     </li>
-                    <li class="mb-3.25">
-                        <p class="text-base/6.5 font-semibold">
+                    <li class="mb-[13px]">
+                        <p class="text-base/6.5 font-semibold text-[#2C2C2C]">
                             +7 (495) 181-11-11
                         </p>
-                        <p class="text-base/6.5 font-semibold">
+                        <p class="text-base/6.5 font-semibold text-[#2C2C2C]">
                             +7 (800) 555-35-35
                         </p>
                     </li>
                     <li class="mb-6">
                         <a
-                            class="text-main-blue text-base/6.5 font-semibold"
+                            class="text-base/6.5 font-semibold text-[#1882F0]"
                             href="mail:popechati@gmail.com"
                         >
                             popechati@gmail.com
                         </a>
                     </li>
                     <li
-                        class="text-content-primery relative text-sm/[22.4px] font-normal"
+                        class="relative text-sm leading-relaxed font-normal text-[#2C2C2C]"
                     >
-                        <span class="absolute w-73">
+                        <span class="absolute w-73 leading-relaxed">
                             115280, г. Москва, ул. Ленинская<br />
                             Слобода, д. 19, БЦ "Омега Плаза", 4 этаж,<br />
                             офис 4005/1. В 300 метрах от станции<br />
@@ -108,15 +111,21 @@ import Logo from "@/Components/atoms/Logo.vue";
             <div class="flex min-w-56 flex-col">
                 <ul class="m-0 flex flex-col p-0">
                     <li class="mb-4.5">
-                        <p class="text-lg/5.5 font-medium">Информация</p>
+                        <p class="text-lg/5.5 font-medium text-[#2C2C2C]">
+                            Информация
+                        </p>
                     </li>
                     <li class="">
                         <ul
-                            class="text-content-primery text-sm/6.5 font-normal underline"
+                            class="text-sm leading-[25px] font-normal text-[#2C2C2C] underline"
                         >
                             <li><span>Контакты</span></li>
                             <li><span>Требования к макетам</span></li>
-                            <li><span>Оплата, доставка, возврат</span></li>
+                            <li class="flex flex-wrap">
+                                <span>Оплата</span>,
+                                <span class="ml-1">доставка</span>,
+                                <span class="ml-1">возврат</span>
+                            </li>
                             <li><span>Реальные отзывы</span></li>
                             <li><span>Пользовательское соглашение</span></li>
                             <li><span>Публичная оферта</span></li>
@@ -129,19 +138,37 @@ import Logo from "@/Components/atoms/Logo.vue";
             <div class="flex min-w-56 flex-col">
                 <ul class="m-0 flex flex-col p-0">
                     <li class="mb-4.5">
-                        <p class="text-lg/5.5 font-medium">Популярные услуги</p>
+                        <p class="text-lg/5.5 font-medium text-[#2C2C2C]">
+                            Популярные услуги
+                        </p>
                     </li>
                     <li class="">
                         <ul
-                            class="text-content-primery text-sm/6.5 font-normal underline"
+                            class="text-sm leading-[25px] font-normal text-[#2C2C2C] underline"
                         >
-                            <li><span>Печать визиток, листовок</span></li>
+                            <li class="flex flex-wrap">
+                                <span>Печать визиток</span>,
+                                <span class="ml-1">листовок</span>
+                            </li>
                             <li><span>Печать на баннере</span></li>
                             <li><span>Календари</span></li>
-                            <li><span>Печать плакатов, наклеек</span></li>
-                            <li><span>Roll Up, Press Wall</span></li>
-                            <li><span>ПублПечать на кружках, ручках</span></li>
-                            <li><span>Холсты, фотоколлажи, пазлы</span></li>
+                            <li class="flex flex-wrap">
+                                <span>Печать плакатов</span>,
+                                <span class="ml-1">наклеек</span>
+                            </li>
+                            <li class="flex flex-wrap">
+                                <span>Roll Up</span>,
+                                <span class="ml-1">Press Wall</span>
+                            </li>
+                            <li class="flex flex-wrap">
+                                <span>Печать на кружках</span>,
+                                <span class="ml-1">ручках</span>
+                            </li>
+                            <li class="flex flex-wrap">
+                                <span>Холсты</span>,
+                                <span class="ml-1">фотоколлажи</span>,
+                                <span class="ml-1">пазлы</span>
+                            </li>
                             <li><span>Все услуги</span></li>
                         </ul>
                     </li>
@@ -157,7 +184,7 @@ import Logo from "@/Components/atoms/Logo.vue";
 }
 .container {
     max-width: 1220px;
-    margin: 32px auto 56px;
+    margin: 31px auto 30px;
     padding: 0 30px;
 }
-</style> 
+</style>
