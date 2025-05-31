@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import Logo from "@/Components/atoms/Logo.vue";
 import Menu from "@/Components/molecules/Menu.vue";
+import { Button } from "@/Components/atoms/ui/button";
 import BasketShopping from "@/Components/atoms/icons/BasketShopping.vue";
 import OrderModal from "@/Components/organisms/OrderModal.vue";
 
