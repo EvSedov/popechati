@@ -54,7 +54,7 @@ const bank = [{ name: "Банковский расчет", icon: "/icons/bank.sv
                             :key="item.name"
                             :src="item.icon"
                             :alt="item.name"
-                            :class="className"
+                            :class="item.className"
                         />
                     </div>
                 </div>

@@ -27,11 +27,10 @@ watch(agree, () => console.log(agree));
         @click.self="closeModal"
     >
         <!-- Overlay (handled by bg-black/50 on the parent) -->
-
-        <!-- Modal Content -->
         <div
             class="relative z-10 flex w-full max-w-[1104px] overflow-hidden rounded-3xl bg-white shadow-lg"
         >
+            <!-- Modal Content -->
             <!--Container from Left and Right Columns-->
             <div class="flex gap-4 px-[140px]">
                 <!-- Left Column (Form and Footer) -->
