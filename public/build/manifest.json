@@ -92,17 +92,17 @@
     "src": "public/icons/icons-nav-google.svg"
   },
   "resources/css/app.css": {
-    "file": "assets/app-OU7ukZzL.css",
+    "file": "assets/app-CLUHht-6.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-DAjEKPra.js",
+    "file": "assets/app-B6RQkp5V.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-Dwjo3iCm.css"
+      "assets/app-C7IHem9H.css"
     ],
     "assets": [
       "assets/LogoPopechati-n5l2dxgf.png",
