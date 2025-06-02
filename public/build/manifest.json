@@ -15,10 +15,6 @@
     "file": "assets/Commissioner-SemiBold-C33mJM-e.ttf",
     "src": "public/fonts/Commissioner-SemiBold.ttf"
   },
-  "public/hero-t-shirt.png": {
-    "file": "assets/hero-t-shirt-D91BJKBe.png",
-    "src": "public/hero-t-shirt.png"
-  },
   "public/icons/arrow-right.svg": {
     "file": "assets/arrow-right-Bs_6WOL8.svg",
     "src": "public/icons/arrow-right.svg"
@@ -92,17 +88,29 @@
     "src": "public/icons/icons-nav-google.svg"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CLUHht-6.css",
+    "file": "assets/app-4nEwSKPU.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
+  "resources/images/products/hero-t-shirt.png": {
+    "file": "assets/hero-t-shirt-D91BJKBe.png",
+    "src": "resources/images/products/hero-t-shirt.png"
+  },
+  "resources/images/products/plate.png": {
+    "file": "assets/plate-DhivJmvV.png",
+    "src": "resources/images/products/plate.png"
+  },
+  "resources/images/products/shopper.png": {
+    "file": "assets/shopper-V-PgceKN.png",
+    "src": "resources/images/products/shopper.png"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-B6RQkp5V.js",
+    "file": "assets/app-BaDeTlNA.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-C7IHem9H.css"
+      "assets/app-CknZgw4s.css"
     ],
     "assets": [
       "assets/LogoPopechati-n5l2dxgf.png",
@@ -114,8 +122,6 @@
       "assets/i-social-vk-DWEBIM-e.png",
       "assets/i-social-tg-D5RvMVwN.png",
       "assets/i-social-whatsapp-3AAGdiPa.png",
-      "assets/hero-t-shirt-D91BJKBe.png",
-      "assets/arrow-right-Bs_6WOL8.svg",
       "assets/container-1-C-YPYBQG.png",
       "assets/container-2-B7qPMWQm.png",
       "assets/container-3-CyBVsjCE.png",
@@ -124,7 +130,11 @@
       "assets/container-6-Cdd_5DdW.png",
       "assets/icon-nav-yandex-DGqMgLlN.svg",
       "assets/icons-nav-google-DgMeKI7J.svg",
-      "assets/icon-nav-2gis-IENnA5nh.svg"
+      "assets/icon-nav-2gis-IENnA5nh.svg",
+      "assets/hero-t-shirt-D91BJKBe.png",
+      "assets/plate-DhivJmvV.png",
+      "assets/shopper-V-PgceKN.png",
+      "assets/arrow-right-Bs_6WOL8.svg"
     ]
   }
 }
