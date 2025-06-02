@@ -74,7 +74,7 @@ const openOrderModal = inject("openOrderModal") as () => void;
                     <ArrowRight class="ml-8 h-3.75 w-4.25 invert" />
                 </Button>
                 <img
-                    src="/public/hero-t-shirt.png"
+                    src="/resources/images/products/hero-t-shirt.png"
                     alt="Футболка"
                     class="absolute top-42 left-19 scale-118!"
                 />
