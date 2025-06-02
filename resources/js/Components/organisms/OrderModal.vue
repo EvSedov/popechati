@@ -2,35 +2,40 @@
 import { ref, watch } from "vue";
 import Button from "../atoms/ui/button/Button.vue";
 
-const isOpen = ref(false);
-const agree = ref<boolean>(false);
-
-const openModal = () => {
-    isOpen.value = true;
-};
-
-const closeModal = () => {
-    isOpen.value = false;
-};
-
-defineExpose({
-    openModal,
+// Change isOpen to a prop, using modelValue for v-model compatibility
+const props = defineProps({
+    modelValue: {
+        type: Boolean,
+        required: true,
+    },
 });
 
-watch(agree, () => console.log(agree));
+// Define emits for updating the prop
+const emit = defineEmits(["update:modelValue"]);
+
+const closeModal = () => {
+    // Emit event to update parent's state
+    emit("update:modelValue", false);
+};
+
+const agree = ref<boolean>(false);
+
+// Removed watch(agree, ...) as it was commented out and likely not needed
 </script>
 
 <template>
+    <!-- Use the prop modelValue to control visibility -->
     <div
-        v-if="isOpen"
+        v-if="modelValue"
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
         @click.self="closeModal"
     >
-        <!-- Overlay (handled by bg-black/50 on the parent) -->
+        <!-- Overlay is handled by bg-black/50 on the parent -->
+
+        <!-- Modal Content -->
         <div
             class="relative z-10 flex w-full max-w-[1104px] overflow-hidden rounded-3xl bg-white shadow-lg"
         >
-            <!-- Modal Content -->
             <!--Container from Left and Right Columns-->
             <div class="flex gap-4 px-[140px]">
                 <!-- Left Column (Form and Footer) -->
@@ -42,7 +47,7 @@ watch(agree, () => console.log(agree));
                         >
                             Сделать заказ
                         </h2>
-                        <!-- Close button 
+                        <!-- Close button -->
                         <button
                             @click="closeModal"
                             class="text-[#000000CC] hover:text-gray-700"
@@ -61,7 +66,7 @@ watch(agree, () => console.log(agree));
                                     d="M6 18L18 6M6 6l12 12"
                                 />
                             </svg>
-                        </button>-->
+                        </button>
                     </div>
 
                     <!-- Modal Body (Form) -->
@@ -91,20 +96,11 @@ watch(agree, () => console.log(agree));
                             <select
                                 class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
                             >
-                                <option value="" class="text-[#0000008A]">
-                                    <span class="text-[16px] leading-[1.5em]"
-                                        >Какой тип услуги Вам нужен?</span
-                                    >
-                                </option>
-                                <option value="" class="text-[#0000008A]">
-                                    <span class="text-[16px] leading-[1.5em]"
-                                        >Какой тип услуги Вам нужен?</span
-                                    >
-                                </option>
-                                <option value="" class="text-[#0000008A]">
-                                    <span class="text-[16px] leading-[1.5em]"
-                                        >Какой тип услуги Вам нужен?</span
-                                    >
+                                <option
+                                    value=""
+                                    class="text-[16px] leading-[1.5em] text-[#0000008A]"
+                                >
+                                    Какой тип услуги Вам нужен?
                                 </option>
                                 <!-- Add service options here -->
                             </select>
@@ -258,7 +254,7 @@ watch(agree, () => console.log(agree));
                         <div class="flex-shrink-0">
                             <!-- Prevent button from shrinking -->
                             <button
-                                class="rounded-xl bg-[#1882F0] px-8! py-4! text-[16px] leading-[1.25em] font-medium text-white hover:bg-blue-600"
+                                class="rounded-xl bg-[#1882F0] px-8 py-4 text-[16px] leading-[1.25em] font-medium text-white hover:bg-blue-600"
                                 :class="{ btnDisabled: !agree }"
                             >
                                 Сделать заказ
@@ -306,4 +302,5 @@ watch(agree, () => console.log(agree));
     opacity: 0.5;
     cursor: not-allowed;
 }
+/* Add any component-specific styles here if needed, though Tailwind should cover most */
 </style>

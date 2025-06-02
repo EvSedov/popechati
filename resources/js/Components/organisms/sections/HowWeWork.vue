@@ -15,17 +15,19 @@
                             class="relative flex h-[196px] w-[276px] flex-col items-center justify-center"
                         >
                             <div
-                                class="absolute top-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1882F0]"
+                                class="absolute top-0 flex h-14 w-14 items-start justify-center rounded-2xl bg-[#1882F0]"
                             >
                                 <span class="text-2xl/[28px] text-white"
                                     >1</span
                                 >
                             </div>
                             <div
-                                class="flex h-[136px] w-[228px] items-center justify-center rounded-3xl shadow-md"
+                                class="flex h-[136px] w-[228px] items-start justify-center rounded-3xl pt-14 shadow-md"
                             >
-                                <span class="text-sm text-black/80 uppercase"
-                                    >Начинаем скам</span
+                                <span
+                                    class="text-center text-sm/relaxed text-black/80"
+                                    >Бесплатно доставим карту с выбранным
+                                    дизайном</span
                                 >
                             </div>
                         </div>
@@ -40,10 +42,12 @@
                                 >
                             </div>
                             <div
-                                class="flex h-[136px] w-[228px] items-center justify-center rounded-3xl shadow-md"
+                                class="flex h-[136px] w-[228px] items-start justify-center rounded-3xl pt-14 shadow-md"
                             >
-                                <span class="text-sm text-black/80 uppercase"
-                                    >Почти скам</span
+                                <span
+                                    class="text-center text-sm/relaxed text-black/80"
+                                    >Бесплатно доставим карту с выбранным
+                                    дизайном</span
                                 >
                             </div>
                         </div>
@@ -58,10 +62,12 @@
                                 >
                             </div>
                             <div
-                                class="flex h-[136px] w-[228px] items-center justify-center rounded-3xl shadow-md"
+                                class="flex h-[136px] w-[228px] items-start justify-center rounded-3xl pt-14 shadow-md"
                             >
-                                <span class="text-sm text-black/80 uppercase"
-                                    >Жесткий скам</span
+                                <span
+                                    class="text-center text-sm/relaxed text-black/80"
+                                    >Бесплатно доставим карту с выбранным
+                                    дизайном</span
                                 >
                             </div>
                         </div>
@@ -76,10 +82,13 @@
                                 >
                             </div>
                             <div
-                                class="flex h-[136px] w-[228px] items-center justify-center rounded-3xl shadow-md"
+                                class="flex h-[136px] w-[228px] items-start justify-center rounded-3xl pt-14 shadow-md"
                             >
-                                <span class="text-sm text-black/80 uppercase"
-                                    >Скам</span
+                                <span
+                                    class="text-center text-sm/relaxed text-black/80"
+                                    >Выберите карту<br />
+                                    с дизайном картины <br />
+                                    Эрмитажа</span
                                 >
                             </div>
                         </div>
@@ -182,4 +191,4 @@
     </div>
 </template>
 
-<style lang="css" scoped></style> 
+<style lang="css" scoped></style>

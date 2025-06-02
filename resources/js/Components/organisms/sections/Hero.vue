@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import { Button } from "@/Components/atoms/ui/button";
 import ArrowRight from "@/Components/atoms/icons/ArrowRight.vue";
+import { inject } from "vue";
+
+const openOrderModal = inject("openOrderModal") as () => void;
 </script>
 
 <template>
@@ -49,6 +52,7 @@ import ArrowRight from "@/Components/atoms/icons/ArrowRight.vue";
                 </ul>
                 <Button
                     class="h-15 border-2 border-[#BA2150] bg-linear-to-r from-[#F10488] to-[#FF0224] py-5.5 pr-8 pl-9 tracking-widest text-white uppercase"
+                    @click="openOrderModal"
                 >
                     Сделать заказ
                     <ArrowRight class="h-3.8 ml-4.5 w-4.75" />
@@ -84,4 +88,4 @@ h3 {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
 }
-</style> 
+</style>

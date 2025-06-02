@@ -7,6 +7,17 @@ import HowWeWork from "@/Components/organisms/sections/HowWeWork.vue";
 import ExamplesTShirts from "@/Components/organisms/sections/ExamplesTShirts.vue";
 import ContactInfo from "@/Components/organisms/sections/ContactInfo.vue";
 import PaymentMethods from "@/Components/organisms/sections/PaymentMethods.vue";
+
+import { ref, provide } from "vue";
+import OrderModal from "@/Components/organisms/OrderModal.vue";
+
+const isOrderModalOpen = ref(false);
+
+const openOrderModal = () => {
+    isOrderModalOpen.value = true;
+};
+
+provide("openOrderModal", openOrderModal);
 </script>
 
 <template>
@@ -24,6 +35,8 @@ import PaymentMethods from "@/Components/organisms/sections/PaymentMethods.vue";
         </div>
     </div>
     <Footer />
+
+    <OrderModal v-model="isOrderModalOpen" />
 </template>
 
 <style scoped lang="css">
