@@ -87,8 +87,24 @@
     "file": "assets/icons-nav-google-DgMeKI7J.svg",
     "src": "public/icons/icons-nav-google.svg"
   },
+  "public/images/examp-1.jpg": {
+    "file": "assets/examp-1-DlraCh49.jpg",
+    "src": "public/images/examp-1.jpg"
+  },
+  "public/images/examp-2.jpg": {
+    "file": "assets/examp-2-CY4EIlVs.jpg",
+    "src": "public/images/examp-2.jpg"
+  },
+  "public/images/examp-3.jpg": {
+    "file": "assets/examp-3-DEBERZxF.jpg",
+    "src": "public/images/examp-3.jpg"
+  },
+  "public/images/yandex-map.jpg": {
+    "file": "assets/yandex-map-KtuH9RlI.jpg",
+    "src": "public/images/yandex-map.jpg"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-4nEwSKPU.css",
+    "file": "assets/app-HwZbgnPt.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -105,12 +121,12 @@
     "src": "resources/images/products/shopper.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BaDeTlNA.js",
+    "file": "assets/app-BGi9fuIa.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-CknZgw4s.css"
+      "assets/app-DFeUuYh1.css"
     ],
     "assets": [
       "assets/LogoPopechati-n5l2dxgf.png",
@@ -128,6 +144,10 @@
       "assets/container-4-CG9joPVO.png",
       "assets/container-5-DCX7XJ7S.png",
       "assets/container-6-Cdd_5DdW.png",
+      "assets/examp-1-DlraCh49.jpg",
+      "assets/examp-2-CY4EIlVs.jpg",
+      "assets/examp-3-DEBERZxF.jpg",
+      "assets/yandex-map-KtuH9RlI.jpg",
       "assets/icon-nav-yandex-DGqMgLlN.svg",
       "assets/icons-nav-google-DgMeKI7J.svg",
       "assets/icon-nav-2gis-IENnA5nh.svg",
