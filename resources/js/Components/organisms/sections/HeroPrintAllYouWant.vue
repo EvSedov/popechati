@@ -11,7 +11,7 @@ const openOrderModal = inject("openOrderModal") as () => void;
 const getImageUrl = (name: string) => {
     // Этот подход гарантирует, что Vite (или другой сборщик) правильно обработает путь
     // к изображению, если оно находится в папке 'resources/images/products/'
-    return new URL(`/resources/images/products/${name}`, import.meta.url).href;
+    return new URL(`/public/images/products/${name}`, import.meta.url).href;
 };
 
 // Данные для карточек категорий продуктов

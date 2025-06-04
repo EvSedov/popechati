@@ -136,6 +136,17 @@ const filterCategories = ref<FilterCategory[]>([
         isActive: false,
         icon: "backpack",
     },
+    // Новые категории на основе изображений
+    { id: 25, name: "Открытки", value: "cards", isActive: false },
+    { id: 26, name: "Приглашения", value: "invitations", isActive: false },
+    { id: 27, name: "Листовки", value: "flyers", isActive: false },
+    { id: 28, name: "Плакаты", value: "posters", isActive: false },
+    { id: 29, name: "Билеты", value: "tickets", isActive: false },
+    { id: 30, name: "Сертификаты", value: "certificates", isActive: false },
+    { id: 31, name: "Дипломы", value: "diplomas", isActive: false },
+    { id: 32, name: "Буклеты", value: "brochures", isActive: false },
+    { id: 33, name: "Конверты", value: "envelopes", isActive: false },
+    { id: 34, name: "Закладки", value: "bookmarks", isActive: false },
 ]);
 
 const emit = defineEmits(["filters-changed"]); // Добавляем объявление события
