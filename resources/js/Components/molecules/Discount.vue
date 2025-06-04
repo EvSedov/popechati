@@ -3,12 +3,10 @@ import { Button } from "@/Components/atoms/ui/button";
 </script>
 
 <template>
-    <div
-        class="bg-linear-to-r from-[#EA5A55] to-[#254EA3] px-[350px] py-[11px]"
-    >
-        <div class="discount">
+    <div class="bg-linear-to-r from-[#EA5A55] to-[#254EA3] py-[11px]">
+        <div class="discount mx-auto flex-col xl:flex-row">
             <p
-                class="font-[Commissioner] text-xs/5.5 font-bold tracking-normal text-white"
+                class="mb-2 text-center font-[Commissioner] text-xs/5.5 font-bold tracking-normal text-white xl:mb-0"
             >
                 Скидка 10% на онлайн заказ через корзину и бесплатная курьерская
                 доставка по Москве в пределах МКАД при заказе от 6 000 000 ₽!

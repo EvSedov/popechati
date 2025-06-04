@@ -62,7 +62,7 @@ const openOrderModal = inject("openOrderModal") as () => void;
 .container {
     max-width: 1590px;
     margin: 0 auto;
-    padding: 12px 0 0;
+    padding: 12px 10px 0;
 }
 
 /* Пример градиентного фона для кнопки */

@@ -48,7 +48,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 <template>
     <NavigationMenu>
-        <NavigationMenuList class="gap-0 tracking-wider">
+        <NavigationMenuList class="flex-wrap gap-0 tracking-wider">
             <NavigationMenuItem>
                 <NavigationMenuLink
                     href="#"
