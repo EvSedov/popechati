@@ -87,46 +87,130 @@
     "file": "assets/icons-nav-google-DgMeKI7J.svg",
     "src": "public/icons/icons-nav-google.svg"
   },
-  "public/images/examp-1.jpg": {
-    "file": "assets/examp-1-DlraCh49.jpg",
-    "src": "public/images/examp-1.jpg"
+  "public/images/examples/afisha.png": {
+    "file": "assets/afisha-GZSBWUTD.png",
+    "src": "public/images/examples/afisha.png"
   },
-  "public/images/examp-2.jpg": {
-    "file": "assets/examp-2-CY4EIlVs.jpg",
-    "src": "public/images/examp-2.jpg"
+  "public/images/examples/bejdzhi-new-2.png": {
+    "file": "assets/bejdzhi-new-2-BxV45a4U.png",
+    "src": "public/images/examples/bejdzhi-new-2.png"
   },
-  "public/images/examp-3.jpg": {
-    "file": "assets/examp-3-DEBERZxF.jpg",
-    "src": "public/images/examp-3.jpg"
+  "public/images/examples/birka-oblozhka.png": {
+    "file": "assets/birka-oblozhka-D3rdr5az.png",
+    "src": "public/images/examples/birka-oblozhka.png"
   },
-  "public/images/yandex-map.jpg": {
-    "file": "assets/yandex-map-KtuH9RlI.jpg",
-    "src": "public/images/yandex-map.jpg"
+  "public/images/examples/blank.png": {
+    "file": "assets/blank-SUkA28Q7.png",
+    "src": "public/images/examples/blank.png"
+  },
+  "public/images/examples/bukleti.png": {
+    "file": "assets/bukleti-CKPlzBFL.png",
+    "src": "public/images/examples/bukleti.png"
+  },
+  "public/images/examples/bumazhnye-papki-2.png": {
+    "file": "assets/bumazhnye-papki-2-BbryRoa5.png",
+    "src": "public/images/examples/bumazhnye-papki-2.png"
+  },
+  "public/images/examples/diplom.png": {
+    "file": "assets/diplom-CHu3Ngpn.png",
+    "src": "public/images/examples/diplom.png"
+  },
+  "public/images/examples/flayer.png": {
+    "file": "assets/flayer-B3y-nKtR.png",
+    "src": "public/images/examples/flayer.png"
+  },
+  "public/images/examples/knizhnye-zakladki.png": {
+    "file": "assets/knizhnye-zakladki-CGAUnESH.png",
+    "src": "public/images/examples/knizhnye-zakladki.png"
+  },
+  "public/images/examples/kolody_kart.png": {
+    "file": "assets/kolody_kart-CSnkL0Et.png",
+    "src": "public/images/examples/kolody_kart.png"
+  },
+  "public/images/examples/konvert.png": {
+    "file": "assets/konvert-B8Dks9_O.png",
+    "src": "public/images/examples/konvert.png"
+  },
+  "public/images/examples/listovaya-3d-lak-folga.png": {
+    "file": "assets/listovaya-3d-lak-folga-HS6-umvK.png",
+    "src": "public/images/examples/listovaya-3d-lak-folga.png"
+  },
+  "public/images/examples/listovka.png": {
+    "file": "assets/listovka-DBjKq0Su.png",
+    "src": "public/images/examples/listovka.png"
+  },
+  "public/images/examples/main-small.png": {
+    "file": "assets/main-small-DuDGKaOG.png",
+    "src": "public/images/examples/main-small.png"
+  },
+  "public/images/examples/nakleyki.png": {
+    "file": "assets/nakleyki-D--DK7zE.png",
+    "src": "public/images/examples/nakleyki.png"
+  },
+  "public/images/examples/otkrytki.png": {
+    "file": "assets/otkrytki-BsyU6O1I.png",
+    "src": "public/images/examples/otkrytki.png"
+  },
+  "public/images/examples/papki-na-kolcah-2.png": {
+    "file": "assets/papki-na-kolcah-2-D5MJOqK6.png",
+    "src": "public/images/examples/papki-na-kolcah-2.png"
+  },
+  "public/images/examples/pechat-biletov.png": {
+    "file": "assets/pechat-biletov-DSTapppX.png",
+    "src": "public/images/examples/pechat-biletov.png"
+  },
+  "public/images/examples/pechat-plakatov.png": {
+    "file": "assets/pechat-plakatov-DYOuJ_Az.png",
+    "src": "public/images/examples/pechat-plakatov.png"
+  },
+  "public/images/examples/pechat-sertifikatov.png": {
+    "file": "assets/pechat-sertifikatov-DBHQTRE2.png",
+    "src": "public/images/examples/pechat-sertifikatov.png"
+  },
+  "public/images/examples/priglasheniya.png": {
+    "file": "assets/priglasheniya-BSpPSe5U.png",
+    "src": "public/images/examples/priglasheniya.png"
+  },
+  "public/images/examples/t-shirts.jpg": {
+    "file": "assets/t-shirts-DlraCh49.jpg",
+    "src": "public/images/examples/t-shirts.jpg"
+  },
+  "public/images/examples/undershirt-1.jpg": {
+    "file": "assets/undershirt-1-CY4EIlVs.jpg",
+    "src": "public/images/examples/undershirt-1.jpg"
+  },
+  "public/images/examples/undershirt-2.jpg": {
+    "file": "assets/undershirt-2-DEBERZxF.jpg",
+    "src": "public/images/examples/undershirt-2.jpg"
+  },
+  "public/images/examples/vizitki.png": {
+    "file": "assets/vizitki-BWcLGLGW.png",
+    "src": "public/images/examples/vizitki.png"
+  },
+  "public/images/products/hero-t-shirt.png": {
+    "file": "assets/hero-t-shirt-D91BJKBe.png",
+    "src": "public/images/products/hero-t-shirt.png"
+  },
+  "public/images/products/plate.png": {
+    "file": "assets/plate-DhivJmvV.png",
+    "src": "public/images/products/plate.png"
+  },
+  "public/images/products/shopper.png": {
+    "file": "assets/shopper-V-PgceKN.png",
+    "src": "public/images/products/shopper.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-HwZbgnPt.css",
+    "file": "assets/app-CiLNOJ0X.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/images/products/hero-t-shirt.png": {
-    "file": "assets/hero-t-shirt-D91BJKBe.png",
-    "src": "resources/images/products/hero-t-shirt.png"
-  },
-  "resources/images/products/plate.png": {
-    "file": "assets/plate-DhivJmvV.png",
-    "src": "resources/images/products/plate.png"
-  },
-  "resources/images/products/shopper.png": {
-    "file": "assets/shopper-V-PgceKN.png",
-    "src": "resources/images/products/shopper.png"
-  },
   "resources/js/app.js": {
-    "file": "assets/app-BGi9fuIa.js",
+    "file": "assets/app-DkU96qne.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-DFeUuYh1.css"
+      "assets/app-BvA9cHbE.css"
     ],
     "assets": [
       "assets/LogoPopechati-n5l2dxgf.png",
@@ -144,10 +228,31 @@
       "assets/container-4-CG9joPVO.png",
       "assets/container-5-DCX7XJ7S.png",
       "assets/container-6-Cdd_5DdW.png",
-      "assets/examp-1-DlraCh49.jpg",
-      "assets/examp-2-CY4EIlVs.jpg",
-      "assets/examp-3-DEBERZxF.jpg",
-      "assets/yandex-map-KtuH9RlI.jpg",
+      "assets/afisha-GZSBWUTD.png",
+      "assets/bejdzhi-new-2-BxV45a4U.png",
+      "assets/birka-oblozhka-D3rdr5az.png",
+      "assets/blank-SUkA28Q7.png",
+      "assets/bukleti-CKPlzBFL.png",
+      "assets/bumazhnye-papki-2-BbryRoa5.png",
+      "assets/diplom-CHu3Ngpn.png",
+      "assets/flayer-B3y-nKtR.png",
+      "assets/knizhnye-zakladki-CGAUnESH.png",
+      "assets/kolody_kart-CSnkL0Et.png",
+      "assets/konvert-B8Dks9_O.png",
+      "assets/listovaya-3d-lak-folga-HS6-umvK.png",
+      "assets/listovka-DBjKq0Su.png",
+      "assets/main-small-DuDGKaOG.png",
+      "assets/nakleyki-D--DK7zE.png",
+      "assets/otkrytki-BsyU6O1I.png",
+      "assets/papki-na-kolcah-2-D5MJOqK6.png",
+      "assets/pechat-biletov-DSTapppX.png",
+      "assets/pechat-plakatov-DYOuJ_Az.png",
+      "assets/pechat-sertifikatov-DBHQTRE2.png",
+      "assets/priglasheniya-BSpPSe5U.png",
+      "assets/t-shirts-DlraCh49.jpg",
+      "assets/undershirt-1-CY4EIlVs.jpg",
+      "assets/undershirt-2-DEBERZxF.jpg",
+      "assets/vizitki-BWcLGLGW.png",
       "assets/icon-nav-yandex-DGqMgLlN.svg",
       "assets/icons-nav-google-DgMeKI7J.svg",
       "assets/icon-nav-2gis-IENnA5nh.svg",
