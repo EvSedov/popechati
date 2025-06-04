@@ -200,17 +200,17 @@
     "src": "public/images/products/shopper.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CiLNOJ0X.css",
+    "file": "assets/app-D5Abj_IY.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-DkU96qne.js",
+    "file": "assets/app-Bij15noF.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-BvA9cHbE.css"
+      "assets/app-IJxNTF0G.css"
     ],
     "assets": [
       "assets/LogoPopechati-n5l2dxgf.png",
