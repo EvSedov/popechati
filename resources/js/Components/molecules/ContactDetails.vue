@@ -22,30 +22,33 @@
             </h3>
             <div>
                 <div>
-                    <span class="whitespace-nowrap text-neutral-900"
-                        >+7 (925) 470-94-00</span
-                    >
-                    &nbsp;
-                    <span class="text-neutral-900/50"
-                        >(Копи-центр, выдача заказов)</span
-                    >
+                    <a href="tel:+74993985601">
+                        <span
+                            class="whitespace-nowrap text-neutral-900 underline"
+                            >+7 (499) 398-56-01</span
+                        >
+                    </a>
                 </div>
-                <div>
-                    <span class="whitespace-nowrap text-neutral-900"
-                        >+7 (499) 398-56-01</span
-                    >
+                <div class="flex items-center gap-2">
+                    <a href="tel:+79254709400">
+                        <span
+                            class="whitespace-nowrap text-neutral-900 underline"
+                            >+7 (925) 470-94-00</span
+                        >
+                    </a>
                     &nbsp;
-                    <span class="text-neutral-900/50">(Городской номер)</span>
-                </div>
-                <div>
-                    <span class="whitespace-nowrap text-neutral-900"
-                        >+7 (977) 813-32-27</span
-                    >
-                    &nbsp;
-                    <span class="text-neutral-900/50"
-                        >(Прием заказов, консультация, сопровождение
-                        клиентов)</span
-                    >
+                    <span class="flex gap-1.5">
+                        <img
+                            src="/public/icons/i-social-whatsapp.png"
+                            alt="Иконка социальной сети WhatsApp"
+                            class="h-4 w-4"
+                        />
+                        <img
+                            src="/public/icons/i-social-tg.png"
+                            alt="Иконка социальной сети телеграмм"
+                            class="h-4 w-4"
+                        />
+                    </span>
                 </div>
                 <div>
                     <a
@@ -61,27 +64,26 @@
         <div class="mb-4">
             <h3 class="mb-2 font-medium text-neutral-900">Дополнительно:</h3>
             <p class="text-neutral-700">
-                В офисе есть каталог и материалов, образцы продукции, мягкие
-                диванчики.
+                В офисе есть каталог материалов, образцы продукции и мягкий
+                диванчик.
             </p>
         </div>
 
         <!-- Время работы -->
         <div class="mb-4">
             <h3 class="mb-2 font-medium text-neutral-900">Время работы:</h3>
-            <p class="text-neutral-700">Пн - Пт 11:00 - 22:00</p>
-            <p class="text-neutral-700">Сб, Вс: По договоренности!</p>
+            <p class="text-neutral-700">Пн-пт: 11:00 – 20:00</p>
+            <p class="text-neutral-700">Сб: 12:00 – 16:00</p>
+            <p class="text-neutral-700">Вс: выходной</p>
         </div>
 
         <!-- Адрес -->
         <div class="mb-6">
             <h3 class="mb-2 font-medium text-neutral-900">Адрес:</h3>
             <p class="text-neutral-700">
-                Батайский проезд 59, вход между первым и вторым подъездом, офис
-                24
-                <span class="font-bold text-neutral-500"
-                    >(Копи-центр, выдача заказов)</span
-                >
+                Батайский проезд 59, вход с противоположной стороны от
+                подъездов, под вывеской «КОПИ ЦЕНТ», 7 минут пешком от метро
+                Марьино
             </p>
         </div>
 

@@ -68,7 +68,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                     <li class="relative">
                         <span
                             class="absolute w-60 text-xs leading-relaxed text-[#2C2C2C]"
-                            >Copyright © 2014 – 2024 Popechati.com</span
+                            >Copyright © 2014 – 2025 Popechati.com</span
                         >
                     </li>
                 </ul>
@@ -81,14 +81,36 @@ import Logo from "@/Components/atoms/Logo.vue";
                         </p>
                     </li>
                     <li class="mb-[13px]">
-                        <p class="text-base/6.5 font-semibold text-[#2C2C2C]">
-                            +7 (495) 181-11-11
-                        </p>
-                        <p class="text-base/6.5 font-semibold text-[#2C2C2C]">
-                            +7 (800) 555-35-35
-                        </p>
+                        <a href="tel:+74993985601">
+                            <p
+                                class="text-base/6.5 font-semibold text-[#2C2C2C]"
+                            >
+                                +7 (499) 398-56-01
+                            </p>
+                        </a>
+                        <div class="flex items-center gap-2">
+                            <a href="tel:+79254709400" class="flex">
+                                <p
+                                    class="text-base/6.5 font-semibold text-[#2C2C2C]"
+                                >
+                                    +7 (925) 470-94-00
+                                </p>
+                            </a>
+                            <span class="flex gap-1.5">
+                                <img
+                                    src="/public/icons/i-social-whatsapp.png"
+                                    alt="Иконка социальной сети WhatsApp"
+                                    class="h-4 w-4"
+                                />
+                                <img
+                                    src="/public/icons/i-social-tg.png"
+                                    alt="Иконка социальной сети телеграмм"
+                                    class="h-4 w-4"
+                                />
+                            </span>
+                        </div>
                     </li>
-                    <li class="mb-6">
+                    <li class="mb-4">
                         <a
                             class="text-base/6.5 font-semibold text-[#1882F0]"
                             href="mail:popechati@gmail.com"
@@ -97,13 +119,13 @@ import Logo from "@/Components/atoms/Logo.vue";
                         </a>
                     </li>
                     <li
-                        class="relative text-sm leading-relaxed font-normal text-[#2C2C2C]"
+                        class="text-sm leading-relaxed font-normal text-[#2C2C2C]"
                     >
-                        <span class="absolute w-73 leading-relaxed">
-                            115280, г. Москва, ул. Ленинская<br />
-                            Слобода, д. 19, БЦ "Омега Плаза", 4 этаж,<br />
-                            офис 4005/1. В 300 метрах от станции<br />
-                            метро Автозаводская.
+                        <span class="w-73 leading-relaxed">
+                            г. Москва, Батайский проезд 59, <br />метро
+                            Автозаводская, вход с противоположной стороны от
+                            подъездов, под вывеской «КОПИ ЦЕНТ», 7 минут пешком
+                            от метро Марьино
                         </span>
                     </li>
                 </ul>

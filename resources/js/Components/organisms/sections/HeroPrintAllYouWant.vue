@@ -27,7 +27,7 @@ const productCategories = [
     {
         id: 2,
         title: "КРУЖКИ",
-        image: getImageUrl("plate.png"), // Динамический путь к изображению
+        image: getImageUrl("cup.png"), // Динамический путь к изображению
         link: "/category/mugs",
         bgColor: "#E3F3F3", // Обновлен фон согласно CSS для кружки
         titleColor: "#BCCACA", // Обновлен цвет заголовка согласно CSS для кружки

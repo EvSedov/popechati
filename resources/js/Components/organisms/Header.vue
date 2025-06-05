@@ -20,20 +20,41 @@ const openOrderModal = inject("openOrderModal") as () => void;
             <Menu class="mr-auto" />
 
             <div class="mr-8 flex items-center space-x-4 text-sm">
-                <div>
+                <div class="flex flex-col items-end">
+                    <div class="flex items-center justify-end gap-1">
+                        <!-- TODO: добавить иконку телефона -->
+                        <!-- <PhoneIcon class="mr-1 h-4 w-4 text-gray-700" /> -->
+                        <span class="flex">
+                            <img
+                                src="/public/icons/i-social-whatsapp.png"
+                                alt="Иконка социальной сети WhatsApp"
+                                class="mr-1 h-4 w-4"
+                            />
+                            <img
+                                src="/public/icons/i-social-tg.png"
+                                alt="Иконка социальной сети телеграмм"
+                                class="mr-1 h-4 w-4"
+                            />
+                        </span>
+                        <a
+                            href="tel:+79254709400"
+                            class="font-semibold whitespace-nowrap text-gray-900"
+                            >+7 (925) 470-94-00</a
+                        >
+                    </div>
                     <div class="flex items-center justify-end">
                         <!-- TODO: добавить иконку телефона -->
                         <!-- <PhoneIcon class="mr-1 h-4 w-4 text-gray-700" /> -->
                         <a
-                            href="tel:+7800553535"
+                            href="tel:+74993985601"
                             class="font-semibold whitespace-nowrap text-gray-900"
-                            >+7 (800)-55-35-35</a
+                            >+7 (499) 398-56-01</a
                         >
                     </div>
                     <a
                         href="mailto:POPECHATI@GMAIL.COM"
                         class="text-xs text-gray-600"
-                        >POPECHATI@GMAIL.COM</a
+                        >popechati@gmail.com</a
                     >
                 </div>
                 <!-- Иконки соцсетей -->

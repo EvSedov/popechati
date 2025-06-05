@@ -6,8 +6,10 @@
             <div
                 class="absolute top-[-90px] flex h-203.5 w-full flex-col items-center gap-4 bg-white pt-9"
             >
-                <div class="flex flex-col gap-10">
-                    <h2 class="text-center text-[42px] font-bold text-black">
+                <div class="flex flex-col">
+                    <h2
+                        class="mb-10 text-center text-[42px] font-bold text-black"
+                    >
                         Как мы работаем?
                     </h2>
                     <div class="flex justify-around">
@@ -15,7 +17,7 @@
                             class="relative flex h-[196px] w-[276px] flex-col items-center justify-center"
                         >
                             <div
-                                class="absolute top-0 flex h-14 w-14 items-start justify-center rounded-2xl bg-[#1882F0]"
+                                class="absolute top-0 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1882F0]"
                             >
                                 <span class="text-2xl/[28px] text-white"
                                     >1</span
@@ -26,8 +28,8 @@
                             >
                                 <span
                                     class="text-center text-sm/relaxed text-black/80"
-                                    >Бесплатно доставим карту с выбранным
-                                    дизайном</span
+                                    >Оставляете заявку <br />
+                                    на сайте/звоните или пишите на прямую</span
                                 >
                             </div>
                         </div>
@@ -46,9 +48,9 @@
                             >
                                 <span
                                     class="text-center text-sm/relaxed text-black/80"
-                                    >Бесплатно доставим карту с выбранным
-                                    дизайном</span
-                                >
+                                    >Обговариваем нюансы, согласовываем макеты и
+                                    сроки
+                                </span>
                             </div>
                         </div>
                         <div
@@ -66,8 +68,7 @@
                             >
                                 <span
                                     class="text-center text-sm/relaxed text-black/80"
-                                    >Бесплатно доставим карту с выбранным
-                                    дизайном</span
+                                    >Мы сообщаем о готовности</span
                                 >
                             </div>
                         </div>
@@ -86,13 +87,16 @@
                             >
                                 <span
                                     class="text-center text-sm/relaxed text-black/80"
-                                    >Выберите карту<br />
-                                    с дизайном картины <br />
-                                    Эрмитажа</span
+                                    >Вы забираете готовый заказ в офисе /
+                                    оформляем доставку</span
                                 >
                             </div>
                         </div>
                     </div>
+                    <span class="text-center text-sm font-semibold text-black"
+                        >* Оплата осуществляется на стадии согласования
+                        макета</span
+                    >
                 </div>
                 <div class="flex w-full flex-col gap-10">
                     <h2 class="text-center text-[42px] font-bold text-black">

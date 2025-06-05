@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import YandexMap from "@/Components/molecules/YandexMap.vue";
+import { ref, watch, onUnmounted } from "vue";
+import ContactMap from "@/Components/molecules/ContactMap.vue";
 import FaqAccordion from "@/Components/molecules/FaqAccordion.vue";
 import ContactDetails from "@/Components/molecules/ContactDetails.vue";
 
@@ -26,6 +27,30 @@ const faqItems = [
         answer: "Детальная информация о программе лояльности и начислении кэшбэка.",
     },
 ];
+
+const isMapZoomed = ref(false); // Reactive property to control map zoom
+
+const toggleMapZoom = () => {
+    isMapZoomed.value = !isMapZoomed.value;
+};
+
+// Watch for changes in isMapZoomed to control body scroll
+watch(
+    isMapZoomed,
+    (newValue) => {
+        if (newValue) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+    },
+    { immediate: true }, // Run immediately to set initial state if needed
+);
+
+// Reset body scroll when component is unmounted
+onUnmounted(() => {
+    document.body.style.overflow = "";
+});
 </script>
 
 <template>
@@ -42,8 +67,8 @@ const faqItems = [
             <div class="mb-8 flex flex-row gap-23.5">
                 <!-- Левая колонка: Карта и FAQ -->
                 <div class="flex flex-col pt-2 pl-2">
-                    <!-- Яндекс карта -->
-                    <YandexMap />
+                    <!-- Яндекс карта (original size) -->
+                    <ContactMap @click="toggleMapZoom" class="cursor-pointer" />
 
                     <!-- FAQ секция (перемещена под карту) -->
                     <FaqAccordion :items="faqItems" />
@@ -56,6 +81,41 @@ const faqItems = [
             </div>
         </div>
     </section>
+
+    <!-- Overlay for zoomed map -->
+    <div
+        v-if="isMapZoomed"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+        @click.self="toggleMapZoom"
+    >
+        <!-- Zoomed Map Container -->
+        <div
+            class="relative z-10 flex max-h-[90vh] w-[90vw] flex-col overflow-hidden rounded-3xl bg-white shadow-lg"
+        >
+            <!-- Close button for zoomed map -->
+            <button
+                @click="toggleMapZoom"
+                class="absolute top-4 right-4 z-20 flex-shrink-0 rounded-full bg-white p-2 text-[#000000CC] transition-all duration-300 ease-in-out hover:scale-110 hover:text-gray-700 active:translate-y-0.5 active:scale-95"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                    />
+                </svg>
+            </button>
+            <!-- ContactMap in zoomed state -->
+            <ContactMap class="h-full w-full" />
+        </div>
+    </div>
 </template>
 
 <style scoped>
@@ -71,4 +131,7 @@ button:focus {
 .prose p {
     margin-bottom: 0.5rem;
 }
+
+/* No longer need .map-zoomed class for positioning,
+   as the new overlay structure handles it with Tailwind classes. */
 </style>

@@ -39,7 +39,7 @@ const bank = [{ name: "Банковский расчет", icon: "/icons/bank.sv
                 Способы оплаты в Типографии
             </h2>
             <div
-                class="grid grid-cols-2 grid-rows-2 rounded-2xl bg-white text-sm"
+                class="grid grid-cols-2 grid-rows-1 rounded-2xl bg-white text-sm"
             >
                 <!-- 1 -->
                 <div
@@ -60,42 +60,10 @@ const bank = [{ name: "Банковский расчет", icon: "/icons/bank.sv
                 </div>
                 <!-- 2 -->
                 <div
-                    class="flex flex-col items-center justify-center border-b border-[#ececec] px-19 pb-13"
-                >
-                    <div class="mt-6.5 mb-6 font-medium">
-                        Электронные деньги и кошельки
-                    </div>
-                    <div class="flex items-center gap-14">
-                        <img
-                            v-for="item in wallets"
-                            :key="item.name"
-                            :src="item.icon"
-                            :alt="item.name"
-                        />
-                    </div>
-                </div>
-                <!-- 3 -->
-                <div
                     class="flex flex-col items-center justify-center border-r border-[#ececec] px-19 pb-13"
                 >
                     <div class="mt-6.5 mb-6 font-medium">
-                        Наличные через терминалы
-                    </div>
-                    <div class="flex items-center gap-7">
-                        <img
-                            v-for="item in terminals"
-                            :key="item.name"
-                            :src="item.icon"
-                            :alt="item.name"
-                        />
-                    </div>
-                </div>
-                <!-- 4 -->
-                <div
-                    class="flex flex-col items-center justify-center border-r border-[#ececec] px-19 pb-13"
-                >
-                    <div class="mt-6.5 mb-6 font-medium">
-                        Безналичный расчёт (для ИП и юридических лиц)
+                        Оплата наличными и банковский перевод
                     </div>
                     <div class="flex items-center gap-8">
                         <img

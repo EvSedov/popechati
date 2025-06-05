@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch, onUnmounted } from "vue";
 import Button from "../atoms/ui/button/Button.vue";
 
 // Change isOpen to a prop, using modelValue for v-model compatibility
@@ -19,29 +19,43 @@ const closeModal = () => {
 };
 
 const agree = ref<boolean>(false);
+watch(
+    () => props.modelValue,
+    (newValue) => {
+        if (newValue) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+    },
+    { immediate: true },
+);
 
-// Removed watch(agree, ...) as it was commented out and likely not needed
+onUnmounted(() => {
+    document.body.style.overflow = "";
+});
 </script>
 
 <template>
-    <!-- Use the prop modelValue to control visibility -->
     <div
         v-if="modelValue"
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
         @click.self="closeModal"
     >
-        <!-- Overlay is handled by bg-black/50 on the parent -->
-
         <!-- Modal Content -->
         <div
-            class="relative z-10 flex w-full max-w-[1104px] overflow-hidden rounded-3xl bg-white shadow-lg"
+            class="relative z-10 flex max-h-[calc(100vh-2rem)] w-full max-w-[1104px] flex-col rounded-3xl bg-white shadow-lg"
         >
-            <!--Container from Left and Right Columns-->
-            <div class="flex gap-4 px-[140px]">
+            <!--Container for Left and Right Columns, makes the entire modal content area grow vertically -->
+            <div class="flex min-h-0 flex-grow">
                 <!-- Left Column (Form and Footer) -->
-                <div class="flex flex-grow flex-col py-[64px]">
-                    <!-- Modal Header -->
-                    <div class="mb-8 flex items-center justify-between">
+                <div
+                    class="flex w-2/3 flex-grow flex-col px-4 py-4 md:px-8 md:py-8 lg:py-12 lg:pl-16 xl:py-[64px] xl:pl-[140px]"
+                >
+                    <!-- Modal Header - flex-shrink-0 to prevent it from shrinking -->
+                    <div
+                        class="mb-8 flex flex-shrink-0 items-center justify-between pl-2.5"
+                    >
                         <h2
                             class="text-[24px] leading-[1.16em] font-normal text-[#000000CC]"
                         >
@@ -50,7 +64,7 @@ const agree = ref<boolean>(false);
                         <!-- Close button -->
                         <button
                             @click="closeModal"
-                            class="text-[#000000CC] hover:text-gray-700"
+                            class="flex-shrink-0 text-[#000000CC] hover:text-gray-700"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -69,8 +83,10 @@ const agree = ref<boolean>(false);
                         </button>
                     </div>
 
-                    <!-- Modal Body (Form) -->
-                    <div class="mb-8 flex flex-col gap-6">
+                    <!-- Modal Body (Form) - This is the main scrollable area -->
+                    <div
+                        class="flex min-h-0 flex-grow flex-col gap-6 overflow-y-auto px-2.5 pb-8"
+                    >
                         <!-- "Как к вам обращаться?" Section -->
                         <div>
                             <h3
@@ -154,7 +170,6 @@ const agree = ref<boolean>(false);
                                         viewBox="0 0 512 512"
                                         class="h-6 w-6 text-[#1882F0]"
                                     >
-                                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                         <path
                                             fill="#1882F0"
                                             d="M288 109.3V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3C204.6 122.8 192 141.9 192 160c0 35.3 28.7 64 64 64s64-28.7 64-64c0-18.1-12.6-37.2-32-50.7zM192 416H320c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32zM448 192H312.1c6.4 9.1 10.1 20.3 10.1 32.9c0 35.3-28.7 64-64 64s-64-28.7-64-64c0-12.6 3.7-23.8 10.1-32.9H64c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V256c0-35.3-28.7-64-64-64z"
@@ -221,9 +236,10 @@ const agree = ref<boolean>(false);
                         </div>
                     </div>
 
-                    <!-- Footer section with agreement and button -->
-                    <div class="mt-auto flex items-center justify-between pt-8">
-                        <!-- Use mt-auto to push to bottom and flex for horizontal layout -->
+                    <!-- Footer section with agreement and button - flex-shrink-0 to prevent it from shrinking -->
+                    <div
+                        class="flex flex-shrink-0 items-center justify-between pt-8"
+                    >
                         <!-- Agreement Checkbox -->
                         <div class="flex w-2/3 items-start">
                             <!-- Adjust width as needed -->
@@ -263,9 +279,9 @@ const agree = ref<boolean>(false);
                     </div>
                 </div>
 
-                <!-- Right Column (Progress Bar) -->
+                <!-- Right Column (Progress Bar) - hidden on small screens -->
                 <div
-                    class="flex w-[248px] flex-shrink-0 flex-col px-6 pt-[64px]"
+                    class="hidden min-w-[248px] flex-shrink-0 flex-col pt-[64px] pr-4 pl-6 md:pr-8 lg:flex lg:pr-16 xl:pr-[140px]"
                 >
                     <div class="mb-4">
                         <h3
