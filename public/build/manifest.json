@@ -68,11 +68,11 @@
     "src": "public/icons/i-social-tg.png"
   },
   "public/icons/i-social-vk.png": {
-    "file": "assets/i-social-vk-DWEBIM-e.png",
+    "file": "assets/i-social-vk-3AAGdiPa.png",
     "src": "public/icons/i-social-vk.png"
   },
   "public/icons/i-social-whatsapp.png": {
-    "file": "assets/i-social-whatsapp-3AAGdiPa.png",
+    "file": "assets/i-social-whatsapp-DWEBIM-e.png",
     "src": "public/icons/i-social-whatsapp.png"
   },
   "public/icons/icon-nav-2gis.svg": {
@@ -187,6 +187,10 @@
     "file": "assets/vizitki-BWcLGLGW.png",
     "src": "public/images/examples/vizitki.png"
   },
+  "public/images/products/cup.png": {
+    "file": "assets/cup-P0Juz5Ra.png",
+    "src": "public/images/products/cup.png"
+  },
   "public/images/products/hero-t-shirt.png": {
     "file": "assets/hero-t-shirt-D91BJKBe.png",
     "src": "public/images/products/hero-t-shirt.png"
@@ -200,28 +204,28 @@
     "src": "public/images/products/shopper.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-D5Abj_IY.css",
+    "file": "assets/app-DUqr9gCD.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-Bij15noF.js",
+    "file": "assets/app-DfPgN9j7.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-IJxNTF0G.css"
+      "assets/app-DATl2D7R.css"
     ],
     "assets": [
+      "assets/i-social-whatsapp-DWEBIM-e.png",
+      "assets/i-social-tg-D5RvMVwN.png",
       "assets/LogoPopechati-n5l2dxgf.png",
       "assets/basket-shopping-BMfZBbcV.svg",
       "assets/cards-visa-CCCYEq3l.png",
       "assets/cards-master-B4fj7Av5.png",
       "assets/cards-webmoney-CCbS350Z.png",
       "assets/cards-mir-BSMMhK7j.png",
-      "assets/i-social-vk-DWEBIM-e.png",
-      "assets/i-social-tg-D5RvMVwN.png",
-      "assets/i-social-whatsapp-3AAGdiPa.png",
+      "assets/i-social-vk-3AAGdiPa.png",
       "assets/container-1-C-YPYBQG.png",
       "assets/container-2-B7qPMWQm.png",
       "assets/container-3-CyBVsjCE.png",
@@ -256,6 +260,7 @@
       "assets/icon-nav-yandex-DGqMgLlN.svg",
       "assets/icons-nav-google-DgMeKI7J.svg",
       "assets/icon-nav-2gis-IENnA5nh.svg",
+      "assets/cup-P0Juz5Ra.png",
       "assets/hero-t-shirt-D91BJKBe.png",
       "assets/plate-DhivJmvV.png",
       "assets/shopper-V-PgceKN.png",
