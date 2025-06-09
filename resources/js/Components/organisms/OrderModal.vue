@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch, onUnmounted } from "vue";
-import Button from "../atoms/ui/button/Button.vue";
+import CustomSelect from "@/Components/CustomSelect.vue";
 
 // Change isOpen to a prop, using modelValue for v-model compatibility
 const props = defineProps({
@@ -19,6 +19,15 @@ const closeModal = () => {
 };
 
 const agree = ref<boolean>(false);
+const selectedService = ref(""); // Новое состояние для выбранной услуги
+
+const serviceOptions = [
+    { value: "development", label: "Разработка сайтов" },
+    { value: "design", label: "Веб-дизайн" },
+    { value: "seo", label: "SEO продвижение" },
+    { value: "marketing", label: "Интернет-маркетинг" },
+];
+
 watch(
     () => props.modelValue,
     (newValue) => {
@@ -109,17 +118,11 @@ onUnmounted(() => {
                                 Выберите услугу
                             </h3>
                             <!-- Combobox/Select (simplified for now) -->
-                            <select
-                                class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
-                            >
-                                <option
-                                    value=""
-                                    class="text-[16px] leading-[1.5em] text-[#0000008A]"
-                                >
-                                    Какой тип услуги Вам нужен?
-                                </option>
-                                <!-- Add service options here -->
-                            </select>
+                            <CustomSelect
+                                v-model="selectedService"
+                                :options="serviceOptions"
+                                placeholder="Какой тип услуги Вам нужен?"
+                            />
                         </div>
 
                         <!-- "Контактные данные" Section -->
@@ -166,13 +169,15 @@ onUnmounted(() => {
                                     class="flex h-[80px] w-[125px] cursor-pointer flex-col items-center justify-center rounded-md border-3 border-dashed border-[#1882F0] p-4 text-center"
                                 >
                                     <svg
+                                        width="19"
+                                        height="26"
+                                        viewBox="0 0 19 26"
+                                        fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 512 512"
-                                        class="h-6 w-6 text-[#1882F0]"
                                     >
                                         <path
+                                            d="M12.5 0.125L18.75 6.375H12.5V0.125ZM10.9375 6.375C10.9375 7.25391 11.6211 7.9375 12.5 7.9375H18.75V22.7812C18.75 24.0996 17.6758 25.125 16.4062 25.125H2.34375C1.02539 25.125 0 24.0996 0 22.7812V2.46875C0 1.19922 1.02539 0.125 2.34375 0.125H10.9375V6.375ZM14.0625 16.9707C14.5508 16.5312 14.5508 15.7988 14.0625 15.3105L10.1562 11.4043C9.7168 10.9648 8.98438 10.9648 8.54492 11.4043L4.63867 15.3105C4.15039 15.7988 4.15039 16.5312 4.63867 16.9707C5.07812 17.459 5.81055 17.459 6.25 16.9707L8.20312 15.0664V20.0469C8.20312 20.7305 8.69141 21.2188 9.375 21.2188C10.0098 21.2188 10.5469 20.7305 10.5469 20.0469V15.0664L12.4512 16.9707C12.6465 17.2148 12.9395 17.3125 13.2812 17.3125C13.5742 17.3125 13.8672 17.2148 14.0625 16.9707Z"
                                             fill="#1882F0"
-                                            d="M288 109.3V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3C204.6 122.8 192 141.9 192 160c0 35.3 28.7 64 64 64s64-28.7 64-64c0-18.1-12.6-37.2-32-50.7zM192 416H320c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32zM448 192H312.1c6.4 9.1 10.1 20.3 10.1 32.9c0 35.3-28.7 64-64 64s-64-28.7-64-64c0-12.6 3.7-23.8 10.1-32.9H64c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V256c0-35.3-28.7-64-64-64z"
                                         />
                                     </svg>
                                     <p

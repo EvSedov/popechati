@@ -51,7 +51,7 @@ provide("openOrderModal", openOrderModal);
 }
 .wrap {
     width: 100%;
-    max-width: 1920px;
+    /* max-width: 1920px; */
     margin: 0 auto;
     padding-top: 10px;
 }
