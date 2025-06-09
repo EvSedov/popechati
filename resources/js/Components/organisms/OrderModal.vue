@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, watch, onUnmounted } from "vue";
-import CustomSelect from "@/Components/CustomSelect.vue";
+import { ref, watch, onUnmounted, computed } from "vue";
+import CustomSelect from "@/Components/molecules/CustomSelect.vue";
 
 // Change isOpen to a prop, using modelValue for v-model compatibility
 const props = defineProps({
@@ -16,17 +16,130 @@ const emit = defineEmits(["update:modelValue"]);
 const closeModal = () => {
     // Emit event to update parent's state
     emit("update:modelValue", false);
+    resetFormFields(); // Очищаем поля при закрытии модального окна
 };
 
-const agree = ref<boolean>(false);
-const selectedService = ref(""); // Новое состояние для выбранной услуги
+// Новые reactive-переменные для полей формы
+const fullName = ref("");
+const selectedService = ref("");
+const phoneNumber = ref("");
+const description = ref("");
 
-const serviceOptions = [
-    { value: "development", label: "Разработка сайтов" },
-    { value: "design", label: "Веб-дизайн" },
-    { value: "seo", label: "SEO продвижение" },
-    { value: "marketing", label: "Интернет-маркетинг" },
-];
+const quantity = ref<number | null>(null);
+const agree = ref<boolean>(false);
+
+// const serviceOptions = [
+//     { value: "business-cards", label: "Печать визиток" },
+//     {
+//         value: "sheet-printing",
+//         label: "Листовая полиграфия",
+//     },
+//     {
+//         value: "multi-page-printing",
+//         label: "Многостраничная полиграфия",
+//     },
+//     { value: "stickers", label: "Печать наклеек" },
+//     {
+//         value: "acrylic-printing",
+//         label: "Печать на акриле",
+//     },
+//     { value: "packaging", label: "Печать на упаковке" },
+//     {
+//         value: "bags-and-packages",
+//         label: "Печать на пакетах и сумках",
+//     },
+//     {
+//         value: "wrapping-paper",
+//         label: "Печать на упаковочной бумаге",
+//     },
+//     {
+//         value: "offset-printing",
+//         label: "Офсетная печать",
+//     },
+//     {
+//         value: "corporate-merch",
+//         label: "Печать корпоративного мерча",
+//     },
+//     { value: "souvenirs", label: "Печать сувениров" },
+//     {
+//         value: "interior-printing",
+//         label: "Интерьерная печать",
+//     },
+//     {
+//         value: "wide-format-printing",
+//         label: "Широкоформатная печать",
+//     },
+//     { value: "calendars", label: "Печать календарей" },
+//     { value: "clothing", label: "Печать на одежде" },
+//     {
+//         value: "stands-press-roll-up",
+//         label: "Печать стендов Press wall, Roll Up",
+//     },
+//     { value: "cards", label: "Печать открыток" },
+//     { value: "invitations", label: "Печать приглашений" },
+//     { value: "flyers", label: "Печать листовок" },
+//     { value: "posters", label: "Печать плакатов" },
+//     { value: "tickets", label: "Печать билетов" },
+//     { value: "certificates", label: "Печать сертификатов" },
+//     { value: "diplomas", label: "Печать дипломов" },
+//     { value: "brochures", label: "Печать буклетов" },
+//     { value: "envelopes", label: "Печать конвертов" },
+//     { value: "bookmarks", label: "Печать закладок" },
+// ];
+
+// Вычисляемое свойство для расчета количества заполненных полей
+const completedFieldsCount = computed(() => {
+    let count = 0;
+    if (fullName.value.trim() !== "") {
+        count++;
+    }
+    if (selectedService.value !== "") {
+        count++;
+    }
+    if (phoneNumber.value.trim() !== "") {
+        count++;
+    }
+    if (description.value.trim() !== "") {
+        count++;
+    }
+    return count;
+});
+
+// Вычисляемое свойство для отображения процента скидки (0-20%)
+const discountPercentage = computed(() => {
+    return completedFieldsCount.value * 5;
+});
+
+// Вычисляемое свойство для ширины прогресс-бара (0-100%)
+const progressBarWidth = computed(() => {
+    // Каждое заполненное поле дает 25% ширины прогресс-бара
+    return completedFieldsCount.value * 25;
+});
+
+// Функция для сброса всех полей формы
+const resetFormFields = () => {
+    fullName.value = "";
+    selectedService.value = ""; // Или [] если CustomSelect в режиме multiple
+    phoneNumber.value = "";
+    description.value = "";
+    quantity.value = null;
+    agree.value = false;
+};
+
+// Функция для обработки отправки заказа
+const handleSubmitOrder = () => {
+    // Здесь будет логика отправки данных на сервер
+    console.log("Форма отправлена!");
+    console.log("ФИО:", fullName.value);
+    console.log("Услуга:", selectedService.value);
+    console.log("Телефон:", phoneNumber.value);
+    console.log("Описание:", description.value);
+    console.log("Количество:", quantity.value);
+
+    // Очищаем форму и закрываем модальное окно
+    resetFormFields();
+    closeModal();
+};
 
 watch(
     () => props.modelValue,
@@ -107,6 +220,7 @@ onUnmounted(() => {
                                 type="text"
                                 placeholder="Введите ФИО*"
                                 class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
+                                v-model="fullName"
                             />
                         </div>
 
@@ -115,13 +229,14 @@ onUnmounted(() => {
                             <h3
                                 class="mb-5 text-[21px] leading-[1.33em] font-normal text-[#000000CC]"
                             >
-                                Выберите услугу
+                                Укажите услугу
                             </h3>
-                            <!-- Combobox/Select (simplified for now) -->
-                            <CustomSelect
-                                v-model="selectedService"
-                                :options="serviceOptions"
+
+                            <input
+                                type="text"
                                 placeholder="Какой тип услуги Вам нужен?"
+                                class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
+                                v-model="selectedService"
                             />
                         </div>
 
@@ -136,6 +251,7 @@ onUnmounted(() => {
                                 type="tel"
                                 placeholder="Введите номер телефона*"
                                 class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
+                                v-model="phoneNumber"
                             />
                         </div>
 
@@ -149,6 +265,7 @@ onUnmounted(() => {
                             <textarea
                                 placeholder="Введите описание"
                                 class="h-32 w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
+                                v-model="description"
                             ></textarea>
                         </div>
 
@@ -199,46 +316,6 @@ onUnmounted(() => {
                                 ></div>
                             </div>
                         </div>
-
-                        <!-- "Укажите желаемое количество" Section -->
-                        <div>
-                            <h3
-                                class="mb-4 text-[14px] leading-[1.42em] font-normal text-[#000000CC]"
-                            >
-                                Укажите желаемое количество
-                            </h3>
-                            <!-- Quantity input with values and slider (simplified) -->
-                            <div class="flex flex-col">
-                                <div class="mb-2 flex items-center">
-                                    <input
-                                        type="text"
-                                        value="55 000 шт"
-                                        class="w-32 border-none bg-transparent p-0 text-[19.6875px] leading-[1.21em] font-normal text-[#000000CC] outline-none"
-                                        readonly
-                                    />
-                                    <!-- Icon can be added here if needed -->
-                                </div>
-                                <!-- Slider representation -->
-                                <div
-                                    class="relative mb-2 h-2 w-full rounded-md bg-[#F6F7F8]"
-                                >
-                                    <div
-                                        class="absolute top-0 left-0 h-2 rounded-md bg-[#1882F0]"
-                                        style="width: 20%"
-                                    ></div>
-                                    <!-- Example width -->
-                                </div>
-                                <!-- Quantity steps -->
-                                <div
-                                    class="flex justify-between text-[13px] leading-[1.53em] font-normal text-[#000000CC]"
-                                >
-                                    <span>15 000 шт</span>
-                                    <span>100 000 шт</span>
-                                    <span>500 000 шт</span>
-                                    <span>1 000 000 шт</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Footer section with agreement and button - flex-shrink-0 to prevent it from shrinking -->
@@ -277,6 +354,7 @@ onUnmounted(() => {
                             <button
                                 class="rounded-xl bg-[#1882F0] px-8 py-4 text-[16px] leading-[1.25em] font-medium text-white hover:bg-blue-600"
                                 :class="{ btnDisabled: !agree }"
+                                @click="handleSubmitOrder"
                             >
                                 Сделать заказ
                             </button>
@@ -297,20 +375,20 @@ onUnmounted(() => {
                         <p
                             class="text-[21px] leading-[1.33em] font-normal text-[#000000CC]"
                         >
-                            5%
+                            {{ discountPercentage }}%
                         </p>
                     </div>
                     <!-- Progress Bar -->
                     <div class="mb-2 h-2 w-full rounded-md bg-[#F6F7F8]">
                         <div
                             class="h-2 rounded-md bg-[#1882F0]"
-                            style="width: 5%"
+                            :style="{ width: progressBarWidth + '%' }"
                         ></div>
                     </div>
                     <p
                         class="text-[14px] leading-[1.42em] font-normal text-[#0000008A]"
                     >
-                        +15% за каждый пункт
+                        +5% за каждый пункт
                     </p>
                 </div>
             </div>
