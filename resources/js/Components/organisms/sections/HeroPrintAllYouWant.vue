@@ -1,11 +1,30 @@
 <script lang="ts" setup>
-import { Button } from "@/Components/atoms/ui/button";
-import ArrowRight from "@/Components/atoms/icons/ArrowRight.vue";
-import { inject } from "vue";
+import { inject, ref, onMounted, onUnmounted } from "vue";
+import ProductCard from "@/Components/molecules/ProductCard.vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
+const modules = [Navigation, Pagination];
 // Инжектируем функцию открытия модального окна заказа.
 // Если в вашем приложении нет такого инжектирования, этот код можно удалить.
 const openOrderModal = inject("openOrderModal") as () => void;
+
+const isLargeScreen = ref(window.innerWidth >= 1920);
+
+const updateScreenSize = () => {
+    isLargeScreen.value = window.innerWidth >= 1920;
+};
+
+onMounted(() => {
+    window.addEventListener("resize", updateScreenSize);
+});
+
+onUnmounted(() => {
+    window.removeEventListener("resize", updateScreenSize);
+});
 
 // Вспомогательная функция для генерации динамических путей к изображениям
 const getImageUrl = (name: string) => {
@@ -78,14 +97,14 @@ const getProductCardImgClasses = (index: number) => {
     >
         <!-- Основной контейнер контента -->
         <div
-            class="container mx-auto flex max-w-[1590px] items-center justify-between gap-20 px-4"
+            class="container mx-auto flex max-w-[1590px] flex-col items-center justify-center gap-20 px-4 xl:flex-row xl:justify-between"
         >
             <!-- Левый блок: Текстовый контент -->
             <div
-                class="mb-12 flex w-full flex-col items-start text-center lg:mb-0 lg:w-[40%] lg:text-left"
+                class="mb-12 flex w-full flex-col items-center text-center lg:mb-0 lg:w-[40%] xl:items-start xl:text-left"
             >
                 <h1
-                    class="mb-6 text-[4px] leading-[54px] font-bold text-black md:text-[54px] md:leading-[66px] lg:text-[64px] lg:leading-[78px]"
+                    class="mx-auto mb-6 text-[44px] leading-[54px] font-bold text-black md:text-[54px] md:leading-[66px] lg:text-[64px] lg:leading-[78px] xl:mx-0"
                     style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)"
                 >
                     ПЕЧАТАЙТЕ <br />
@@ -99,7 +118,7 @@ const getProductCardImgClasses = (index: number) => {
                     все, делаем все то, чего не делают другие
                 </p>
                 <Button
-                    class="h-15 rounded-full bg-gradient-to-r from-[#F10488] to-[#FF0224] px-9 py-0 text-lg font-semibold text-white uppercase shadow-lg transition-all duration-300 hover:from-[#E2047A] hover:to-[#E0021F]"
+                    class="mx-auto h-15 rounded-full bg-gradient-to-r from-[#F10488] to-[#FF0224] px-9 py-0 text-lg font-semibold text-white uppercase shadow-lg transition-all duration-300 hover:from-[#E2047A] hover:to-[#E0021F] xl:mx-0"
                     @click="openOrderModal"
                 >
                     СДЕЛАТЬ ЗАКАЗ
@@ -109,38 +128,53 @@ const getProductCardImgClasses = (index: number) => {
 
             <!-- Правый блок: Карточки категорий продуктов -->
             <div
-                class="relative flex w-full items-center justify-center gap-20"
+                class="flex w-full items-center justify-center gap-20"
+                v-if="isLargeScreen"
             >
-                <div
+                <ProductCard
                     v-for="(product, index) in productCategories"
                     :key="product.id"
-                    :style="{ backgroundColor: product.bgColor }"
-                    class="relative flex h-[515px] w-[227px] flex-col rounded-xl pt-2 pb-16.5 hover:z-10 hover:scale-118"
+                    :product="product"
+                    :index="index"
+                    :get-product-card-img-classes="getProductCardImgClasses"
+                />
+            </div>
+            <div v-else class="w-full">
+                <Swiper
+                    :slides-per-view="1"
+                    :space-between="10"
+                    :auto-height="true"
+                    :navigation="true"
+                    :pagination="{
+                        clickable: true,
+                    }"
+                    :modules="modules"
+                    :loop="true"
+                    :breakpoints="{
+                        '768': {
+                            slidesPerView: 1,
+                            spaceBetween: 20,
+                        },
+                        '1024': {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                        },
+                    }"
+                    class="mySwiper mx-auto! max-w-[60%]! xl:mx-0!"
                 >
-                    <!-- Вертикальный заголовок категории -->
-                    <h3
-                        class="self-start text-[55px]/[60px] font-semibold tracking-wider whitespace-nowrap"
-                        :style="{
-                            color: product.titleColor,
-                        }"
+                    <swiper-slide
+                        v-for="(product, index) in productCategories"
+                        :key="product.id"
                     >
-                        {{ product.title }}
-                    </h3>
-
-                    <Button
-                        class="mx-auto mt-auto mr-5 ml-5 flex h-[45px] w-[192px] border-dashed border-[#0034B0] bg-transparent p-6 text-[12px] font-semibold text-black"
-                        variant="outline"
-                    >
-                        Узнать подробнее
-                        <ArrowRight class="ml-2 h-3.75 w-4.25 invert" />
-                    </Button>
-                    <img
-                        :src="product.image"
-                        :alt="product.title"
-                        class="absolute z-5"
-                        :style="getProductCardImgClasses(index)"
-                    />
-                </div>
+                        <ProductCard
+                            :product="product"
+                            :index="index"
+                            :get-product-card-img-classes="
+                                getProductCardImgClasses
+                            "
+                        />
+                    </swiper-slide>
+                </Swiper>
             </div>
         </div>
     </section>
@@ -152,10 +186,12 @@ h3 {
     transform: rotate(180deg);
 }
 
-.bg-hero-pattern {
-    background-image: url("/images/bg-hero-abstract.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.swiper {
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>
