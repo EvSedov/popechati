@@ -186,9 +186,6 @@ h3 {
     transform: rotate(180deg);
 }
 
-.swiper {
-}
-
 .swiper-slide {
     display: flex;
     justify-content: center;
