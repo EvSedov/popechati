@@ -55,18 +55,22 @@ onUnmounted(() => {
 
 <template>
     <section id="contacts" class="w-full bg-white pt-[26px] pb-[2px]">
-        <div class="mx-auto w-[1170px]">
+        <div class="mx-auto max-w-[1170px] px-4 md:px-6 lg:px-8">
             <!-- Заголовок секции -->
             <h2
-                class="font-montserrat mb-8 text-center text-[42px] font-semibold text-[#2C2C2C]"
+                class="font-montserrat mb-8 text-center text-[32px] font-semibold text-[#2C2C2C] md:text-[42px]"
             >
                 Контактная информация
             </h2>
 
             <!-- Контактная информация с картой -->
-            <div class="mb-8 flex flex-row gap-23.5">
+            <div
+                class="mb-8 flex flex-col-reverse items-center gap-8 xl:flex-row xl:items-start xl:gap-23.5"
+            >
                 <!-- Левая колонка: Карта и FAQ -->
-                <div class="flex flex-col pt-2 pl-2">
+                <div
+                    class="flex w-full flex-col items-center pt-0 pl-0 xl:w-auto xl:items-start xl:pt-2 xl:pl-2"
+                >
                     <!-- Яндекс карта (original size) -->
                     <ContactMap @click="toggleMapZoom" class="cursor-pointer" />
 
@@ -75,7 +79,7 @@ onUnmounted(() => {
                 </div>
 
                 <!-- Контактная информация (правая часть) -->
-                <div class="w-[40%]">
+                <div class="mx-auto xl:mx-0 xl:w-[40%]">
                     <ContactDetails />
                 </div>
             </div>
