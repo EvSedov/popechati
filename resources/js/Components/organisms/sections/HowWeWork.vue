@@ -1,18 +1,64 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, onMounted, computed, onBeforeUnmount } from "vue";
+
+const whiteCardRef = ref<HTMLElement | null>(null);
+const whiteCardHeight = ref<number>(0);
+const whiteCardWidth = ref<number>(0);
+let resizeObserver: ResizeObserver | null = null;
+
+const containerMinHeight = computed(() => {
+    const paddingY = 180;
+
+    return `${whiteCardHeight.value - paddingY}px`;
+});
+const containerWidth = computed(() => {
+    return `${whiteCardWidth.value}px`;
+});
+
+onMounted(() => {
+    if (whiteCardRef.value) {
+        resizeObserver = new ResizeObserver((entries) => {
+            for (let entry of entries) {
+                if (entry.target === whiteCardRef.value) {
+                    whiteCardHeight.value = entry.contentRect.height;
+                    whiteCardWidth.value = entry.contentRect.width;
+                }
+            }
+        });
+
+        resizeObserver.observe(whiteCardRef.value);
+    }
+});
+
+onBeforeUnmount(() => {
+    if (resizeObserver) {
+        resizeObserver.disconnect();
+    }
+});
+</script>
 
 <template>
-    <div class="h-158.5 bg-[#1882F0]">
-        <div class="relative mx-auto h-full w-292.5">
+    <div class="h-auto bg-[#1882F0]">
+        <div
+            class="relative mx-auto"
+            :style="{
+                minHeight: containerMinHeight,
+                width: containerWidth,
+            }"
+        >
             <div
-                class="absolute top-[-90px] flex h-203.5 w-full flex-col items-center gap-4 bg-white pt-9"
+                ref="whiteCardRef"
+                class="absolute top-[-120px] flex max-w-[1166px] flex-col items-center gap-4 rounded-md bg-white py-9 shadow-lg"
             >
                 <div class="flex flex-col">
                     <h2
-                        class="mb-10 text-center text-[42px] font-bold text-black"
+                        class="mb-10 text-center text-3xl font-bold text-black sm:text-4xl md:text-[42px]"
                     >
                         Как мы работаем?
                     </h2>
-                    <div class="flex justify-around">
+                    <div
+                        class="grid grid-cols-[276px] justify-center gap-4 md:grid-cols-[276px_276px] xl:grid-cols-[276px_276px_276px_276px]"
+                    >
                         <div
                             class="relative flex h-[196px] w-[276px] flex-col items-center justify-center"
                         >
@@ -98,95 +144,95 @@
                         макета</span
                     >
                 </div>
-                <div class="flex w-full flex-col gap-10">
-                    <h2 class="text-center text-[42px] font-bold text-black">
+                <div class="mt-10 flex w-full flex-col gap-10">
+                    <h2
+                        class="text-center text-3xl font-bold text-black sm:text-4xl md:text-[42px]"
+                    >
                         Что вы получаете работая с нами?
                     </h2>
-                    <div class="flex flex-col gap-8">
-                        <div class="flex w-full gap-18.5">
-                            <div
-                                class="flex h-[144px] w-[362px] flex-col items-center justify-between px-16"
-                            >
-                                <img
-                                    src="/public/icons/container-1.png"
-                                    alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
-                                />
+                    <div
+                        class="grid grid-cols-[362px] gap-5 md:grid-cols-[362px_362px] xl:grid-cols-[362px_362px_362px]"
+                    >
+                        <div
+                            class="flex h-[144px] w-[362px] flex-col items-center justify-between px-16"
+                        >
+                            <img
+                                src="/public/icons/container-1.png"
+                                alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
+                            />
 
-                                <p class="text-center text-base text-black/80">
-                                    Библиотека компонентов и дизайнерских бумаг
-                                </p>
-                            </div>
-                            <div
-                                class="flex h-[144px] w-[362px] flex-col items-center justify-between px-8"
-                            >
-                                <img
-                                    src="/public/icons/container-2.png"
-                                    alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
-                                />
-
-                                <p class="text-center text-base text-black/80">
-                                    Прозрачные цены без скрытых коммиссий и
-                                    переплат
-                                </p>
-                            </div>
-                            <div
-                                class="flex h-[144px] w-[362px] flex-col items-center justify-between px-10"
-                            >
-                                <img
-                                    src="/public/icons/container-3.png"
-                                    alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
-                                />
-
-                                <p class="text-center text-base text-black/80">
-                                    Собственное производство и студия дизайна
-                                </p>
-                            </div>
+                            <p class="text-center text-base text-black/80">
+                                Библиотека компонентов и дизайнерских бумаг
+                            </p>
                         </div>
-                        <div class="flex w-full gap-18.5">
-                            <div
-                                class="flex h-[144px] w-[362px] flex-col items-center justify-between px-18"
-                            >
-                                <img
-                                    src="/public/icons/container-4.png"
-                                    alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
-                                />
+                        <div
+                            class="flex h-[144px] w-[362px] flex-col items-center justify-between px-8"
+                        >
+                            <img
+                                src="/public/icons/container-2.png"
+                                alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
+                            />
 
-                                <p class="text-center text-base text-black/80">
-                                    Доставка в <br />
-                                    любую точку России
-                                </p>
-                            </div>
-                            <div
-                                class="flex h-[144px] w-[362px] flex-col items-center justify-between px-8"
-                            >
-                                <img
-                                    src="/public/icons/container-5.png"
-                                    alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
-                                />
+                            <p class="text-center text-base text-black/80">
+                                Прозрачные цены без скрытых коммиссий и переплат
+                            </p>
+                        </div>
+                        <div
+                            class="flex h-[144px] w-[362px] flex-col items-center justify-between px-10"
+                        >
+                            <img
+                                src="/public/icons/container-3.png"
+                                alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
+                            />
 
-                                <p class="text-center text-base text-black/80">
-                                    Скидки для рекламных <br />
-                                    агентств и
-                                    <span class="underline"
-                                        >постоянных клиентов</span
-                                    >
-                                </p>
-                            </div>
-                            <div
-                                class="flex h-[144px] w-[362px] flex-col items-center justify-between px-10"
-                            >
-                                <img
-                                    src="/public/icons/container-6.png"
-                                    alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
-                                />
+                            <p class="text-center text-base text-black/80">
+                                Собственное производство и студия дизайна
+                            </p>
+                        </div>
 
-                                <p class="text-center text-base text-black/80">
-                                    Любые способы оплаты заказов
-                                    <span class="text-[#1882F0]/45"
-                                        >(даже натурой)</span
-                                    >
-                                </p>
-                            </div>
+                        <div
+                            class="flex h-[144px] w-[362px] flex-col items-center justify-between px-18"
+                        >
+                            <img
+                                src="/public/icons/container-4.png"
+                                alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
+                            />
+
+                            <p class="text-center text-base text-black/80">
+                                Доставка в <br />
+                                любую точку России
+                            </p>
+                        </div>
+                        <div
+                            class="flex h-[144px] w-[362px] flex-col items-center justify-between px-8"
+                        >
+                            <img
+                                src="/public/icons/container-5.png"
+                                alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
+                            />
+
+                            <p class="text-center text-base text-black/80">
+                                Скидки для рекламных <br />
+                                агентств и
+                                <span class="underline"
+                                    >постоянных клиентов</span
+                                >
+                            </p>
+                        </div>
+                        <div
+                            class="flex h-[144px] w-[362px] flex-col items-center justify-between px-10"
+                        >
+                            <img
+                                src="/public/icons/container-6.png"
+                                alt="Иконка с нашими преимуществами о том почему нужно с нами сотрудничать"
+                            />
+
+                            <p class="text-center text-base text-black/80">
+                                Любые способы оплаты заказов
+                                <span class="text-[#1882F0]/45"
+                                    >(даже натурой)</span
+                                >
+                            </p>
                         </div>
                     </div>
                 </div>
