@@ -2,6 +2,7 @@
 import { inject } from "vue";
 import Logo from "@/Components/atoms/Logo.vue";
 import Menu from "@/Components/molecules/Menu.vue";
+import MobileMenuToggle from "@/Components/molecules/MobileMenuToggle.vue";
 import { Button } from "@/Components/atoms/ui/button";
 import BasketShopping from "@/Components/atoms/icons/BasketShopping.vue";
 
@@ -15,11 +16,13 @@ const openOrderModal = inject("openOrderModal") as () => void;
 
 <template>
     <div class="header">
-        <div class="container flex items-center justify-between">
+        <div class="container flex items-center xl:justify-between">
             <Logo class="mr-10" />
-            <Menu class="mr-auto" />
+            <Menu class="mr-auto hidden xl:flex" />
 
-            <div class="mr-8 flex items-center space-x-4 text-sm">
+            <div
+                class="mr-8 hidden items-center space-x-4 text-sm md:ml-auto! md:flex"
+            >
                 <div class="flex flex-col items-end">
                     <div class="flex items-center justify-end gap-1">
                         <!-- TODO: добавить иконку телефона -->
@@ -65,8 +68,12 @@ const openOrderModal = inject("openOrderModal") as () => void;
                 </div> -->
             </div>
 
+            <div class="ml-auto md:ml-0 xl:hidden">
+                <MobileMenuToggle />
+            </div>
+
             <Button
-                class="rounded-md border-2 border-[#BA2150] bg-gradient-to-r from-[#F10488] to-[#FF0224] px-6 py-3 text-base font-semibold tracking-wider text-white shadow-lg transition-all duration-300 hover:from-[#E2047A] hover:to-[#E0021F]"
+                class="hidden rounded-md border-2 border-[#BA2150] bg-gradient-to-r from-[#F10488] to-[#FF0224] px-6 py-3 text-base font-semibold tracking-wider text-white shadow-lg transition-all duration-300 hover:from-[#E2047A] hover:to-[#E0021F] xl:flex"
                 @click="openOrderModal"
             >
                 <BasketShopping class="mr-2 h-4 w-4" />
