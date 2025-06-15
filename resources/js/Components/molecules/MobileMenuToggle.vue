@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, provide } from "vue";
 import {
     Sheet,
     SheetContent,
@@ -10,10 +11,16 @@ import {
 import { Button } from "@/Components/atoms/ui/button";
 import { MenuIcon } from "lucide-vue-next";
 import MobileMenuContent from "@/Components/molecules/MobileMenuContent.vue";
+
+const isOpen = ref(false);
+const closeSheet = () => {
+    isOpen.value = false;
+};
+provide("closeSheet", closeSheet);
 </script>
 
 <template>
-    <Sheet>
+    <Sheet v-model:open="isOpen">
         <SheetTrigger as-child>
             <Button variant="outline" size="icon">
                 <MenuIcon class="h-6 w-6" />
