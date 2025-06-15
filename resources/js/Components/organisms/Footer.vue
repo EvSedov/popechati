@@ -3,9 +3,11 @@ import Logo from "@/Components/atoms/Logo.vue";
 </script>
 
 <template>
-    <div class="footer border-t border-[#F3F3F3]">
-        <div class="container flex gap-[88px]">
-            <div class="flex min-w-56 flex-col">
+    <div class="footer border-t border-[#F3F3F3] py-8">
+        <div
+            class="mx-auto grid w-fit max-w-[1220px] grid-cols-1 gap-y-8 px-4 md:grid-cols-2 md:px-6 lg:gap-x-12 lg:px-8 xl:grid-cols-4 xl:gap-x-[88px]"
+        >
+            <div class="flex flex-col">
                 <ul class="m-0 flex flex-col p-0">
                     <li>
                         <Logo />
@@ -51,29 +53,25 @@ import Logo from "@/Components/atoms/Logo.vue";
                             <img
                                 src="/public/icons/i-social-vk.png"
                                 alt="Иконка социальной сети вконтакте"
-                                class="m-2"
                             />
                             <img
                                 src="/public/icons/i-social-tg.png"
                                 alt="Иконка социальной сети телеграмм"
-                                class="m-2"
                             />
                             <img
                                 src="/public/icons/i-social-whatsapp.png"
                                 alt="Иконка социальной сети WhatsApp"
-                                class="m-2"
                             />
                         </div>
                     </li>
-                    <li class="relative">
-                        <span
-                            class="absolute w-60 text-xs leading-relaxed text-[#2C2C2C]"
-                            >Copyright © 2014 – 2025 Popechati.com</span
-                        >
+                    <li class="mt-4">
+                        <span class="text-xs leading-relaxed text-[#2C2C2C]">
+                            Copyright © 2014 – 2025 Popechati.com
+                        </span>
                     </li>
                 </ul>
             </div>
-            <div class="flex max-w-73 min-w-66.5 flex-col">
+            <div class="flex min-w-66.5 flex-col">
                 <ul class="m-0 flex flex-col p-0">
                     <li class="mb-4.5">
                         <p class="text-lg/5.5 font-medium text-[#2C2C2C]">
@@ -121,7 +119,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                     <li
                         class="text-sm leading-relaxed font-normal text-[#2C2C2C]"
                     >
-                        <span class="w-73 leading-relaxed">
+                        <span class="block max-w-73 leading-relaxed">
                             г. Москва, Батайский проезд 59, <br />метро
                             Автозаводская, вход с противоположной стороны от
                             подъездов, под вывеской «КОПИ ЦЕНТ», 7 минут пешком
@@ -130,7 +128,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                     </li>
                 </ul>
             </div>
-            <div class="flex min-w-56 flex-col">
+            <div class="flex flex-col">
                 <ul class="m-0 flex flex-col p-0">
                     <li class="mb-4.5">
                         <p class="text-lg/5.5 font-medium text-[#2C2C2C]">
@@ -157,7 +155,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                     </li>
                 </ul>
             </div>
-            <div class="flex min-w-56 flex-col">
+            <div class="flex flex-col">
                 <ul class="m-0 flex flex-col p-0">
                     <li class="mb-4.5">
                         <p class="text-lg/5.5 font-medium text-[#2C2C2C]">
@@ -203,10 +201,5 @@ import Logo from "@/Components/atoms/Logo.vue";
 <style lang="css" scoped>
 .footer {
     width: 100%;
-}
-.container {
-    max-width: 1220px;
-    margin: 31px auto 30px;
-    padding: 0 30px;
 }
 </style>

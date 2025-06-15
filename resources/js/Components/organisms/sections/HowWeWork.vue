@@ -52,12 +52,12 @@ onBeforeUnmount(() => {
             >
                 <div class="flex flex-col">
                     <h2
-                        class="mb-10 text-center text-3xl font-bold text-black sm:text-4xl md:text-[42px]"
+                        class="mb-10 text-center text-3xl font-bold text-wrap text-black sm:text-4xl md:text-[42px]"
                     >
                         Как мы работаем?
                     </h2>
                     <div
-                        class="grid grid-cols-[276px] justify-center gap-4 md:grid-cols-[276px_276px] xl:grid-cols-[276px_276px_276px_276px]"
+                        class="grid grid-cols-[276px] justify-center md:grid-cols-[276px_276px] md:gap-4 xl:grid-cols-[276px_276px_276px_276px]"
                     >
                         <div
                             class="relative flex h-[196px] w-[276px] flex-col items-center justify-center"
@@ -146,12 +146,12 @@ onBeforeUnmount(() => {
                 </div>
                 <div class="mt-10 flex w-full flex-col gap-10">
                     <h2
-                        class="text-center text-3xl font-bold text-black sm:text-4xl md:text-[42px]"
+                        class="text-center text-3xl font-bold text-wrap text-black sm:text-4xl md:text-[42px]"
                     >
                         Что вы получаете работая с нами?
                     </h2>
                     <div
-                        class="grid grid-cols-[362px] gap-5 md:grid-cols-[362px_362px] xl:grid-cols-[362px_362px_362px]"
+                        class="grid grid-cols-[362px] justify-center md:grid-cols-[362px_362px] md:gap-5 xl:grid-cols-[362px_362px_362px]"
                     >
                         <div
                             class="flex h-[144px] w-[362px] flex-col items-center justify-between px-16"
