@@ -64,7 +64,7 @@ const bank = [{ name: "Банковский расчет", icon: "/icons/bank.sv
                 </div>
                 <!-- 2 -->
                 <div
-                    class="flex flex-col items-center justify-center px-4 pb-13 xl:px-19"
+                    class="flex flex-col items-center justify-center px-4 pb-13 xl:border-r xl:border-[#ececec] xl:px-19"
                 >
                     <div class="mt-6.5 mb-6 text-center font-medium">
                         Оплата наличными и банковский перевод
