@@ -168,43 +168,74 @@ onUnmounted(() => {
         <div
             class="relative z-10 flex max-h-[calc(100vh-2rem)] w-full max-w-[1104px] flex-col rounded-3xl bg-white shadow-lg"
         >
+            <!-- Modal Header -->
+            <div
+                class="flex flex-shrink-0 items-center justify-between px-4 py-4 md:px-8 md:py-8 lg:py-12 lg:pl-16 xl:py-[64px] xl:pl-[140px]"
+            >
+                <h2
+                    class="text-[24px] leading-[1.16em] font-bold text-black sm:text-[32px]"
+                >
+                    Сделать заказ
+                </h2>
+                <!-- Close button -->
+                <button
+                    @click="closeModal"
+                    class="flex-shrink-0 p-2 text-black hover:scale-120 hover:font-black hover:text-gray-700"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-8 w-8"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
             <!--Container for Left and Right Columns, makes the entire modal content area grow vertically -->
-            <div class="flex min-h-0 flex-grow">
+            <div class="flex flex-grow flex-col lg:flex-row-reverse">
+                <!-- Right Column (Progress Bar) -->
+                <div
+                    class="w-full flex-shrink-0 px-4 pt-4 md:px-8 lg:w-1/3 lg:min-w-[248px] lg:pt-[64px] lg:pr-16 lg:pl-6 xl:pr-[140px]"
+                >
+                    <div class="mb-4">
+                        <h3
+                            class="text-[14px] leading-[1.42em] font-normal text-[#0000008A]"
+                        >
+                            Шкала заполнения формы:
+                        </h3>
+                        <p
+                            class="text-[21px] leading-[1.33em] font-normal text-[#000000CC]"
+                        >
+                            {{ discountPercentage }}%
+                        </p>
+                    </div>
+                    <!-- Progress Bar -->
+                    <div
+                        class="mb-2 h-2 w-full max-w-51 rounded-md bg-[#F6F7F8]"
+                    >
+                        <div
+                            class="h-2 rounded-md bg-[#1882F0]"
+                            :style="{ width: progressBarWidth + '%' }"
+                        ></div>
+                    </div>
+                    <p
+                        class="text-[14px] leading-[1.42em] font-normal text-[#0000008A]"
+                    >
+                        +5% за каждый пункт
+                    </p>
+                </div>
+
                 <!-- Left Column (Form and Footer) -->
                 <div
-                    class="flex w-2/3 flex-grow flex-col px-4 py-4 md:px-8 md:py-8 lg:py-12 lg:pl-16 xl:py-[64px] xl:pl-[140px]"
+                    class="flex w-full flex-grow flex-col px-4 py-4 md:px-8 md:py-8 lg:w-2/3 lg:py-12 lg:pl-16 xl:py-[64px] xl:pl-[140px]"
                 >
-                    <!-- Modal Header - flex-shrink-0 to prevent it from shrinking -->
-                    <div
-                        class="mb-8 flex flex-shrink-0 items-center justify-between pl-2.5"
-                    >
-                        <h2
-                            class="text-[24px] leading-[1.16em] font-normal text-[#000000CC]"
-                        >
-                            Сделать заказ
-                        </h2>
-                        <!-- Close button -->
-                        <button
-                            @click="closeModal"
-                            class="flex-shrink-0 text-[#000000CC] hover:text-gray-700"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                class="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12"
-                                />
-                            </svg>
-                        </button>
-                    </div>
-
                     <!-- Modal Body (Form) - This is the main scrollable area -->
                     <div
                         class="flex min-h-0 flex-grow flex-col gap-6 overflow-y-auto px-2.5 pb-8"
@@ -280,7 +311,9 @@ onUnmounted(() => {
                                 </h3>
                             </div>
                             <!-- File upload area -->
-                            <div class="grid grid-cols-3 gap-4">
+                            <div
+                                class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4"
+                            >
                                 <!-- "Прикрепите файлы" box -->
                                 <div
                                     class="flex h-[80px] w-[125px] cursor-pointer flex-col items-center justify-center rounded-md border-3 border-dashed border-[#1882F0] p-4 text-center"
@@ -360,36 +393,6 @@ onUnmounted(() => {
                             </button>
                         </div>
                     </div>
-                </div>
-
-                <!-- Right Column (Progress Bar) - hidden on small screens -->
-                <div
-                    class="hidden min-w-[248px] flex-shrink-0 flex-col pt-[64px] pr-4 pl-6 md:pr-8 lg:flex lg:pr-16 xl:pr-[140px]"
-                >
-                    <div class="mb-4">
-                        <h3
-                            class="text-[14px] leading-[1.42em] font-normal text-[#0000008A]"
-                        >
-                            Шкала заполнения формы:
-                        </h3>
-                        <p
-                            class="text-[21px] leading-[1.33em] font-normal text-[#000000CC]"
-                        >
-                            {{ discountPercentage }}%
-                        </p>
-                    </div>
-                    <!-- Progress Bar -->
-                    <div class="mb-2 h-2 w-full rounded-md bg-[#F6F7F8]">
-                        <div
-                            class="h-2 rounded-md bg-[#1882F0]"
-                            :style="{ width: progressBarWidth + '%' }"
-                        ></div>
-                    </div>
-                    <p
-                        class="text-[14px] leading-[1.42em] font-normal text-[#0000008A]"
-                    >
-                        +5% за каждый пункт
-                    </p>
                 </div>
             </div>
         </div>
