@@ -204,17 +204,17 @@
     "src": "public/images/products/shopper.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-CyM-p8CA.css",
+    "file": "assets/app-CluwDfJY.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-qv7wERje.js",
+    "file": "assets/app-Dt2sRQau.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-BPllNYtj.css"
+      "assets/app-CaTgPNhK.css"
     ],
     "assets": [
       "assets/i-social-whatsapp-DWEBIM-e.png",
