@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderSubmitted;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
+use Inertia\Inertia;
 
 class OrderController extends Controller
 {
@@ -40,7 +41,7 @@ class OrderController extends Controller
             Log::info('Email sent successfully.');
 
             // Перенаправление обратно с сообщением об успехе (Изменено: Возврат редиректа)
-            return response()->json(['message' => 'Order submitted successfully!']);
+            return redirect()->back();
         } catch (\Exception $e) {
             Log::error('Mail sending failed: ' . $e->getMessage(), ['exception' => $e]);
             return response()->json(['message' => 'Failed to submit order.', 'error' => $e->getMessage()], 500);
