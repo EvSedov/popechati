@@ -166,7 +166,7 @@ onUnmounted(() => {
     >
         <!-- Modal Content -->
         <div
-            class="relative z-10 flex max-h-[calc(100vh-2rem)] w-full max-w-[1104px] flex-col rounded-3xl bg-white shadow-lg"
+            class="flex max-h-[calc(100vh-2rem)] w-full max-w-[1104px] flex-col rounded-3xl bg-white shadow-lg"
         >
             <!-- Modal Header -->
             <div
@@ -199,10 +199,10 @@ onUnmounted(() => {
                 </button>
             </div>
             <!--Container for Left and Right Columns, makes the entire modal content area grow vertically -->
-            <div class="flex flex-grow flex-col lg:flex-row-reverse">
+            <div class="flex min-h-0 flex-grow flex-col lg:flex-row-reverse">
                 <!-- Right Column (Progress Bar) -->
                 <div
-                    class="w-full flex-shrink-0 px-4 pt-4 md:px-8 lg:w-1/3 lg:min-w-[248px] lg:pt-[64px] lg:pr-16 lg:pl-6 xl:pr-[140px]"
+                    class="w-full flex-shrink-0 px-4 py-4 md:px-8 lg:w-1/3 lg:min-w-[248px] lg:pt-[64px] lg:pr-16 lg:pl-6 xl:pr-[140px]"
                 >
                     <div class="mb-4">
                         <h3
@@ -234,7 +234,7 @@ onUnmounted(() => {
 
                 <!-- Left Column (Form and Footer) -->
                 <div
-                    class="flex w-full flex-grow flex-col px-4 py-4 md:px-8 md:py-8 lg:w-2/3 lg:py-12 lg:pl-16 xl:py-[64px] xl:pl-[140px]"
+                    class="flex min-h-0 w-full flex-grow flex-col px-4 py-4 md:px-8 md:py-8 lg:w-2/3 lg:py-12 lg:pl-16 xl:py-[64px] xl:pl-[140px]"
                 >
                     <!-- Modal Body (Form) - This is the main scrollable area -->
                     <div
@@ -353,10 +353,10 @@ onUnmounted(() => {
 
                     <!-- Footer section with agreement and button - flex-shrink-0 to prevent it from shrinking -->
                     <div
-                        class="flex flex-shrink-0 items-center justify-between pt-8"
+                        class="flex flex-shrink-0 flex-col items-start justify-between gap-4 pt-8 md:flex-row md:items-center"
                     >
                         <!-- Agreement Checkbox -->
-                        <div class="flex w-2/3 items-start">
+                        <div class="flex w-full items-start md:w-2/3">
                             <!-- Adjust width as needed -->
                             <input
                                 type="checkbox"
@@ -382,7 +382,7 @@ onUnmounted(() => {
                         </div>
 
                         <!-- Modal Footer (Submit button) -->
-                        <div class="flex-shrink-0">
+                        <div class="w-full flex-shrink-0 md:w-auto">
                             <!-- Prevent button from shrinking -->
                             <button
                                 class="rounded-xl bg-[#1882F0] px-8 py-4 text-[16px] leading-[1.25em] font-medium text-white hover:bg-blue-600"
