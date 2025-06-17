@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, watch, onUnmounted, computed } from "vue";
-import CustomSelect from "@/Components/molecules/CustomSelect.vue";
+import { watch, onUnmounted, computed } from "vue";
+import { useForm } from "@inertiajs/vue3";
 
 // Change isOpen to a prop, using modelValue for v-model compatibility
 const props = defineProps({
@@ -16,17 +16,17 @@ const emit = defineEmits(["update:modelValue"]);
 const closeModal = () => {
     // Emit event to update parent's state
     emit("update:modelValue", false);
-    resetFormFields(); // Очищаем поля при закрытии модального окна
 };
 
-// Новые reactive-переменные для полей формы
-const fullName = ref("");
-const selectedService = ref("");
-const phoneNumber = ref("");
-const description = ref("");
-
-const quantity = ref<number | null>(null);
-const agree = ref<boolean>(false);
+// Изменено: Создание экземпляра form с использованием useForm
+const form = useForm({
+    fullName: "",
+    selectedService: "",
+    phoneNumber: "",
+    description: "",
+    quantity: null, // Количество тоже может быть в форме
+    agree: false, // Согласие также может быть частью формы
+});
 
 // const serviceOptions = [
 //     { value: "business-cards", label: "Печать визиток" },
@@ -90,16 +90,16 @@ const agree = ref<boolean>(false);
 // Вычисляемое свойство для расчета количества заполненных полей
 const completedFieldsCount = computed(() => {
     let count = 0;
-    if (fullName.value.trim() !== "") {
+    if (form.fullName.trim() !== "") {
         count++;
     }
-    if (selectedService.value !== "") {
+    if (form.selectedService !== "") {
         count++;
     }
-    if (phoneNumber.value.trim() !== "") {
+    if (form.phoneNumber.trim() !== "") {
         count++;
     }
-    if (description.value.trim() !== "") {
+    if (form.description.trim() !== "") {
         count++;
     }
     return count;
@@ -116,29 +116,22 @@ const progressBarWidth = computed(() => {
     return completedFieldsCount.value * 25;
 });
 
-// Функция для сброса всех полей формы
-const resetFormFields = () => {
-    fullName.value = "";
-    selectedService.value = ""; // Или [] если CustomSelect в режиме multiple
-    phoneNumber.value = "";
-    description.value = "";
-    quantity.value = null;
-    agree.value = false;
-};
-
 // Функция для обработки отправки заказа
 const handleSubmitOrder = () => {
     // Здесь будет логика отправки данных на сервер
-    console.log("Форма отправлена!");
-    console.log("ФИО:", fullName.value);
-    console.log("Услуга:", selectedService.value);
-    console.log("Телефон:", phoneNumber.value);
-    console.log("Описание:", description.value);
-    console.log("Количество:", quantity.value);
-
-    // Очищаем форму и закрываем модальное окно
-    resetFormFields();
-    closeModal();
+    form.post("/submit-order", {
+        // Изменено: Отправка формы через Inertia
+        onSuccess: () => {
+            // Изменено: Обработка успешной отправки
+            console.log("Письмо отправлено.");
+            closeModal(); // Закрываем модальное окно при успехе
+        },
+        onError: (errors) => {
+            // Изменено: Обработка ошибок валидации
+            console.error("Ошибка отправки формы:", errors);
+            // Здесь можно добавить логику отображения ошибок пользователю
+        },
+    });
 };
 
 watch(
@@ -251,7 +244,7 @@ onUnmounted(() => {
                                 type="text"
                                 placeholder="Введите ФИО*"
                                 class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
-                                v-model="fullName"
+                                v-model="form.fullName"
                             />
                         </div>
 
@@ -267,7 +260,7 @@ onUnmounted(() => {
                                 type="text"
                                 placeholder="Какой тип услуги Вам нужен?"
                                 class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
-                                v-model="selectedService"
+                                v-model="form.selectedService"
                             />
                         </div>
 
@@ -282,7 +275,7 @@ onUnmounted(() => {
                                 type="tel"
                                 placeholder="Введите номер телефона*"
                                 class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
-                                v-model="phoneNumber"
+                                v-model="form.phoneNumber"
                             />
                         </div>
 
@@ -296,7 +289,7 @@ onUnmounted(() => {
                             <textarea
                                 placeholder="Введите описание"
                                 class="h-32 w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
-                                v-model="description"
+                                v-model="form.description"
                             ></textarea>
                         </div>
 
@@ -362,7 +355,7 @@ onUnmounted(() => {
                                 type="checkbox"
                                 id="agreement"
                                 class="mt-1 mr-2 flex-shrink-0"
-                                v-model="agree"
+                                v-model="form.agree"
                             />
                             <label
                                 for="agreement"
@@ -386,7 +379,7 @@ onUnmounted(() => {
                             <!-- Prevent button from shrinking -->
                             <button
                                 class="rounded-xl bg-[#1882F0] px-8 py-4 text-[16px] leading-[1.25em] font-medium text-white hover:bg-blue-600"
-                                :class="{ btnDisabled: !agree }"
+                                :class="{ btnDisabled: !form.agree }"
                                 @click="handleSubmitOrder"
                             >
                                 Сделать заказ
