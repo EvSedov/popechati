@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderSubmitted;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 
 class OrderController extends Controller
 {
@@ -17,6 +18,9 @@ class OrderController extends Controller
      */
     public function submitOrder(Request $request)
     {
+        Log::info('Form submission received.');
+        Log::info('Received data:', $request->all());
+
         // Валидация входящих данных (Изменено: Добавлена валидация)
         $validated = $request->validate([
             'fullName' => 'required|string|max:255',
@@ -25,15 +29,21 @@ class OrderController extends Controller
             'description' => 'nullable|string', // Описание может быть необязательным
         ]);
 
-        // Отправка письма (Изменено: Добавлена логика отправки письма)
-        Mail::to('sedoff-online@yandex.ru')->send(new OrderSubmitted( // Изменено: Замени 'your-email@example.com' на реальный email
-            $validated['fullName'],
-            $validated['selectedService'],
-            $validated['phoneNumber'],
-            $validated['description']
-        ));
+        try {
+            // Отправка письма (Изменено: Добавлена логика отправки письма)
+            Mail::to('sedoff-online@yandex.ru')->send(new OrderSubmitted(
+                $validated['fullName'],
+                $validated['selectedService'],
+                $validated['phoneNumber'],
+                $validated['description'] ?? ''
+            ));
+            Log::info('Email sent successfully.');
 
-        // Перенаправление обратно с сообщением об успехе (Изменено: Возврат редиректа)
-        return back()->with('success', 'Ваш заказ успешно отправлен!');
+            // Перенаправление обратно с сообщением об успехе (Изменено: Возврат редиректа)
+            return response()->json(['message' => 'Order submitted successfully!']);
+        } catch (\Exception $e) {
+            Log::error('Mail sending failed: ' . $e->getMessage(), ['exception' => $e]);
+            return response()->json(['message' => 'Failed to submit order.', 'error' => $e->getMessage()], 500);
+        }
     }
 }
