@@ -81,7 +81,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                     <li class="mb-[13px]">
                         <a href="tel:+74993985601">
                             <p
-                                class="text-base/6.5 font-semibold text-[#2C2C2C]"
+                                class="w-fit rounded-md px-1 py-0.5 text-base/6.5 font-semibold text-[#2c2c2c] transition-all duration-300 ease-in-out hover:scale-105 hover:bg-pink-100"
                             >
                                 +7 (499) 398-56-01
                             </p>
@@ -89,7 +89,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                         <div class="flex items-center gap-2">
                             <a href="tel:+79254709400" class="flex">
                                 <p
-                                    class="text-base/6.5 font-semibold text-[#2C2C2C]"
+                                    class="w-fit rounded-md px-1 py-0.5 text-base/6.5 font-semibold text-[#2c2c2c] transition-all duration-300 ease-in-out hover:scale-105 hover:bg-pink-100"
                                 >
                                     +7 (925) 470-94-00
                                 </p>
@@ -110,7 +110,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                     </li>
                     <li class="mb-4">
                         <a
-                            class="text-base/6.5 font-semibold text-[#1882F0]"
+                            class="rounded-md px-1 py-0.5 text-base/6.5 font-semibold text-[#1882F0] transition-all duration-300 ease-in-out hover:scale-105 hover:bg-blue-100"
                             href="mail:popechati@gmail.com"
                         >
                             popechati@gmail.com

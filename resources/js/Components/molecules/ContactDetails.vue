@@ -22,19 +22,19 @@
             </h3>
             <div>
                 <div>
-                    <a href="tel:+74993985601">
-                        <span
-                            class="whitespace-nowrap text-neutral-900 underline"
-                            >+7 (499) 398-56-01</span
-                        >
+                    <a
+                        href="tel:+74993985601"
+                        class="rounded-md px-1 py-0.5 text-gray-900 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-pink-100"
+                    >
+                        +7 (499) 398-56-01
                     </a>
                 </div>
                 <div class="flex items-center gap-2">
-                    <a href="tel:+79254709400">
-                        <span
-                            class="whitespace-nowrap text-neutral-900 underline"
-                            >+7 (925) 470-94-00</span
-                        >
+                    <a
+                        href="tel:+79254709400"
+                        class="rounded-md px-1 py-0.5 text-gray-900 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-pink-100"
+                    >
+                        +7 (925) 470-94-00
                     </a>
                     &nbsp;
                     <span class="flex gap-1.5">
@@ -53,7 +53,7 @@
                 <div>
                     <a
                         href="mailto:popechati@gmail.com"
-                        class="text-xs text-blue-600"
+                        class="rounded-md px-1 py-0.5 text-gray-900 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-blue-100"
                         >popechati@gmail.com</a
                     >
                 </div>

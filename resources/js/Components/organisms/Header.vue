@@ -41,7 +41,7 @@ const openOrderModal = inject("openOrderModal") as () => void;
                         </span>
                         <a
                             href="tel:+79254709400"
-                            class="font-semibold whitespace-nowrap text-gray-900"
+                            class="rounded-md px-1 py-0.5 font-semibold whitespace-nowrap text-gray-900 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-pink-100"
                             >+7 (925) 470-94-00</a
                         >
                     </div>
@@ -50,13 +50,13 @@ const openOrderModal = inject("openOrderModal") as () => void;
                         <!-- <PhoneIcon class="mr-1 h-4 w-4 text-gray-700" /> -->
                         <a
                             href="tel:+74993985601"
-                            class="font-semibold whitespace-nowrap text-gray-900"
+                            class="rounded-md px-1 py-0.5 font-semibold whitespace-nowrap text-gray-900 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-pink-100"
                             >+7 (499) 398-56-01</a
                         >
                     </div>
                     <a
                         href="mailto:POPECHATI@GMAIL.COM"
-                        class="text-xs text-gray-600"
+                        class="rounded-md px-1 py-0.5 text-xs whitespace-nowrap text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-blue-100"
                         >popechati@gmail.com</a
                     >
                 </div>
