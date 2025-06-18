@@ -28,7 +28,7 @@ const handleClick = () => {
             'bg-[#2C2C2C] text-white': isActive, // Активное состояние (цвет фона и текста из Figma)
             'border border-[#2C2C2C] bg-white text-[#2C2C2C]': !isActive, // Неактивное состояние (фон, текст, рамка из Figma)
         }"
-        class="flex items-center rounded-lg px-5 py-1.5 text-sm font-normal transition-colors duration-200"
+        class="flex min-w-40 items-center justify-center rounded-lg px-5 py-1.5 text-sm font-normal transition-colors duration-200"
         @click="handleClick"
     >
         <span v-if="icon" class="mr-1">🔥</span>
