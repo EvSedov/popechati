@@ -102,18 +102,21 @@ const completedFieldsCount = computed(() => {
     if (form.description.trim() !== "") {
         count++;
     }
+    if (form.quantity !== null && form.quantity > 0) {
+        count++;
+    }
     return count;
 });
 
 // Вычисляемое свойство для отображения процента скидки (0-20%)
 const discountPercentage = computed(() => {
-    return completedFieldsCount.value * 5;
+    return completedFieldsCount.value * 2;
 });
 
 // Вычисляемое свойство для ширины прогресс-бара (0-100%)
 const progressBarWidth = computed(() => {
     // Каждое заполненное поле дает 25% ширины прогресс-бара
-    return completedFieldsCount.value * 25;
+    return completedFieldsCount.value * 20;
 });
 
 // Функция для обработки отправки заказа
@@ -221,7 +224,7 @@ onUnmounted(() => {
                     <p
                         class="text-[14px] leading-[1.42em] font-normal text-[#0000008A]"
                     >
-                        +5% за каждый пункт
+                        +2,5% за каждый пункт
                     </p>
                 </div>
 
@@ -293,6 +296,20 @@ onUnmounted(() => {
                             ></textarea>
                         </div>
 
+                        <div>
+                            <h3
+                                class="mb-5 text-[21px] leading-[1.33em] font-normal text-[#000000CC]"
+                            >
+                                Количество единиц
+                            </h3>
+                            <input
+                                type="number"
+                                placeholder="Введите количество"
+                                class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
+                                v-model.number="form.quantity"
+                                min="1"
+                            />
+                        </div>
                         <!-- File Upload Section -->
                         <div>
                             <div class="mb-4 flex items-center">
