@@ -224,7 +224,7 @@ onUnmounted(() => {
                     <p
                         class="text-[14px] leading-[1.42em] font-normal text-[#0000008A]"
                     >
-                        +2,5% за каждый пункт
+                        +2% за каждый пункт
                     </p>
                 </div>
 
