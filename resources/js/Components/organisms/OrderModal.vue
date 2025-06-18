@@ -26,6 +26,7 @@ const form = useForm({
     description: "",
     quantity: null, // Количество тоже может быть в форме
     agree: false, // Согласие также может быть частью формы
+    discount: 0,
 });
 
 // const serviceOptions = [
@@ -108,7 +109,7 @@ const completedFieldsCount = computed(() => {
     return count;
 });
 
-// Вычисляемое свойство для отображения процента скидки (0-20%)
+// Вычисляемое свойство для отображения процента скидки (0-10%)
 const discountPercentage = computed(() => {
     return completedFieldsCount.value * 2;
 });
@@ -121,6 +122,7 @@ const progressBarWidth = computed(() => {
 
 // Функция для обработки отправки заказа
 const handleSubmitOrder = () => {
+    form.discount = discountPercentage.value;
     // Здесь будет логика отправки данных на сервер
     form.post("/submit-order", {
         // Изменено: Отправка формы через Inertia

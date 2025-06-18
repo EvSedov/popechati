@@ -8,8 +8,9 @@
 -   **ФИО:** {{ $fullName }}
 -   **Услуга:** {{ $selectedService }}
 -   **Телефон:** {{ $phoneNumber }}
--   **Описание:**
-    {{ $description }}
+-   **Описание:** {{ $description }}
+-   **Количество:** {{ $quantity}}
+-   **Скидка:** {{ $discount }}
 
 Спасибо,<br>
 {{ config('app.name') }}

@@ -18,16 +18,20 @@ class OrderSubmitted extends Mailable
     public $selectedService;
     public $phoneNumber;
     public $description;
+    public $quantity;
+    public $discount;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($fullName, $selectedService, $phoneNumber, $description) // Изменено: Добавлены параметры в конструктор
+    public function __construct($fullName, $selectedService, $phoneNumber, $description, $quantity, $discount) // Изменено: Добавлены параметры в конструктор
     {
         $this->fullName = $fullName;
         $this->selectedService = $selectedService;
         $this->phoneNumber = $phoneNumber;
         $this->description = $description;
+        $this->quantity = $quantity;
+        $this->discount = $discount;
     }
 
     /**
@@ -52,6 +56,8 @@ class OrderSubmitted extends Mailable
                 'selectedService' => $this->selectedService,
                 'phoneNumber' => $this->phoneNumber,
                 'description' => $this->description,
+                'quantity' => $this->quantity,
+                'discount' => $this->discount,
             ],
         );
     }

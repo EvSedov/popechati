@@ -27,7 +27,9 @@ class OrderController extends Controller
             'fullName' => 'required|string|max:255',
             'selectedService' => 'required|string|max:255',
             'phoneNumber' => 'required|string|max:255',
-            'description' => 'nullable|string', // Описание может быть необязательным
+            'description' => 'nullable|string',
+            'quantity' => 'nullable|numeric',
+            'discount' => 'nullable|numeric'
         ]);
 
         try {
@@ -36,7 +38,9 @@ class OrderController extends Controller
                 $validated['fullName'],
                 $validated['selectedService'],
                 $validated['phoneNumber'],
-                $validated['description'] ?? ''
+                $validated['description'] ?? '',
+                $validated['quantity'],
+                $validated['discount']
             ));
             Log::info('Email sent successfully.');
 
