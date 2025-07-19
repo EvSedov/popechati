@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { inject, ref, onMounted, onUnmounted } from "vue";
 import ProductCard from "@/Components/molecules/ProductCard.vue";
+import Button from "@/Components/atoms/ui/button/Button.vue";
+import ArrowRight from "@/Components/atoms/icons/ArrowRight.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";

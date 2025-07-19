@@ -38,13 +38,19 @@ const props = defineProps<{
             variant="outline"
         >
             Узнать подробнее
-            <ArrowRight class="ml-2 h-3.75 w-4.25 invert" />
+            <ArrowRight class="ml-2 h-4 w-4 invert" />
         </Button>
         <img
             :src="props.product.image"
             :alt="props.product.title"
             class="absolute z-5"
             :style="props.getProductCardImgClasses(props.index)"
+            @error="
+                console.error(
+                    'Ошибка загрузки изображения:',
+                    props.product.image,
+                )
+            "
         />
     </div>
 </template>

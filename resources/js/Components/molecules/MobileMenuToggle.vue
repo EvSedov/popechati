@@ -30,7 +30,7 @@ provide("closeSheet", closeSheet);
         <SheetContent side="left">
             <SheetHeader>
                 <SheetTitle>Мобильное меню</SheetTitle>
-                <SheetDescription> Навигация по сайту. </SheetDescription>
+                <SheetDescription>Навигация по сайту</SheetDescription>
             </SheetHeader>
             <MobileMenuContent />
         </SheetContent>
