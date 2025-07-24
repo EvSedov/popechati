@@ -4,13 +4,24 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "deploy": "surge dist popechati.surge.sh"
+        "test": "vitest",
+        "test:unit": "vitest run --config tests/vitest.config.ts",
+        "test:unit:watch": "vitest --config tests/vitest.config.ts",
+        "test:e2e": "playwright test --config tests/playwright.config.ts",
+        "test:e2e:ui": "playwright test --config tests/playwright.config.ts --ui",
+        "test:all": "npm run test:unit && npm run test:e2e",
+        "docs": "echo 'Документация доступна в файлах: README.md, TESTING.md, ACHIEVEMENTS.md, DEVELOPMENT_LOG.md'",
+        "docs:test": "start tests/manual/test-errors.html"
     },
     "devDependencies": {
+        "@playwright/test": "^1.54.1",
         "@tailwindcss/vite": "^4.0.0",
+        "@testing-library/jest-dom": "^6.6.3",
+        "@testing-library/vue": "^8.1.0",
         "@types/node": "^22.14.1",
-        "axios": "^1.8.2",
+        "axios": "^1.10.0",
         "concurrently": "^9.0.1",
+        "jsdom": "^26.1.0",
         "laravel-mix": "^6.0.49",
         "laravel-vite-plugin": "^1.2.0",
         "postcss-custom-properties": "^14.0.4",
@@ -21,6 +32,7 @@
         "typescript": "^5.8.3",
         "vite": "^6.2.4",
         "vite-plugin-vue-devtools": "^7.7.6",
+        "vitest": "^3.2.4",
         "vue-loader": "^16.8.3"
     },
     "dependencies": {
@@ -30,6 +42,7 @@
         "@vueuse/core": "^13.3.0",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
+        "lodash-es": "^4.17.21",
         "lucide-vue-next": "^0.503.0",
         "postcss": "^8.5.3",
         "reka-ui": "^2.3.1",
