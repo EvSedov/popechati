@@ -3,23 +3,27 @@
 const cards = [
     {
         name: "VISA",
-        icon: new URL("/icons/visa.svg", import.meta.url).href,
+        icon: new URL("/public/icons/visa.svg", import.meta.url).href,
         className: "w-13 h-7.5",
     },
     {
         name: "mastercard",
-        icon: new URL("/icons/mastercard.svg", import.meta.url).href,
+        icon: new URL("/public/icons/mastercard.svg", import.meta.url).href,
         className: "w-9.5 h-7.5",
     },
     {
         name: "maestro",
-        icon: new URL("/icons/maestro.svg", import.meta.url).href,
+        icon: new URL("/public/icons/maestro.svg", import.meta.url).href,
         className: "w-9.5 h-7.5",
     },
-    { name: "МИР", icon: "/icons/mir.svg", className: "w-16 h-5" },
+    {
+        name: "МИР",
+        icon: new URL("/public/icons/mir.svg", import.meta.url).href,
+        className: "w-16 h-5",
+    },
     {
         name: "Apple Pay",
-        icon: new URL("/icons/applepay.svg", import.meta.url).href,
+        icon: new URL("/public/icons/applepay.svg", import.meta.url).href,
         className: "w-15.5 h-10.5",
     },
 ];
@@ -27,7 +31,7 @@ const cards = [
 const bank = [
     {
         name: "Банковский расчет",
-        icon: new URL("/icons/bank.svg", import.meta.url).href,
+        icon: new URL("/public/icons/bank.svg", import.meta.url).href,
     },
 ];
 </script>
