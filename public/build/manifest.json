@@ -15,9 +15,17 @@
     "file": "assets/Commissioner-SemiBold-C33mJM-e.ttf",
     "src": "public/fonts/Commissioner-SemiBold.ttf"
   },
+  "public/icons/applepay.svg": {
+    "file": "assets/applepay-CgUHRBVD.svg",
+    "src": "public/icons/applepay.svg"
+  },
   "public/icons/arrow-right.svg": {
     "file": "assets/arrow-right-Bs_6WOL8.svg",
     "src": "public/icons/arrow-right.svg"
+  },
+  "public/icons/bank.svg": {
+    "file": "assets/bank-B9GsE6Ab.svg",
+    "src": "public/icons/bank.svg"
   },
   "public/icons/basket-shopping.svg": {
     "file": "assets/basket-shopping-BMfZBbcV.svg",
@@ -86,6 +94,22 @@
   "public/icons/icons-nav-google.svg": {
     "file": "assets/icons-nav-google-DgMeKI7J.svg",
     "src": "public/icons/icons-nav-google.svg"
+  },
+  "public/icons/maestro.svg": {
+    "file": "assets/maestro-CO3erZZO.svg",
+    "src": "public/icons/maestro.svg"
+  },
+  "public/icons/mastercard.svg": {
+    "file": "assets/mastercard-Dhe3ynPT.svg",
+    "src": "public/icons/mastercard.svg"
+  },
+  "public/icons/mir.svg": {
+    "file": "assets/mir-B-UGaZsG.svg",
+    "src": "public/icons/mir.svg"
+  },
+  "public/icons/visa.svg": {
+    "file": "assets/visa-B5gGS33Z.svg",
+    "src": "public/icons/visa.svg"
   },
   "public/images/examples/afisha.png": {
     "file": "assets/afisha-GZSBWUTD.png",
@@ -209,12 +233,12 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-B79toAf-.js",
+    "file": "assets/app-BpMHOrJN.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-C920y-Nl.css"
+      "assets/app-BrRx_6mn.css"
     ],
     "assets": [
       "assets/i-social-whatsapp-DWEBIM-e.png",
@@ -260,6 +284,12 @@
       "assets/icon-nav-yandex-DGqMgLlN.svg",
       "assets/icons-nav-google-DgMeKI7J.svg",
       "assets/icon-nav-2gis-IENnA5nh.svg",
+      "assets/visa-B5gGS33Z.svg",
+      "assets/mastercard-Dhe3ynPT.svg",
+      "assets/maestro-CO3erZZO.svg",
+      "assets/mir-B-UGaZsG.svg",
+      "assets/applepay-CgUHRBVD.svg",
+      "assets/bank-B9GsE6Ab.svg",
       "assets/cup-P0Juz5Ra.png",
       "assets/hero-t-shirt-D91BJKBe.png",
       "assets/plate-DhivJmvV.png",
