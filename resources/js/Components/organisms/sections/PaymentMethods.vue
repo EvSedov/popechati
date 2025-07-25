@@ -1,39 +1,35 @@
 <script setup lang="ts">
 // Массивы с данными для секций
 const cards = [
-    { name: "VISA", icon: "/public/icons/visa.svg", className: "w-13 h-7.5" },
+    {
+        name: "VISA",
+        icon: new URL("/icons/visa.svg", import.meta.url).href,
+        className: "w-13 h-7.5",
+    },
     {
         name: "mastercard",
-        icon: "/public/icons/mastercard.svg",
+        icon: new URL("/icons/mastercard.svg", import.meta.url).href,
         className: "w-9.5 h-7.5",
     },
     {
         name: "maestro",
-        icon: "/public/icons/maestro.svg",
+        icon: new URL("/icons/maestro.svg", import.meta.url).href,
         className: "w-9.5 h-7.5",
     },
-    { name: "МИР", icon: "/public/icons/mir.svg", className: "w-16 h-5" },
+    { name: "МИР", icon: "/icons/mir.svg", className: "w-16 h-5" },
     {
         name: "Apple Pay",
-        icon: "/public/icons/applepay.svg",
+        icon: new URL("/icons/applepay.svg", import.meta.url).href,
         className: "w-15.5 h-10.5",
     },
 ];
-// const wallets = [
-//     {
-//         name: "WebMoney",
-//         icon: "/icons/webmoney.svg",
-//         className: "w-27.5 h-8.5",
-//     },
-//     { name: "QIWI", icon: "/icons/qiwi.svg", className: "w-23.5 h-13" },
-//     { name: "Юmoney", icon: "/icons/yoomoney.svg", className: "w-26 h-5.5" },
-// ];
-// const terminals = [
-//     { name: "Comepay", icon: "/icons/comepay.svg", className: "w-30 h-12.5" },
-//     { name: "Связной", icon: "/icons/svyaznoy.svg", className: "w-28 h-9.5" },
-//     { name: "Евросеть", icon: "/icons/euroset.svg", className: "w-28 h-7.5" },
-// ];
-const bank = [{ name: "Банковский расчет", icon: "/icons/bank.svg" }];
+
+const bank = [
+    {
+        name: "Банковский расчет",
+        icon: new URL("/icons/bank.svg", import.meta.url).href,
+    },
+];
 </script>
 
 <template>
