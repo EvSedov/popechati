@@ -111,7 +111,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                     <li class="mb-4">
                         <a
                             class="rounded-md px-1 py-0.5 text-base/6.5 font-semibold text-[#1882F0] transition-all duration-300 ease-in-out hover:scale-105 hover:bg-blue-100"
-                            href="mail:popechati@gmail.com"
+                            href="mailto:popechati@gmail.com"
                         >
                             popechati@gmail.com
                         </a>
