@@ -1,17 +1,21 @@
 <script setup lang="ts">
 // Массивы с данными для секций
 const cards = [
-    { name: "VISA", icon: "/icons/visa.svg", className: "w-13 h-7.5" },
+    { name: "VISA", icon: "/public/icons/visa.svg", className: "w-13 h-7.5" },
     {
         name: "mastercard",
-        icon: "/icons/mastercard.svg",
+        icon: "/public/icons/mastercard.svg",
         className: "w-9.5 h-7.5",
     },
-    { name: "maestro", icon: "/icons/maestro.svg", className: "w-9.5 h-7.5" },
-    { name: "МИР", icon: "/icons/mir.svg", className: "w-16 h-5" },
+    {
+        name: "maestro",
+        icon: "/public/icons/maestro.svg",
+        className: "w-9.5 h-7.5",
+    },
+    { name: "МИР", icon: "/public/icons/mir.svg", className: "w-16 h-5" },
     {
         name: "Apple Pay",
-        icon: "/icons/applepay.svg",
+        icon: "/public/icons/applepay.svg",
         className: "w-15.5 h-10.5",
     },
 ];
