@@ -173,7 +173,7 @@ const openOrderModal = inject("openOrderModal") as () => void;
 </script>
 
 <template>
-    <section class="mt-40 bg-[#F7F7F7] px-4 py-16">
+    <section id="examples" class="mt-40 bg-[#F7F7F7] px-4 py-16">
         <div class="container mx-auto max-w-[1590px] text-center">
             <!-- Заголовок секции -->
             <h2

@@ -6,6 +6,7 @@ import {
     NavigationMenuList,
     navigationMenuTriggerStyle,
 } from "@/Components/atoms/ui/navigation-menu";
+import { scrollToSection } from "@/lib/utils";
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -51,26 +52,29 @@ const components: { title: string; href: string; description: string }[] = [
         <NavigationMenuList class="flex-wrap gap-0 tracking-wider">
             <NavigationMenuItem>
                 <NavigationMenuLink
-                    href="#"
+                    href="#hero"
                     class="mx-0 pl-0"
                     :class="navigationMenuTriggerStyle()"
+                    @click="scrollToSection"
                 >
                     Главная
                 </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
                 <NavigationMenuLink
-                    href="#"
+                    href="#how-we-work"
                     class="mx-0 px-0"
                     :class="navigationMenuTriggerStyle()"
+                    @click="scrollToSection"
                 >
                     Как мы работаем?
                 </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
                 <NavigationMenuLink
-                    href="#"
+                    href="#examples"
                     :class="navigationMenuTriggerStyle()"
+                    @click="scrollToSection"
                 >
                     Наши работы и портфолио
                 </NavigationMenuLink>
@@ -79,14 +83,16 @@ const components: { title: string; href: string; description: string }[] = [
                 <NavigationMenuLink
                     href="#contacts"
                     :class="navigationMenuTriggerStyle()"
+                    @click="scrollToSection"
                 >
                     Контакты
                 </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
                 <NavigationMenuLink
-                    href="/docs/introduction"
+                    href="#faqs"
                     :class="navigationMenuTriggerStyle()"
+                    @click="scrollToSection"
                 >
                     Часто задаваемые вопросы
                 </NavigationMenuLink>

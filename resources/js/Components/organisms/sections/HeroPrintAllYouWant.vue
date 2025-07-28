@@ -95,6 +95,7 @@ const getProductCardImgClasses = (index: number) => {
 
 <template>
     <section
+        id="hero"
         class="relative w-full overflow-hidden bg-[#F7F7F7] py-20 pb-[350px]"
     >
         <!-- Основной контейнер контента -->

@@ -75,7 +75,7 @@ onUnmounted(() => {
                     <ContactMap @click="toggleMapZoom" class="cursor-pointer" />
 
                     <!-- FAQ секция (перемещена под карту) -->
-                    <FaqAccordion :items="faqItems" />
+                    <FaqAccordion :items="faqItems" id="faqs" />
                 </div>
 
                 <!-- Контактная информация (правая часть) -->

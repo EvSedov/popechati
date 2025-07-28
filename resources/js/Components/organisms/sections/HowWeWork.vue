@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, computed, onBeforeUnmount } from "vue";
+import { debounce } from "lodash-es";
 
 const whiteCardRef = ref<HTMLElement | null>(null);
 const whiteCardHeight = ref<number>(0);
@@ -14,18 +15,18 @@ const containerMinHeight = computed(() => {
 const containerWidth = computed(() => {
     return `${whiteCardWidth.value}px`;
 });
+const handleResize = debounce((entries) => {
+    for (let entry of entries) {
+        if (entry.target === whiteCardRef.value) {
+            whiteCardHeight.value = entry.contentRect.height;
+            whiteCardWidth.value = entry.contentRect.width;
+        }
+    }
+}, 100);
 
 onMounted(() => {
     if (whiteCardRef.value) {
-        resizeObserver = new ResizeObserver((entries) => {
-            for (let entry of entries) {
-                if (entry.target === whiteCardRef.value) {
-                    whiteCardHeight.value = entry.contentRect.height;
-                    whiteCardWidth.value = entry.contentRect.width;
-                }
-            }
-        });
-
+        resizeObserver = new ResizeObserver(handleResize);
         resizeObserver.observe(whiteCardRef.value);
     }
 });
@@ -33,6 +34,7 @@ onMounted(() => {
 onBeforeUnmount(() => {
     if (resizeObserver) {
         resizeObserver.disconnect();
+        resizeObserver = null;
     }
 });
 </script>
@@ -47,6 +49,7 @@ onBeforeUnmount(() => {
             }"
         >
             <div
+                id="how-we-work"
                 ref="whiteCardRef"
                 class="absolute top-[-120px] flex max-w-[1166px] flex-col items-center gap-4 rounded-md bg-white py-9 shadow-lg"
             >

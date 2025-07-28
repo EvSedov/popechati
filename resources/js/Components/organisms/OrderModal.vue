@@ -1,6 +1,12 @@
 <script setup lang="ts">
-import { watch, onUnmounted, computed } from "vue";
+import { watch, onUnmounted, computed, ref } from "vue";
 import { useForm } from "@inertiajs/vue3";
+import { useErrorHandler } from "../../composables/useErrorHandler.js";
+import {
+    validateForm,
+    validationRules,
+    formatPhoneNumber,
+} from "../../lib/validation.js";
 
 // Change isOpen to a prop, using modelValue for v-model compatibility
 const props = defineProps({
@@ -13,8 +19,16 @@ const props = defineProps({
 // Define emits for updating the prop
 const emit = defineEmits(["update:modelValue"]);
 
+// Инициализация обработчика ошибок
+const { showError, showSuccess, isLoading } = useErrorHandler();
+
+// Состояние валидации
+const validationErrors = ref<Record<string, string>>({});
+
 const closeModal = () => {
-    // Emit event to update parent's state
+    // Очищаем форму и ошибки при закрытии
+    form.reset();
+    validationErrors.value = {};
     emit("update:modelValue", false);
 };
 
@@ -120,21 +134,74 @@ const progressBarWidth = computed(() => {
     return completedFieldsCount.value * 20;
 });
 
+// Валидация формы
+const validateFormData = () => {
+    const formData = {
+        fullName: form.fullName,
+        selectedService: form.selectedService,
+        phoneNumber: form.phoneNumber,
+        description: form.description,
+        quantity: form.quantity,
+    };
+
+    const rules = {
+        fullName: validationRules.fullName,
+        selectedService: validationRules.selectedService,
+        phoneNumber: validationRules.phoneNumber,
+        description: validationRules.description,
+        quantity: validationRules.quantity,
+    };
+
+    const errors = validateForm(formData, rules);
+    validationErrors.value = errors;
+
+    return Object.keys(errors).length === 0;
+};
+
+// Форматирование номера телефона при вводе
+const handlePhoneInput = (event: Event) => {
+    const target = event.target as HTMLInputElement;
+    const formatted = formatPhoneNumber(target.value);
+    form.phoneNumber = formatted;
+};
+
 // Функция для обработки отправки заказа
-const handleSubmitOrder = () => {
+const handleSubmitOrder = async () => {
+    // Проверяем согласие
+    if (!form.agree) {
+        showError("Необходимо принять условия передачи информации");
+        return;
+    }
+
+    // Валидируем форму
+    if (!validateFormData()) {
+        showError("Пожалуйста, исправьте ошибки в форме");
+        return;
+    }
+
+    // Устанавливаем скидку
     form.discount = discountPercentage.value;
-    // Здесь будет логика отправки данных на сервер
+
+    // Отправляем форму
     form.post("/submit-order", {
-        // Изменено: Отправка формы через Inertia
         onSuccess: () => {
-            // Изменено: Обработка успешной отправки
-            console.log("Письмо отправлено.");
-            closeModal(); // Закрываем модальное окно при успехе
+            showSuccess(
+                "Заказ успешно отправлен! Мы свяжемся с вами в ближайшее время.",
+            );
+            closeModal();
         },
         onError: (errors) => {
-            // Изменено: Обработка ошибок валидации
             console.error("Ошибка отправки формы:", errors);
-            // Здесь можно добавить логику отображения ошибок пользователю
+
+            // Обрабатываем ошибки валидации от сервера
+            if (errors) {
+                validationErrors.value = errors;
+                showError("Пожалуйста, исправьте ошибки в форме");
+            } else {
+                showError(
+                    "Произошла ошибка при отправке заказа. Попробуйте еще раз.",
+                );
+            }
         },
     });
 };
@@ -248,9 +315,20 @@ onUnmounted(() => {
                             <input
                                 type="text"
                                 placeholder="Введите ФИО*"
-                                class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
+                                :class="[
+                                    'w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2',
+                                    validationErrors.fullName
+                                        ? 'ring-2 ring-red-500 focus:ring-red-500'
+                                        : 'focus:ring-blue-500',
+                                ]"
                                 v-model="form.fullName"
                             />
+                            <p
+                                v-if="validationErrors.fullName"
+                                class="mt-1 text-sm text-red-500"
+                            >
+                                {{ validationErrors.fullName }}
+                            </p>
                         </div>
 
                         <!-- "Выберите услугу" Section -->
@@ -264,9 +342,20 @@ onUnmounted(() => {
                             <input
                                 type="text"
                                 placeholder="Какой тип услуги Вам нужен?"
-                                class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
+                                :class="[
+                                    'w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2',
+                                    validationErrors.selectedService
+                                        ? 'ring-2 ring-red-500 focus:ring-red-500'
+                                        : 'focus:ring-blue-500',
+                                ]"
                                 v-model="form.selectedService"
                             />
+                            <p
+                                v-if="validationErrors.selectedService"
+                                class="mt-1 text-sm text-red-500"
+                            >
+                                {{ validationErrors.selectedService }}
+                            </p>
                         </div>
 
                         <!-- "Контактные данные" Section -->
@@ -279,9 +368,21 @@ onUnmounted(() => {
                             <input
                                 type="tel"
                                 placeholder="Введите номер телефона*"
-                                class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
+                                :class="[
+                                    'w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2',
+                                    validationErrors.phoneNumber
+                                        ? 'ring-2 ring-red-500 focus:ring-red-500'
+                                        : 'focus:ring-blue-500',
+                                ]"
                                 v-model="form.phoneNumber"
+                                @input="handlePhoneInput"
                             />
+                            <p
+                                v-if="validationErrors.phoneNumber"
+                                class="mt-1 text-sm text-red-500"
+                            >
+                                {{ validationErrors.phoneNumber }}
+                            </p>
                         </div>
 
                         <!-- "Описание" Section -->
@@ -293,9 +394,20 @@ onUnmounted(() => {
                             </h3>
                             <textarea
                                 placeholder="Введите описание"
-                                class="h-32 w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
+                                :class="[
+                                    'h-32 w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2',
+                                    validationErrors.description
+                                        ? 'ring-2 ring-red-500 focus:ring-red-500'
+                                        : 'focus:ring-blue-500',
+                                ]"
                                 v-model="form.description"
                             ></textarea>
+                            <p
+                                v-if="validationErrors.description"
+                                class="mt-1 text-sm text-red-500"
+                            >
+                                {{ validationErrors.description }}
+                            </p>
                         </div>
 
                         <div>
@@ -307,10 +419,21 @@ onUnmounted(() => {
                             <input
                                 type="number"
                                 placeholder="Введите количество"
-                                class="w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2 focus:ring-blue-500"
+                                :class="[
+                                    'w-full rounded-xl bg-[#244A7F0F] px-4 py-3 text-[16px] leading-[1.5em] text-[#0000008A] placeholder-[#0000008A] outline-none focus:ring-2',
+                                    validationErrors.quantity
+                                        ? 'ring-2 ring-red-500 focus:ring-red-500'
+                                        : 'focus:ring-blue-500',
+                                ]"
                                 v-model.number="form.quantity"
                                 min="1"
                             />
+                            <p
+                                v-if="validationErrors.quantity"
+                                class="mt-1 text-sm text-red-500"
+                            >
+                                {{ validationErrors.quantity }}
+                            </p>
                         </div>
                         <!-- File Upload Section -->
                         <div>
@@ -381,15 +504,25 @@ onUnmounted(() => {
                                 class="text-[13px] leading-[1.53em] font-normal text-[rgba(0,0,0,0.4)]"
                             >
                                 Заполняя форму, я принимаю
-                                <a href="#" class="text-[#126DF7]">
+                                <a
+                                    href="/docs/Оферта.pdf"
+                                    download="Оферта.pdf"
+                                    target="_blank"
+                                    class="text-[#126DF7]"
+                                >
                                     условия передачи информации
                                 </a>
                                 и даю
-                                <a href="#" class="text-[#126DF7]">
-                                    согласие на получение информации о продуктах
-                                    и
-                                    <span class="font-bold">popechati.com</span>
+                                <a
+                                    href="/docs/Соглашение.pdf"
+                                    download="Соглашение.pdf"
+                                    target="_blank"
+                                    class="text-[#126DF7]"
+                                >
+                                    согласие
                                 </a>
+                                на получение информации о продуктах от
+                                <span class="font-bold">popechati.com</span>
                             </label>
                         </div>
 
@@ -397,11 +530,42 @@ onUnmounted(() => {
                         <div class="w-full flex-shrink-0 md:w-auto">
                             <!-- Prevent button from shrinking -->
                             <button
-                                class="rounded-xl bg-[#1882F0] px-8 py-4 text-[16px] leading-[1.25em] font-medium text-white hover:bg-blue-600"
-                                :class="{ btnDisabled: !form.agree }"
+                                :class="[
+                                    'rounded-xl px-8 py-4 text-[16px] leading-[1.25em] font-medium text-white transition-all duration-200',
+                                    !form.agree || isLoading
+                                        ? 'cursor-not-allowed bg-gray-400 opacity-50'
+                                        : 'bg-[#1882F0] hover:bg-blue-600',
+                                ]"
+                                :disabled="!form.agree || isLoading"
                                 @click="handleSubmitOrder"
                             >
-                                Сделать заказ
+                                <span
+                                    v-if="isLoading"
+                                    class="flex items-center"
+                                >
+                                    <svg
+                                        class="mr-3 -ml-1 h-5 w-5 animate-spin text-white"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <circle
+                                            class="opacity-25"
+                                            cx="12"
+                                            cy="12"
+                                            r="10"
+                                            stroke="currentColor"
+                                            stroke-width="4"
+                                        ></circle>
+                                        <path
+                                            class="opacity-75"
+                                            fill="currentColor"
+                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                        ></path>
+                                    </svg>
+                                    Отправка...
+                                </span>
+                                <span v-else>Сделать заказ</span>
                             </button>
                         </div>
                     </div>

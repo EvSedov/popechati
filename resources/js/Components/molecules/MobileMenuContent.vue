@@ -2,6 +2,7 @@
 import { inject } from "vue";
 import { Button } from "@/Components/atoms/ui/button";
 import BasketShopping from "@/Components/atoms/icons/BasketShopping.vue";
+import { scrollToSection } from "@/lib/utils";
 const openOrderModal = inject("openOrderModal") as () => void;
 const closeSheet = inject("closeSheet") as () => void;
 
@@ -10,42 +11,100 @@ const handleLinkClick = () => {
         closeSheet();
     }
 };
+
+const delayedScrollToSection = (targetId: string) => {
+    // {{ edit_1 }} Возвращаем setTimeout
+    window.setTimeout(() => {
+        scrollToSection(targetId);
+    }, 500); // Задержка в 500 мс
+};
 </script>
 
 <template>
     <nav class="flex flex-col gap-2 p-4">
         <a
-            href="#"
+            href="#hero"
             class="block rounded-md px-4 py-2 text-lg font-medium text-gray-700 hover:bg-gray-100"
-            @click="handleLinkClick"
+            @click.prevent="
+                (event: Event) => {
+                    handleLinkClick();
+                    const targetId = (
+                        event.currentTarget as HTMLAnchorElement
+                    ).getAttribute('href'); // {{ edit_3 }} Получаем targetId здесь
+                    if (targetId) {
+                        // {{ edit_4 }} Добавляем проверку на targetId
+                        delayedScrollToSection(targetId); // {{ edit_5 }} Передаем targetId
+                    }
+                }
+            "
         >
             Главная
         </a>
         <a
-            href="#"
+            href="#how-we-work"
             class="block rounded-md px-4 py-2 text-lg font-medium text-gray-700 hover:bg-gray-100"
-            @click="handleLinkClick"
+            @click.prevent="
+                (event: Event) => {
+                    handleLinkClick();
+                    const targetId = (
+                        event.currentTarget as HTMLAnchorElement
+                    ).getAttribute('href');
+                    if (targetId) {
+                        delayedScrollToSection(targetId);
+                    }
+                }
+            "
         >
             Как мы работаем?
         </a>
         <a
-            href="#"
+            href="#examples"
             class="block rounded-md px-4 py-2 text-lg font-medium text-gray-700 hover:bg-gray-100"
-            @click="handleLinkClick"
+            @click.prevent="
+                (event: Event) => {
+                    handleLinkClick();
+                    const targetId = (
+                        event.currentTarget as HTMLAnchorElement
+                    ).getAttribute('href');
+                    if (targetId) {
+                        delayedScrollToSection(targetId);
+                    }
+                }
+            "
         >
             Наши работы и портфолио
         </a>
         <a
             href="#contacts"
             class="block rounded-md px-4 py-2 text-lg font-medium text-gray-700 hover:bg-gray-100"
-            @click="handleLinkClick"
+            @click.prevent="
+                (event: Event) => {
+                    handleLinkClick();
+                    const targetId = (
+                        event.currentTarget as HTMLAnchorElement
+                    ).getAttribute('href');
+                    if (targetId) {
+                        delayedScrollToSection(targetId);
+                    }
+                }
+            "
         >
             Контакты
         </a>
         <a
-            href="/docs/introduction"
+            href="#faqs"
             class="block rounded-md px-4 py-2 text-lg font-medium text-gray-700 hover:bg-gray-100"
-            @click="handleLinkClick"
+            @click.prevent="
+                (event: Event) => {
+                    handleLinkClick();
+                    const targetId = (
+                        event.currentTarget as HTMLAnchorElement
+                    ).getAttribute('href');
+                    if (targetId) {
+                        delayedScrollToSection(targetId);
+                    }
+                }
+            "
         >
             Часто задаваемые вопросы
         </a>
@@ -54,7 +113,6 @@ const handleLinkClick = () => {
     <div
         class="mt-4 flex flex-col items-center border-t border-gray-200 p-4 md:items-start"
     >
-        <!-- {{ 5 }} -->
         <div
             class="flex flex-col items-center space-y-2 px-4 text-sm md:items-start"
         >

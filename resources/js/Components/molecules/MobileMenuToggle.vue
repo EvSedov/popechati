@@ -20,7 +20,7 @@ provide("closeSheet", closeSheet);
 </script>
 
 <template>
-    <Sheet v-model:open="isOpen">
+    <Sheet v-model:open="isOpen" :prevent-scroll-on-entry-focus="true">
         <SheetTrigger as-child>
             <Button variant="outline" size="icon">
                 <MenuIcon class="h-6 w-6" />
