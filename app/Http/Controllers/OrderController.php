@@ -34,7 +34,7 @@ class OrderController extends Controller
 
         try {
             // Отправка письма (Изменено: Добавлена логика отправки письма)
-            Mail::to('sedoff-online@yandex.ru')->send(new OrderSubmitted(
+            Mail::to(env('MAIL_FROM_ADDRESS'))->send(new OrderSubmitted(
                 $validated['fullName'],
                 $validated['selectedService'],
                 $validated['phoneNumber'],
