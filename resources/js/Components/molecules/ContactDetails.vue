@@ -21,14 +21,6 @@
                 Контакты и номера телефонов:
             </h3>
             <div>
-                <div>
-                    <a
-                        href="tel:+74993985601"
-                        class="rounded-md px-1 py-0.5 text-gray-900 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-pink-100"
-                    >
-                        +7 (499) 398-56-01
-                    </a>
-                </div>
                 <div class="flex items-center gap-2">
                     <a
                         href="tel:+79254709400"

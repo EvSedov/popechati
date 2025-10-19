@@ -134,14 +134,7 @@ const delayedScrollToSection = (targetId: string) => {
                     class="ml-1 h-4 w-4"
                 />
             </div>
-            <div class="flex items-center">
-                <a
-                    href="tel:+74993985601"
-                    class="rounded-md px-1 py-0.5 font-semibold whitespace-nowrap text-gray-900 transition-all duration-300 ease-in-out hover:scale-105 hover:text-[#BA2150]"
-                    @click="handleLinkClick"
-                    >+7 (499) 398-56-01</a
-                >
-            </div>
+
             <a
                 href="mailto:POPECHATI@GMAIL.COM"
                 class="mt-2 rounded-md px-1 py-0.5 text-xs text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 hover:text-[#1882F0]"

@@ -79,13 +79,6 @@ import Logo from "@/Components/atoms/Logo.vue";
                         </p>
                     </li>
                     <li class="mb-[13px]">
-                        <a href="tel:+74993985601">
-                            <p
-                                class="w-fit rounded-md px-1 py-0.5 text-base/6.5 font-semibold text-[#2c2c2c] transition-all duration-300 ease-in-out hover:scale-105 hover:bg-pink-100"
-                            >
-                                +7 (499) 398-56-01
-                            </p>
-                        </a>
                         <div class="flex items-center gap-2">
                             <a href="tel:+79254709400" class="flex">
                                 <p
