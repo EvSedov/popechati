@@ -9,13 +9,11 @@ export const scrollToSection = (targetId: string) => {
     if (targetId) {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-            const elementPosition =
-                targetElement.getBoundingClientRect().top + window.scrollY;
-            const offsetPosition = elementPosition;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth",
+            // Используем scrollIntoView для более надежной плавной прокрутки
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest'
             });
         }
     }

@@ -45,6 +45,16 @@ const components: { title: string; href: string; description: string }[] = [
             "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
 ];
+
+// Универсальная функция для обработки клика по навигационной ссылке
+const handleNavigationClick = (event: Event) => {
+    event.preventDefault(); // Предотвращаем стандартное поведение
+    const targetElement = event.currentTarget as HTMLAnchorElement;
+    const href = targetElement.getAttribute('href');
+    if (href && href.startsWith('#')) {
+        scrollToSection(href);
+    }
+};
 </script>
 
 <template>
@@ -55,7 +65,7 @@ const components: { title: string; href: string; description: string }[] = [
                     href="#hero"
                     class="mx-0 pl-0"
                     :class="navigationMenuTriggerStyle()"
-                    @click="scrollToSection"
+                    @click="handleNavigationClick"
                 >
                     Главная
                 </NavigationMenuLink>
@@ -65,7 +75,7 @@ const components: { title: string; href: string; description: string }[] = [
                     href="#how-we-work"
                     class="mx-0 px-0"
                     :class="navigationMenuTriggerStyle()"
-                    @click="scrollToSection"
+                    @click="handleNavigationClick"
                 >
                     Как мы работаем?
                 </NavigationMenuLink>
@@ -74,7 +84,7 @@ const components: { title: string; href: string; description: string }[] = [
                 <NavigationMenuLink
                     href="#examples"
                     :class="navigationMenuTriggerStyle()"
-                    @click="scrollToSection"
+                    @click="handleNavigationClick"
                 >
                     Наши работы и портфолио
                 </NavigationMenuLink>
@@ -83,7 +93,7 @@ const components: { title: string; href: string; description: string }[] = [
                 <NavigationMenuLink
                     href="#contacts"
                     :class="navigationMenuTriggerStyle()"
-                    @click="scrollToSection"
+                    @click="handleNavigationClick"
                 >
                     Контакты
                 </NavigationMenuLink>
@@ -92,7 +102,7 @@ const components: { title: string; href: string; description: string }[] = [
                 <NavigationMenuLink
                     href="#faqs"
                     :class="navigationMenuTriggerStyle()"
-                    @click="scrollToSection"
+                    @click="handleNavigationClick"
                 >
                     Часто задаваемые вопросы
                 </NavigationMenuLink>
