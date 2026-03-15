@@ -20,7 +20,9 @@ class OrderController extends Controller
     public function submitOrder(Request $request)
     {
         Log::info('Form submission received.');
-        Log::info('Received data:', $request->all());
+        if (config('app.debug')) {
+            Log::info('Received data (debug):', $request->except(['description']));
+        }
 
         // Валидация входящих данных (Изменено: Добавлена валидация)
         $validated = $request->validate([
@@ -33,8 +35,9 @@ class OrderController extends Controller
         ]);
 
         try {
-            // Отправка письма (Изменено: Добавлена логика отправки письма)
-            Mail::to(env('MAIL_FROM_ADDRESS'))->send(new OrderSubmitted(
+            // Отправка письма (с постановкой в очередь)
+            $recipient = config('mail.orders_recipient', env('ORDERS_RECIPIENT'));
+            Mail::to($recipient)->queue(new OrderSubmitted(
                 $validated['fullName'],
                 $validated['selectedService'],
                 $validated['phoneNumber'],
@@ -45,7 +48,7 @@ class OrderController extends Controller
             Log::info('Email sent successfully.');
 
             // Перенаправление обратно с сообщением об успехе (Изменено: Возврат редиректа)
-            return redirect()->back();
+            return redirect()->back()->with('success', 'Заказ успешно отправлен');
         } catch (\Exception $e) {
             Log::error('Mail sending failed: ' . $e->getMessage(), ['exception' => $e]);
             return response()->json(['message' => 'Failed to submit order.', 'error' => $e->getMessage()], 500);
