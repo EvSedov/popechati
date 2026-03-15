@@ -45,7 +45,11 @@ export function validateField(value: any, rule: ValidationRule): string | null {
     }
 
     // Если поле пустое и не обязательное, пропускаем остальные проверки
-    if (!value || (typeof value === "string" && value.trim() === "")) {
+    if (
+        value === undefined ||
+        value === null ||
+        (typeof value === "string" && value.trim() === "")
+    ) {
         return null;
     }
 
@@ -67,6 +71,12 @@ export function validateField(value: any, rule: ValidationRule): string | null {
         return `Максимальная длина: ${rule.maxLength} символов`;
     }
 
+    // Кастомная валидация (приоритетнее, чтобы возвращать точные сообщения)
+    if (rule.custom) {
+        const customError = rule.custom(value);
+        if (customError) return customError;
+    }
+
     // Проверка по регулярному выражению
     if (
         rule.pattern &&
@@ -74,11 +84,6 @@ export function validateField(value: any, rule: ValidationRule): string | null {
         !rule.pattern.test(value)
     ) {
         return "Неверный формат данных";
-    }
-
-    // Кастомная валидация
-    if (rule.custom) {
-        return rule.custom(value);
     }
 
     return null;
@@ -141,29 +146,42 @@ export function formatPhoneNumber(value: string): string {
 
     if (cleaned.length === 0) return "";
 
-    if (cleaned.startsWith("8")) {
-        const withoutFirst = cleaned.substring(1);
-        if (withoutFirst.length <= 10) {
-            return `+7 ${withoutFirst}`
-                .replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, "$1 $2-$3-$4")
-                .trim();
-        }
+    // Нормализуем к российскому формату, приводим к +7 и форматируем прогрессивно
+    let digits = cleaned;
+    if (digits.startsWith("8")) digits = digits.substring(1);
+    if (digits.startsWith("7")) digits = digits.substring(1);
+
+    const prefix = "+7 ";
+    // Прогрессивное форматирование по мере ввода: 3 3 2 2
+    if (digits.length <= 3) {
+        return prefix + digits;
+    }
+    if (digits.length <= 6) {
+        return prefix + digits.slice(0, 3) + " " + digits.slice(3);
+    }
+    if (digits.length <= 8) {
+        return (
+            prefix +
+            digits.slice(0, 3) +
+            " " +
+            digits.slice(3, 6) +
+            "-" +
+            digits.slice(6)
+        );
+    }
+    if (digits.length <= 10) {
+        return (
+            prefix +
+            digits.slice(0, 3) +
+            " " +
+            digits.slice(3, 6) +
+            "-" +
+            digits.slice(6, 8) +
+            "-" +
+            digits.slice(8)
+        );
     }
 
-    if (cleaned.startsWith("7")) {
-        const withoutFirst = cleaned.substring(1);
-        if (withoutFirst.length <= 10) {
-            return `+7 ${withoutFirst}`
-                .replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, "$1 $2-$3-$4")
-                .trim();
-        }
-    }
-
-    if (cleaned.length <= 10) {
-        return `+7 ${cleaned}`
-            .replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, "$1 $2-$3-$4")
-            .trim();
-    }
-
+    // Если слишком длинное — не форматируем
     return value;
 }
