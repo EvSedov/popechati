@@ -115,4 +115,7 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    // Получатель писем с заказами
+    'orders_recipient' => env('ORDERS_RECIPIENT', env('MAIL_FROM_ADDRESS', 'no-reply@example.com')),
+
 ];
