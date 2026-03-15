@@ -11,8 +11,9 @@ export default mergeConfig(
         test: {
             globals: true,
             environment: "jsdom",
-            setupFiles: ["./setup.ts"],
-            include: ["**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+            setupFiles: ["tests/setup.ts"],
+            include: ["tests/Unit/**/*.{test,spec}.{js,ts,jsx,tsx}"],
+            exclude: ["tests/e2e/**"],
         },
         resolve: {
             alias: {
