@@ -1,4 +1,9 @@
-import { vi } from "vitest";
+import { vi, expect } from "vitest";
+// JSDOM/Testing Library setup hooks can be added here if needed
+// e.g., global fetch polyfills or mocking window APIs
+
+// Ensure Intl/URL APIs exist in JSDOM if needed
+expect.extend({});
 
 // Mock window object
 Object.defineProperty(window, "axios", {
