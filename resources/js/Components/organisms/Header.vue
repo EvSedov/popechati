@@ -17,7 +17,7 @@ const openOrderModal = inject("openOrderModal") as () => void;
 <template>
     <div class="header">
         <div class="container flex items-center xl:justify-between">
-            <Logo class="mr-10" />
+            <Logo class="mr-4 xl:mr-10" />
             <Menu class="mr-auto hidden xl:flex" />
 
             <div
@@ -82,7 +82,7 @@ const openOrderModal = inject("openOrderModal") as () => void;
 .container {
     max-width: 1590px;
     margin: 0 auto;
-    padding: 12px 10px 0;
+    padding: 12px 10px;
 }
 
 /* Пример градиентного фона для кнопки */
