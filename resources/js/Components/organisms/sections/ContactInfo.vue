@@ -72,7 +72,7 @@ onUnmounted(() => {
                     class="flex w-full flex-col items-center pt-0 pl-0 xl:w-auto xl:items-start xl:pt-2 xl:pl-2"
                 >
                     <!-- Яндекс карта (original size) -->
-                    <ContactMap @click="toggleMapZoom" class="cursor-pointer" />
+                    <ContactMap @click="toggleMapZoom" class="mb-8 max-h-[300px] cursor-pointer" />
 
                     <!-- FAQ секция (перемещена под карту) -->
                     <FaqAccordion :items="faqItems" id="faqs" />
@@ -94,7 +94,7 @@ onUnmounted(() => {
     >
         <!-- Zoomed Map Container -->
         <div
-            class="relative z-10 flex max-h-[90vh] w-[90vw] flex-col overflow-hidden rounded-3xl bg-white shadow-lg"
+            class="relative z-10 flex h-[90vh] w-full flex-col overflow-hidden rounded-3xl bg-white shadow-lg"
         >
             <!-- Close button for zoomed map -->
             <button
