@@ -9,5 +9,3 @@ cmds = [
     "php artisan view:cache"
 ]
 
-[start]
-cmd = "php artisan migrate --force && (php-fpm -y $NIXPACKS_PHP_FPM_CONF & nginx -c $NIXPACKS_NGINX_CONF)"
