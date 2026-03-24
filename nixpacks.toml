@@ -1,11 +1,5 @@
 [phases.setup]
-nixPkgs = ["php84", "php84Extensions.pdo", "php84Extensions.pdo_mysql", "php84Extensions.mbstring", "php84Extensions.xml", "php84Extensions.curl", "php84Extensions.zip", "php84Extensions.tokenizer", "nodejs_20", "nodePackages.npm", "curl", "nginx"]
-
-[phases.install]
-cmds = [
-    "curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && /usr/local/bin/composer install --no-dev --optimize-autoloader",
-    "npm install"
-]
+nixPkgs = ["php84", "php84Packages.composer", "nginx", "nodejs_20"]
 
 [phases.build]
 cmds = [
@@ -16,4 +10,4 @@ cmds = [
 ]
 
 [start]
-cmd = "bash start.sh"
+cmd = "php artisan migrate --force && (php-fpm -y $NIXPACKS_PHP_FPM_CONF & nginx -c $NIXPACKS_NGINX_CONF)"
