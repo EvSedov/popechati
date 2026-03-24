@@ -7,10 +7,10 @@
         <!-- Адреса -->
         <div class="mb-4 flex gap-3">
             <h2 class="font-medium tracking-wide text-neutral-900">Адреса</h2>
-            <a href="#"
+            <span
                 class="block h-[34px] rounded-lg border border-dashed border-[#1882F0] px-5 py-1.5 text-center text-[13px] leading-[22px] font-medium whitespace-nowrap text-[#1882F0]">
                 Центральный офис
-            </a>
+            </span>
         </div>
 
         <!-- Контакты и номера телефонов -->
@@ -58,13 +58,12 @@
         <div class="mb-6">
             <h3 class="mb-2 font-medium text-neutral-900">Адрес:</h3>
             <p class="text-neutral-700">
-                г. Москва, Батайский проезд 59, вход с противоположной стороны от
-                подъездов, под вывеской «КОПИ ЦЕНТ», 7 минут пешком от метро
-                Марьино
+                г.&nbsp;Москва, ул.&nbsp;Таганрогская, д.&nbsp;11, к.&nbsp;3. Вход с торца, ориентир: Wildberries, OZON,
+                СДЭК
             </p>
         </div>
 
-        <!-- Проложить маршрут -->
+        <!-- Проложить маршрут 
         <div>
             <h3 class="mb-2 font-medium text-neutral-900">
                 Проложить маршрут:
@@ -83,7 +82,7 @@
                     <img src="/public/icons/icon-nav-2gis.svg" alt="Навигатор 2Gis" width="76" height="24" />
                 </a>
             </div>
-        </div>
+        </div>-->
     </div>
 </template>
 

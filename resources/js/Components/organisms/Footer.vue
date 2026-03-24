@@ -113,9 +113,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                         class="text-sm leading-relaxed font-normal text-[#2C2C2C]"
                     >
                         <span class="block max-w-73 leading-relaxed">
-                            г. Москва, Батайский проезд 59, вход с противоположной стороны от
-                            подъездов, под вывеской «КОПИ ЦЕНТ», 7 минут пешком от метро
-                            Марьино
+                            г.&nbsp;Москва, ул.&nbsp;Таганрогская, д.&nbsp;11, к.&nbsp;3. Вход с торца, ориентир: Wildberries, OZON, СДЭК
                         </span>
                     </li>
                 </ul>
