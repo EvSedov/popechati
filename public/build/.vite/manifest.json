@@ -1,8 +1,4 @@
 {
-  "public/LogoPopechati.png": {
-    "file": "assets/LogoPopechati-n5l2dxgf.png",
-    "src": "public/LogoPopechati.png"
-  },
   "public/fonts/Commissioner-Bold.ttf": {
     "file": "assets/Commissioner-Bold-GoDjoJPL.ttf",
     "src": "public/fonts/Commissioner-Bold.ttf"
@@ -82,18 +78,6 @@
   "public/icons/i-social-whatsapp.png": {
     "file": "assets/i-social-whatsapp-DWEBIM-e.png",
     "src": "public/icons/i-social-whatsapp.png"
-  },
-  "public/icons/icon-nav-2gis.svg": {
-    "file": "assets/icon-nav-2gis-IENnA5nh.svg",
-    "src": "public/icons/icon-nav-2gis.svg"
-  },
-  "public/icons/icon-nav-yandex.svg": {
-    "file": "assets/icon-nav-yandex-DGqMgLlN.svg",
-    "src": "public/icons/icon-nav-yandex.svg"
-  },
-  "public/icons/icons-nav-google.svg": {
-    "file": "assets/icons-nav-google-DgMeKI7J.svg",
-    "src": "public/icons/icons-nav-google.svg"
   },
   "public/icons/maestro.svg": {
     "file": "assets/maestro-CO3erZZO.svg",
@@ -228,22 +212,21 @@
     "src": "public/images/products/shopper.png"
   },
   "resources/css/app.css": {
-    "file": "assets/app-g8nLMfdV.css",
+    "file": "assets/app-CFHV6C3t.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-_6k5HYHE.js",
+    "file": "assets/app-C2uM9A4-.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-BRbwdHLb.css"
+      "assets/app-BLZGIfDx.css"
     ],
     "assets": [
       "assets/i-social-whatsapp-DWEBIM-e.png",
       "assets/i-social-tg-D5RvMVwN.png",
-      "assets/LogoPopechati-n5l2dxgf.png",
       "assets/basket-shopping-BMfZBbcV.svg",
       "assets/cards-visa-CCCYEq3l.png",
       "assets/cards-master-B4fj7Av5.png",
@@ -281,9 +264,6 @@
       "assets/undershirt-1-CY4EIlVs.jpg",
       "assets/undershirt-2-DEBERZxF.jpg",
       "assets/vizitki-BWcLGLGW.png",
-      "assets/icon-nav-yandex-DGqMgLlN.svg",
-      "assets/icons-nav-google-DgMeKI7J.svg",
-      "assets/icon-nav-2gis-IENnA5nh.svg",
       "assets/visa-B5gGS33Z.svg",
       "assets/mastercard-Dhe3ynPT.svg",
       "assets/maestro-CO3erZZO.svg",
