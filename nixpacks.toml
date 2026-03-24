@@ -3,6 +3,7 @@ nixPkgs = ["php84", "php84Packages.composer", "nginx", "nodejs_20"]
 
 [phases.build]
 cmds = [
+    "npm ci",
     "npm run build"
 ]
 
