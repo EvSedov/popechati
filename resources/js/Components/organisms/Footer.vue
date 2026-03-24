@@ -5,8 +5,7 @@ import Logo from "@/Components/atoms/Logo.vue";
 <template>
     <div class="footer border-t border-[#F3F3F3] py-8">
         <div
-            class="mx-auto grid w-fit max-w-[1220px] grid-cols-1 gap-y-8 px-4 md:grid-cols-2 md:px-6 lg:gap-x-12 lg:px-8 xl:grid-cols-4 xl:gap-x-[88px]"
-        >
+            class="mx-auto grid w-fit max-w-[1220px] grid-cols-1 gap-y-8 px-4 md:grid-cols-2 md:px-6 lg:gap-x-12 lg:px-8 xl:grid-cols-4 xl:gap-x-[88px]">
             <div class="flex flex-col">
                 <ul class="m-0 flex flex-col p-0">
                     <li>
@@ -14,54 +13,25 @@ import Logo from "@/Components/atoms/Logo.vue";
                     </li>
                     <li class="my-6 w-33.5">
                         <div class="grid grid-cols-2 grid-rows-2 gap-1.5">
-                            <div
-                                class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]"
-                            >
-                                <img
-                                    src="/public/icons/cards-visa.png"
-                                    alt="Оплата картой visa"
-                                />
+                            <div class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]">
+                                <img src="/public/icons/cards-visa.png" alt="Оплата картой visa" />
                             </div>
-                            <div
-                                class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]"
-                            >
-                                <img
-                                    src="/public/icons/cards-master.png"
-                                    alt="Оплата master card"
-                                />
+                            <div class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]">
+                                <img src="/public/icons/cards-master.png" alt="Оплата master card" />
                             </div>
-                            <div
-                                class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]"
-                            >
-                                <img
-                                    src="/public/icons/cards-webmoney.png"
-                                    alt="Оплата через WebMoney"
-                                />
+                            <div class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]">
+                                <img src="/public/icons/cards-webmoney.png" alt="Оплата через WebMoney" />
                             </div>
-                            <div
-                                class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]"
-                            >
-                                <img
-                                    src="/public/icons/cards-mir.png"
-                                    alt="Оплата картой Мир"
-                                />
+                            <div class="flex h-8 w-16 items-center justify-center rounded-sm border-1 border-[#EAEAEA]">
+                                <img src="/public/icons/cards-mir.png" alt="Оплата картой Мир" />
                             </div>
                         </div>
                     </li>
                     <li class="mb-5">
                         <div class="icons-social flex gap-[5px]">
-                            <img
-                                src="/public/icons/i-social-vk.png"
-                                alt="Иконка социальной сети вконтакте"
-                            />
-                            <img
-                                src="/public/icons/i-social-tg.png"
-                                alt="Иконка социальной сети телеграмм"
-                            />
-                            <img
-                                src="/public/icons/i-social-whatsapp.png"
-                                alt="Иконка социальной сети WhatsApp"
-                            />
+                            <img src="/public/icons/i-social-vk.png" alt="Иконка социальной сети вконтакте" />
+                            <img src="/public/icons/i-social-tg.png" alt="Иконка социальной сети телеграмм" />
+                            <img src="/public/icons/i-social-whatsapp.png" alt="Иконка социальной сети WhatsApp" />
                         </div>
                     </li>
                     <li class="mt-4">
@@ -82,38 +52,28 @@ import Logo from "@/Components/atoms/Logo.vue";
                         <div class="flex items-center gap-2">
                             <a href="tel:+79254709400" class="flex">
                                 <p
-                                    class="w-fit rounded-md px-1 py-0.5 text-base/6.5 font-semibold text-[#2c2c2c] transition-all duration-300 ease-in-out hover:scale-105 hover:bg-pink-100"
-                                >
+                                    class="w-fit rounded-md px-1 py-0.5 text-base/6.5 font-semibold text-[#2c2c2c] transition-all duration-300 ease-in-out hover:scale-105 hover:bg-pink-100">
                                     +7 (925) 470-94-00
                                 </p>
                             </a>
                             <span class="flex gap-1.5">
-                                <img
-                                    src="/public/icons/i-social-whatsapp.png"
-                                    alt="Иконка социальной сети WhatsApp"
-                                    class="h-4 w-4"
-                                />
-                                <img
-                                    src="/public/icons/i-social-tg.png"
-                                    alt="Иконка социальной сети телеграмм"
-                                    class="h-4 w-4"
-                                />
+                                <img src="/public/icons/i-social-whatsapp.png" alt="Иконка социальной сети WhatsApp"
+                                    class="h-4 w-4" />
+                                <img src="/public/icons/i-social-tg.png" alt="Иконка социальной сети телеграмм"
+                                    class="h-4 w-4" />
                             </span>
                         </div>
                     </li>
                     <li class="mb-4">
-                        <a
-                            class="rounded-md px-1 py-0.5 text-base/6.5 font-semibold text-[#1882F0] transition-all duration-300 ease-in-out hover:scale-105 hover:bg-blue-100"
-                            href="mailto:popechati@gmail.com"
-                        >
+                        <a class="rounded-md px-1 py-0.5 text-base/6.5 font-semibold text-[#1882F0] transition-all duration-300 ease-in-out hover:scale-105 hover:bg-blue-100"
+                            href="mailto:popechati@gmail.com">
                             popechati@gmail.com
                         </a>
                     </li>
-                    <li
-                        class="text-sm leading-relaxed font-normal text-[#2C2C2C]"
-                    >
+                    <li class="text-sm leading-relaxed font-normal text-[#2C2C2C]">
                         <span class="block max-w-73 leading-relaxed">
-                            г.&nbsp;Москва, ул.&nbsp;Таганрогская, д.&nbsp;11, к.&nbsp;3. Вход с торца, ориентир: Wildberries, OZON, СДЭК
+                            г.&nbsp;Москва, ул.&nbsp;Таганрогская, д.&nbsp;11, корп.&nbsp;3. Вход с торца, ориентир:
+                            Wildberries, OZON, СДЭК
                         </span>
                     </li>
                 </ul>
@@ -126,9 +86,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                         </p>
                     </li>
                     <li class="">
-                        <ul
-                            class="text-sm leading-[25px] font-normal text-[#2C2C2C] underline"
-                        >
+                        <ul class="text-sm leading-[25px] font-normal text-[#2C2C2C] underline">
                             <li><span>Контакты</span></li>
                             <li><span>Требования к макетам</span></li>
                             <li class="flex flex-wrap">
@@ -153,9 +111,7 @@ import Logo from "@/Components/atoms/Logo.vue";
                         </p>
                     </li>
                     <li class="">
-                        <ul
-                            class="text-sm leading-[25px] font-normal text-[#2C2C2C] underline"
-                        >
+                        <ul class="text-sm leading-[25px] font-normal text-[#2C2C2C] underline">
                             <li class="flex flex-wrap">
                                 <span>Печать визиток</span>,
                                 <span class="ml-1">листовок</span>

@@ -58,7 +58,8 @@
         <div class="mb-6">
             <h3 class="mb-2 font-medium text-neutral-900">Адрес:</h3>
             <p class="text-neutral-700">
-                г.&nbsp;Москва, ул.&nbsp;Таганрогская, д.&nbsp;11, к.&nbsp;3. Вход с торца, ориентир: Wildberries, OZON,
+                г.&nbsp;Москва, ул.&nbsp;Таганрогская, д.&nbsp;11, корп.&nbsp;3. Вход с торца, ориентир: Wildberries,
+                OZON,
                 СДЭК
             </p>
         </div>
